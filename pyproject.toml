@@ -46,8 +46,7 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "http://github.com/claudioperez/opencsi"
-documentation = "https://claudioperez.github.io/opencsi"
+Repository = "http://github.com/wensley-rushing/opencsi"
 
 [project.scripts]
 opencsi = "opencsi.__main__:main"
