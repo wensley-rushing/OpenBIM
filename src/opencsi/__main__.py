@@ -1,3 +1,8 @@
+#===----------------------------------------------------------------------===#
+#
+#         STAIRLab -- STructural Artificial Intelligence Laboratory
+#
+#===----------------------------------------------------------------------===#
 #
 # Certain operations are loosley adapted from:
 #    https://github.com/XunXun-Zhou/Sap2OpenSees/blob/main/STO_ver1.0.py
@@ -165,8 +170,11 @@ def load(f, append: dict=None):
 
 
 def _is_truss(frame, csi):
-    release = find_row(csi["FRAME RELEASE ASSIGNMENTS 1 - GENERAL"],
-                    Frame=frame["Frame"])
+    if "FRAME RELEASE ASSIGNMENTS 1 - GENERAL" in csi:
+        release = find_row(csi["FRAME RELEASE ASSIGNMENTS 1 - GENERAL"],
+                        Frame=frame["Frame"])
+    else:
+        return False
 
     return release and all(release[i] for i in ("TI", "M2I", "M3I", "M2J", "M3J"))
 
@@ -438,8 +446,8 @@ def create_model(sap, types=None, verbose=False):
             # TODO
             continue
 
-        if "FRAME ADDED MASS ASSIGNMENTS" in csi:
-            mass = find_row(csi["FRAME ADDED MASS ASSIGNMENTS"],
+        if "FRAME ADDED MASS ASSIGNMENTS" in sap:
+            mass = find_row(sap["FRAME ADDED MASS ASSIGNMENTS"],
                             Frame=frame["Frame"])["MassPerLen"]
         else:
             mass = 0.0
@@ -464,8 +472,8 @@ def create_model(sap, types=None, verbose=False):
     # Create shells
     #
     for shell in sap.get("CONNECTIVITY - AREA", []):
-        if "AREA ADDED MASS ASSIGNMENTS" in csi:
-            mass = find_row(csi["AREA ADDED MASS ASSIGNMENTS"],
+        if "AREA ADDED MASS ASSIGNMENTS" in sap:
+            mass = find_row(sap["AREA ADDED MASS ASSIGNMENTS"],
                             Area=shell["Area"])["MassPerArea"]
         else:
             mass = 0.0
