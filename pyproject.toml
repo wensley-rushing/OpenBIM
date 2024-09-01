@@ -1,12 +1,12 @@
 [project]
-name = "opencsi"
+name = "openbim"
 version = "0.0.0"
 license = {file = "LICENSE.txt"}
 authors = [
   {name="Wensley Rushing", email="50180846+wensley-rushing@users.noreply.github.com"},
 ]
 
-description="Convert models from CSI applications to OpenSees."
+description="Convert models from BIM applications to OpenSees."
 readme = "README.md"
 
 keywords = [
@@ -46,10 +46,10 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "http://github.com/wensley-rushing/opencsi"
+Repository = "http://github.com/wensley-rushing/openbim"
 
 [project.scripts]
-opencsi = "opencsi.__main__:main"
+openbim = "openbim.__main__:main"
 
 [build-system]
 requires = [
