@@ -4,18 +4,13 @@
 #
 # 2022 - Jose A. Abell M. - www.joseabell.com
 
-import os
-
-if os.name == 'nt':
-    import openseespy.opensees as ops
-else:   #not checked in mac
-    import opensees as ops
+import opensees.openseespy as ops
 
 
 
 from numpy import array, int32, double, concatenate, unique, setdiff1d, zeros, cos, sin, pi, sqrt
 from numpy.linalg import norm
-from gmsh2opensees.g2o_nodes_functions import get_all_nodes, get_displacements_at_nodes, get_eigenvector_at_nodes
+from .nodes import get_all_nodes, get_displacements_at_nodes, get_eigenvector_at_nodes
 
 
 def visualize_displacements_in_gmsh(gmshmodel, nodeTags=[], viewnum=-1,step=0,time=0.,new_view_name="Displacements", component=-1):
