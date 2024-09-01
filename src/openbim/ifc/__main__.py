@@ -34,6 +34,7 @@ print("meshing")
 Meshed = meshing.meshing(Fixed, True)
 
 print("Create tets")
+#model, elementTags, finalTags, nodeTags
 opsModel = analysis.Create4NodesTetraedron(Meshed, data)
 
 print("Static analysis")

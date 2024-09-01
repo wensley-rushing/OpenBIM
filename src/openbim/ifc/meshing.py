@@ -1,6 +1,6 @@
 import gmsh
 
-def mesh_physical_groups(stepFile, data, runGmsh = True): #maybe I separate
+def mesh_physical_groups(stepFile, data, runGmsh = True):
 
     labels = []
     for dictionary in data:
@@ -49,7 +49,7 @@ def mesh_physical_groups(stepFile, data, runGmsh = True): #maybe I separate
         if matches:
             FinalDict[key2] = matches
 
-    print(FinalDict)
+#   print(FinalDict)
 
     for key in FinalDict.keys():
         value = FinalDict[key]
@@ -61,6 +61,7 @@ def mesh_physical_groups(stepFile, data, runGmsh = True): #maybe I separate
     gmsh.write('model.msh')
     
     return gmsh.model #it returns the model
+
 
 def fix_boundaries(gmshmodel, runGmsh = True):
 

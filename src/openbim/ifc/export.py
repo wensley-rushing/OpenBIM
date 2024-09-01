@@ -1,6 +1,11 @@
 import json
 import ifcopenshell
 
+def _final(conainer):
+    for i in conainer:
+        pass
+    return i
+
 # Create a dictionary to store the types from the ifc
 
 def exportProperties(ifcFile, elements):
@@ -117,7 +122,6 @@ def STEPwriter(elements, data, fileName):
     labels = []
     for dictionary in data:
         value = dictionary['MaterialName']
-        print(value)
         labels.append(value)
 
     selected_elements = []
@@ -126,7 +130,6 @@ def STEPwriter(elements, data, fileName):
         if element.is_a("IfcOpeningElement"):
             continue
         selected_elements.append(element)
-    #print(selected_elements)
 
     # geometry settings
     settings = ifcopenshell.geom.settings()
@@ -153,14 +156,12 @@ def STEPwriter(elements, data, fileName):
                 product = ifcopenshell.geom.create_shape(settings, element)
                 # teste = product.geometry
                 # shape_gpXYZ = teste.Location().Transformation().TranslationPart()
-                # print(element.Name)
-                # print(shape_gpXYZ.X(), shape_gpXYZ.Y(), shape_gpXYZ.Z())
             except:
                 print("Shape creation failed")
+
             #product = ifcopenshell.geom.create_shape(settings, element)
             shape = OCC.Core.TopoDS.TopoDS_Iterator(product.geometry).Value()
-            #print(shape.DumpJsonToString())
-            print(shape.NbChildren())
+
             if int(shape.NbChildren()) > 1:
                 sewing = BRepBuilderAPI_Sewing()
                 face_iterator = TopExp_Explorer(shape, TopAbs_FACE)

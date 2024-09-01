@@ -1,3 +1,4 @@
+import tqdm
 import opensees.openseespy as ops
 import openbim.msh as g2o
 import gmsh
@@ -33,7 +34,7 @@ def Create4NodesTetraedron(gmshmodel, data):
     g = 9810 #mm/s2
     allTheTags = []
 
-    for dictionary in data:
+    for dictionary in tqdm.tqdm(data):
         PhysicalGroup = dictionary['MaterialName']
         print(PhysicalGroup)
         PaE = dictionary['YoungModulus'] #Pa - N/m2
@@ -58,6 +59,7 @@ def Create4NodesTetraedron(gmshmodel, data):
             g2o.add_nodes_to_ops(nodeTag, gmshmodel, True)
 
         for eleTag, eleNodes in zip(elementTags, nodeTags):
+            print(eleTag)
             ops.element('FourNodeTetrahedron', eleTag, *eleNodes, solidMaterialTag, 0, 0, rho*g)
 
     
@@ -128,12 +130,6 @@ def NonLinearStaticAnalysis(ops, elementTags, gmshmodel):
     epsyz = allTheStrains[4]
     epszx = allTheStrains[5]
 
-    # print(len(epsxx))
-    # print(len(epsyy))
-    # print(len(epszz))
-    # print(len(epsxy))
-    # print(len(epsyz))
-    # print(len(epszx))
 
     viewEleTags = (gmsh.view.getModelData(1, 0))[1]
 
