@@ -1,5 +1,6 @@
-import openseespy.opensees as ops
-import gmsh2opensees as g2o
+import tqdm
+import opensees.openseespy as ops
+import openbim.msh as g2o
 import gmsh
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,15 +26,17 @@ def CreateNonLinearMaterial(solidMaterialTag, PaFc, E, nu):
 
 def Create4NodesTetraedron(gmshmodel, data):
 
-    #modelBuilder
+    # modelBuilder
     ops.model("basicBuilder","-ndm",3,"-ndf",3)
     
     #get the material Name
     solidMaterialTag = 0
     g = 9810 #mm/s2
     allTheTags = []
+    nodes = set()
+    elements = set()
 
-    for dictionary in data:
+    for dictionary in tqdm.tqdm(data):
         PhysicalGroup = dictionary['MaterialName']
         print(PhysicalGroup)
         PaE = dictionary['YoungModulus'] #Pa - N/m2
@@ -41,7 +44,7 @@ def Create4NodesTetraedron(gmshmodel, data):
         mrho = dictionary['MassDensity'] # kg / m³
         rho = float(mrho*1e-12) # Tons / mm³
         nu = dictionary['PoissonRatio'] #--
-        solidMaterialTag = solidMaterialTag + 1
+        solidMaterialTag += 1
 
         if 'CompressiveStrength' in dictionary:
             PaFc = dictionary['CompressiveStrength'] #Pa - N/m2
@@ -50,15 +53,20 @@ def Create4NodesTetraedron(gmshmodel, data):
         else:
             Mat = CreateLinearElasticMaterial(solidMaterialTag, E, nu, rho)
 
-        #get physical group
-        elementTags, nodeTags, elementName, elementNnodes = g2o.get_elements_and_nodes_in_physical_group(PhysicalGroup, gmshmodel)
+        # get physical group
+        elementTags, nodeTags, elementName, elementNnodes = \
+                g2o.get_elements_and_nodes_in_physical_group(PhysicalGroup, gmshmodel)
         allTheTags.append(elementTags)
-        #add nodes to ops
-        for nodeTag in nodeTags:
-        #print(nodeTag)
-            g2o.add_nodes_to_ops(nodeTag, gmshmodel, True)
 
+        # add element and nodes to the model
         for eleTag, eleNodes in zip(elementTags, nodeTags):
+            print(f"\t{eleTag}")
+            for nodeTag in map(int,eleNodes):
+                if nodeTag not in nodes:
+                    coord = gmshmodel.mesh.get_node(nodeTag)[0]
+                    ops.node(int(nodeTag), *coord)
+                    nodes.add(nodeTag)
+
             ops.element('FourNodeTetrahedron', eleTag, *eleNodes, solidMaterialTag, 0, 0, rho*g)
 
     
@@ -69,7 +77,7 @@ def Create4NodesTetraedron(gmshmodel, data):
 
     finalTags = [item for sublist in allTheTags for item in sublist]
 
-    # ops.printModel('-JSON', '-file', 'model.json')
+    ops.print('-json', '-file', 'model.json')
     # ops.printModel()
     return ops, elementTags, finalTags, nodeTags
 
@@ -129,12 +137,6 @@ def NonLinearStaticAnalysis(ops, elementTags, gmshmodel):
     epsyz = allTheStrains[4]
     epszx = allTheStrains[5]
 
-    # print(len(epsxx))
-    # print(len(epsyy))
-    # print(len(epszz))
-    # print(len(epsxy))
-    # print(len(epsyz))
-    # print(len(epszx))
 
     viewEleTags = (gmsh.view.getModelData(1, 0))[1]
 
@@ -333,6 +335,4 @@ def EigenValue(ops, gmshmodel):
 
     gmsh.fltk.run()
     gmsh.finalize()
-
-
-    
+ 
