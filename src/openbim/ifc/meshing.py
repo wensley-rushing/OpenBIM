@@ -5,7 +5,6 @@ def mesh_physical_groups(stepFile, data, runGmsh = True): #maybe I separate
     labels = []
     for dictionary in data:
         value = dictionary['MaterialName']
-        #print(value)
         labels.append(value)
 
     gmsh.initialize()
@@ -34,14 +33,12 @@ def mesh_physical_groups(stepFile, data, runGmsh = True): #maybe I separate
         OriginalDictionaryValues.append(tg)
 
     OriginalDictionary= {k: v for k, v in zip(OriginalDictionaryKeys, OriginalDictionaryValues)}
-    #print(OriginalDictionary)
 
     #Labeling Dictionary
 
     LabelDictionaryKeys = []
     [LabelDictionaryKeys.append(x) for x in labels if x not in LabelDictionaryKeys]
     LabelDictionaryValues = [0]*len(LabelDictionaryKeys)
-    print(len(LabelDictionaryKeys))
 
     LabelDictionary = {key: None for key in LabelDictionaryKeys}
 
@@ -52,13 +49,10 @@ def mesh_physical_groups(stepFile, data, runGmsh = True): #maybe I separate
         if matches:
             FinalDict[key2] = matches
 
-    print(LabelDictionary)
     print(FinalDict)
 
     for key in FinalDict.keys():
         value = FinalDict[key]
-        # print(key)
-        # print(value)
         gmsh.model.addPhysicalGroup(dim=3, tags=value, name=key)
 
     if runGmsh:

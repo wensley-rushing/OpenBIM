@@ -1,8 +1,7 @@
-import ifcopenshell
 import json
-#Create a dictionary to store the types from the ifc
+import ifcopenshell
 
-
+# Create a dictionary to store the types from the ifc
 
 def exportProperties(ifcFile, elements):
 
@@ -14,10 +13,8 @@ def exportProperties(ifcFile, elements):
     for element in elements:
 
         # PropertiesName = ['solidMaterialTag']
-        # i = i +1 
-        # PropertiesValue = [i]
-        PropertiesName = []
         i = i +1 
+        PropertiesName = []
         PropertiesValue = []
         for rel in element.HasAssociations:
             matNameRel = rel.RelatingMaterial
@@ -28,15 +25,11 @@ def exportProperties(ifcFile, elements):
             
             elif rel.RelatingMaterial.is_a()=="IfcMaterialLayerSet": #because of Roofs
                 for matlayer in rel.RelatingMaterial.MaterialLayers:
-                    print(matlayer)
                     matName = matlayer.Material.Name
-                    print(matName)
 
             elif rel.RelatingMaterial.is_a()=="IfcMaterialProfileSet": #because of Beams/columns
                 for matlayer in rel.RelatingMaterial.MaterialLayers:
-                    print(matlayer)
                     matName = matlayer.Material.Name
-                    print(matName)        
 
 
         # in case Material is in the type
@@ -116,7 +109,8 @@ from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeSolid
 from OCC.Core.BRepMesh import BRepMesh_IncrementalMesh
 from OCC.Core.TopoDS import TopoDS_Face, TopoDS_Solid
 
-#the step writer labeling 
+
+# the step writer labeling
 
 def STEPwriter(elements, data, fileName):
 
@@ -177,9 +171,7 @@ def STEPwriter(elements, data, fileName):
 
                 sewing.Perform()
                 result = sewing.SewedShape()
-                print(result)
                 print(face_iterator.ExploredShape())
-                print('gfuyfjfgygfjy')
                 solid_maker = BRepBuilderAPI_MakeSolid(result)
                 print(solid_maker.Solid())
                 shape = solid_maker.Solid()
@@ -201,13 +193,4 @@ def STEPwriter(elements, data, fileName):
     writer.Write(fileName + '.step'), read_step_file_with_names_colors(fileName + '.step')
 
     return str(fileName + '.step')
-
-                    
-
-
-
-
-
-
-
 
