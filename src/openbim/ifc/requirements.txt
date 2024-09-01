@@ -1,5 +1,0 @@
-opensees
-gmsh
-lark
-ifcopenshell
-
