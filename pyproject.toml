@@ -47,7 +47,7 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "http://github.com/wensley-rushing/openbim"
+Repository = "https://github.com/wensley-rushing/openbim"
 
 [project.scripts]
 openbim = "openbim.__main__:main"
