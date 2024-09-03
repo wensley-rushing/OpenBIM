@@ -1,4 +1,4 @@
-# `opencsi`
+# `openbim`
 
 
 IFC functionality is adapted from:
