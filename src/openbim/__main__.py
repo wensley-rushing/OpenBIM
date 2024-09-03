@@ -284,8 +284,8 @@ def _create_links(csi, model):
         degree = result[1].split('=')
         link_local[link[1]] = degree[1]
 
-def collect_materials(csi, model):
-    cache = {
+def _collect_materials(csi, model):
+    library = {
       "frame_sections": {},
       "shell_sections": {},
     }
@@ -323,23 +323,22 @@ def collect_materials(csi, model):
         mat_total += 1
 
 
-
     # 2) Frame
     for assign in csi.get("FRAME SECTION ASSIGNMENTS", []):
-        if assign["AnalSect"] not in cache["frame_sections"]:
-            tag = len(cache["frame_sections"])+1
-            cache["frame_sections"][assign["AnalSect"]] = \
+        if assign["AnalSect"] not in library["frame_sections"]:
+            tag = len(library["frame_sections"])+1
+            library["frame_sections"][assign["AnalSect"]] = \
               _FrameSection(assign["AnalSect"], csi, tag, model)
 
 
     # 3) Shell
     for assign in csi.get("AREA SECTION ASSIGNMENTS", []):
-        if assign["Section"] not in cache["shell_sections"]:
-            tag = len(cache["shell_sections"])+1
-            cache["shell_sections"][assign["Section"]] = \
+        if assign["Section"] not in library["shell_sections"]:
+            tag = len(library["shell_sections"])+1
+            library["shell_sections"][assign["Section"]] = \
               _ShellSection(assign["Section"], csi, tag, model)
 
-    return cache
+    return library
 
 
 def find_material(sap, cache, type, section, material):
@@ -422,7 +421,6 @@ def create_model(sap, types=None, verbose=False):
             model.eval(f"rigidLink beam {nodes[0]} {nodes[le + 1]}\n")
 
 
-
     used.add("JOINT COORDINATES")
     used.add("JOINT RESTRAINT ASSIGNMENTS")
 
@@ -431,7 +429,7 @@ def create_model(sap, types=None, verbose=False):
     model.geomTransf("Linear", 1, (0,1,1))
 
 
-    library = collect_materials(sap, model)
+    library = _collect_materials(sap, model)
 
     #
     # Create Links
