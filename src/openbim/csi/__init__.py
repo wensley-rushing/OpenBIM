@@ -54,6 +54,11 @@ class _ShellSection(_Section):
         )
         if section is None:
             print(self.name)
+
+        material = find_row(csi["MATERIAL PROPERTIES 01 - GENERAL"],
+                            Material=section["Material"]
+        )
+
         material = find_row(csi["MATERIAL PROPERTIES 02 - BASIC MECHANICAL PROPERTIES"],
                             Material=section["Material"]
         )
@@ -78,6 +83,7 @@ class _FrameSection(_Section):
             material = find_row(csi["MATERIAL PROPERTIES 02 - BASIC MECHANICAL PROPERTIES"],
                                 Material=section["Material"]
             )
+
             if "G12" in material:
                 model.section("FrameElastic", self.index,
                               A  = section["Area"],
@@ -89,15 +95,16 @@ class _FrameSection(_Section):
                               E  = material["E1"],
                               G  = material["G12"]
                 )
-            else:
-                warnings.warn(f"Unknown shape {section['Shape']}")
-                # TODO: truss section?
-                pass
 
 
         elif section["Shape"] == "Nonprismatic":
             shape = find_rows(csi["FRAME SECTION PROPERTIES 05 - NONPRISMATIC"],
                               SectionName=section["SectionName"])
+
+        else:
+            warnings.warn(f"Unknown shape {section['Shape']}")
+            # TODO: truss section?
+            pass
 
         # TODO
         outline = "FRAME SECTION PROPERTIES 06 - POLYGON DATA"

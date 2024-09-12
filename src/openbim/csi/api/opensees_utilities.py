@@ -1,18 +1,6 @@
 """
 MIT License
 
-Copyright (c) 2020 OpenSeesPro
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
 Developed by:
     Ayush Singhania (ayushs@stanford.edu)
     Pearl Ranchal (ranchal@berkeley.edu)
@@ -50,40 +38,50 @@ coordTransf = "Linear"  # Can be {Linear, PDelta, Corotational}
 massType = "-lMass"  # Can be {-lMass, -cMass}
 tol = 1e-3
 
-
-# INITIATE A OPENSEES MODEL
-def initiate_model():
-    # remove existing model
-    op.wipe()
+# SETUP OPENSEES MODEL
+def setup_opensees_model(
+    joints_df,
+    frames_df,
+    frame_props_df,
+    pts_loads_df,
+    mass_df,
+    dict_of_hinges,
+    dict_of_hinges_2,
+    list_new_joints,
+):
 
     # set modelbuilder
-    op.model("basic", "-ndm", 3)
+    model = op.Model(ndm=3)
+
+    add_nodes(model, joints_df.copy(), mass_df.copy(), list_new_joints, dict_of_hinges)
+    add_frames(model, frames_df.copy(), frame_props_df.copy())
+    add_beam_hinges(model, dict_of_hinges, dict_of_hinges_2)
     return
 
 
 # ADD NODES TO THE OPENSEES MODEL USING THE DATA FROM ETABS
-def add_nodes(joints_df, mass_df, list_new_joints, dict_of_hinges):
+def add_nodes(op, joints_df, mass_df, list_new_joints, dict_of_hinges):
 
     # Identify the joints that were auto created by ETABS (like COM joints)
     points_df = joints_df[joints_df.IsAuto == "Yes"].copy()
 
-    # create joints in opensees mdoel
+    # Create joints in opensees mdoel
     joints_df.apply(
         lambda row: op.node(row.UniqueName, row.X, row.Y, row.Z), axis="columns"
     )
-    # add restraints to the joints
+    # Add restraints to the joints
     joints_df.apply(
         lambda row: op.fix(row.UniqueName, *[int(r) for r in row.Restraints]),
         axis="columns",
     )
-    # special joint restraints for the COM joints
+    # Special joint restraints for the COM joints
     points_df.apply(
         lambda row: op.fix(row.UniqueName, *[0, 0, 1, 1, 1, 0]), axis="columns"
     )
 
     op.constraints("Transformation")
 
-    # if the model diaphragm is rigid, define rigidity on each floor
+    # If the model diaphragm is rigid, define rigidity on each floor
     if rigid_dia:
 
         # obtain the list of floors in terms of the elevation (Z coordinate)
@@ -110,7 +108,7 @@ def add_nodes(joints_df, mass_df, list_new_joints, dict_of_hinges):
 
 
 # ADD FRAMES OBJECTS TO THE OPENSEES MODEL
-def add_frames(frames_df, frame_props_df):
+def add_frames(op, frames_df, frame_props_df):
 
     # function to identify and assign beam and columns their respective tags
     def determine_tag(label):
@@ -210,14 +208,14 @@ def plot_opensees_mode_shapes():
 
 
 # ADD NON-LINEAR MOMENT HINGE TO THE MODEL
-def add_beam_hinges(dict_of_hinges, dict_of_hinges_2):
+def add_beam_hinges(op, dict_of_hinges, dict_of_hinges_2):
 
     # obtain nonlinear hinge properties
     data = read_nonlinear_hinge_properties()
 
     #    dict_of_hinges = {real joint: (new joint, zero length element ID, orientation)}
 
-    # iterate through all the hinges and add the uniaxial material and zero length element to the opensees model
+    # Iterate through all the hinges and add the uniaxial material and zero length element to the opensees model
     for key, value in dict_of_hinges.items():
         node_R = key
         node_C = value[0]
@@ -638,21 +636,4 @@ def run_opensees_model(
     )
     return periods, eigenValues
 
-
-# SETUP OPENSEES MODEL
-def setup_opensees_model(
-    joints_df,
-    frames_df,
-    frame_props_df,
-    pts_loads_df,
-    mass_df,
-    dict_of_hinges,
-    dict_of_hinges_2,
-    list_new_joints,
-):
-    initiate_model()
-    add_nodes(joints_df.copy(), mass_df.copy(), list_new_joints, dict_of_hinges)
-    add_frames(frames_df.copy(), frame_props_df.copy())
-    add_beam_hinges(dict_of_hinges, dict_of_hinges_2)
-    return
 

@@ -380,24 +380,25 @@ def get_etabs_data(model=None, units=None):
         model.SetPresentUnits(units)
 
     # call different methods written above to extract and process data from ETABS
-    joints_df, dict_of_hinges, dict_of_hinges_1, list_new_joints = _get_joints(model)
-    dict_of_disp_nodes, dict_of_rxn_nodes = get_node_dicts(joints_df.copy())
-    pt_loads_df = _get_pt_loads(model)
-    frames_df, dict_of_hinges_2 = _get_frames(dict_of_hinges_1, model)
-    mass_df = get_nodal_masses(model)
-    frame_props_df = get_frame_props_from_db_table(model)
-    etabs_periods = get_modal_results_from_etabs(model)
+    joints, hinges, hinges_1, new_joints = _get_joints(model)
+    disp_nodes, rxn_nodes = get_node_dicts(joints.copy())
+    pt_loads         = _get_pt_loads(model)
+    frames, hinges_2 = _get_frames(hinges_1, model)
+    mass             = get_nodal_masses(model)
+    frame_props      = get_frame_props_from_db_table(model)
+    etabs_periods    = get_modal_results_from_etabs(model)
 
     return (
-        joints_df,
-        pt_loads_df,
-        frames_df,
-        mass_df,
-        frame_props_df,
-        dict_of_hinges,
-        dict_of_hinges_2,
-        list_new_joints,
-        dict_of_disp_nodes,
-        dict_of_rxn_nodes,
+        joints,
+        pt_loads,
+        frames,
+        mass,
+        frame_props,
+        hinges,
+        hinges_2,
+        new_joints,
+        disp_nodes,
+        rxn_nodes,
         etabs_periods,
     )
+

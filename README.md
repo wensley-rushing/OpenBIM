@@ -7,3 +7,6 @@ IFC functionality is adapted from:
 
 - https://github.com/wensley-rushing/OpenBIMtoFEM
 
+
+Use of the CSI API is adapted from:
+- https://github.com/wensley-rushing/E2O-SEAOC2020

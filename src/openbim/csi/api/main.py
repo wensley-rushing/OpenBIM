@@ -47,6 +47,7 @@ if __name__ == "__main__":
         dict_of_hinges,
         dict_of_hinges_2,
         list_new_joints,
+
         dict_of_disp_nodes,
         dict_of_rxn_nodes,
         etabs_periods,
@@ -98,3 +99,4 @@ if __name__ == "__main__":
     # FINISH
     end_time(start)
     time.sleep(1.0)
+
