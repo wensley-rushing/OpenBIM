@@ -15,15 +15,28 @@ from dataclasses import dataclass
 import numpy as np
 
 from .parse import load
+from .utility import UnimplementedInstance, find_row, find_rows
+from .frame import create_frames
 
 RE = {
     "joint_key": re.compile("Joint[0-9]")
 }
 
-class UnimplementedInstance:
-    def __init__(self, name, object):
-        self.name = name 
-        self.object = object
+CONFIG = {
+    "Frame": {
+        "Taper": "Subdivide", # Integrate
+        "Element": "PrismFrame",
+    }
+}
+
+TYPES = {
+    "Shell": {
+        "Elastic": "ShellMITC4",
+    },
+    "Frame": {
+        "Elastic": "PrismFrame"
+    }
+}
 
 class _Material:
     @dataclass
@@ -37,20 +50,19 @@ class _Model:
 
 class _Section:
     def __init__(self, name: str, csi: dict,
-                 index: int, model=None):
+                 index: int, model, library):
         self.index = index
         self.name = name
-        self._create(csi, model)
+        self.integration = []
 
-    def _create(self, csi, model):
+        self._create(csi, model, library, None)
+
+    def _create(self, csi, model, library, config):
         pass
 
-class _Shell:
-    def __init__(self, csi):
-        pass
 
 class _ShellSection(_Section):
-    def _create(self, csi, model, options=None):
+    def _create(self, csi, model, library, config):
 
         section = find_row(csi["AREA SECTION PROPERTIES"],
                            Section=self.name
@@ -71,13 +83,35 @@ class _ShellSection(_Section):
                       section["Thickness"],
                       material["UnitMass"]
         )
+        self.integration.append(self.index)
+
+
+def _create_frame_sections(csi, model, library):
+    tag = 1
+    for assign in csi.get("FRAME SECTION ASSIGNMENTS", []):
+
+        if assign["AnalSect"] not in library["frame_sections"]:
+
+            library["frame_sections"][assign["AnalSect"]] = \
+              _FrameSection(assign["AnalSect"], csi, tag, model, library)
+
+            tag += len(library["frame_sections"][assign["AnalSect"]].integration)
+
+    return tag
+
 
 class _FrameSection(_Section):
-    def _create(self, csi, model, options=None):
+    polygon: list
+
+    def _create(self, csi, model, library, config=None):
 
         section = find_row(csi["FRAME SECTION PROPERTIES 01 - GENERAL"],
                            SectionName=self.name
         )
+
+        segments = find_rows(csi["FRAME SECTION PROPERTIES 05 - NONPRISMATIC"],
+                             SectionName=section["SectionName"])
+
         if section is None:
             print(csi["FRAME SECTION PROPERTIES 01 - GENERAL"])
             raise Exception(f"{self.name = }")
@@ -98,11 +132,87 @@ class _FrameSection(_Section):
                               E  = material["E1"],
                               G  = material["G12"]
                 )
+                self.integration.append(self.index)
 
 
-        elif section["Shape"] == "Nonprismatic":
-            shape = find_rows(csi["FRAME SECTION PROPERTIES 05 - NONPRISMATIC"],
-                              SectionName=section["SectionName"])
+        elif section["Shape"] == "Nonprismatic" and \
+             len(segments) != 1: #section["NPSecType"] == "Advanced":
+
+            # TODO: Just treating as normal prismatic section
+
+            assert all(segment["StartSect"] == segment["EndSect"] for segment in segments)
+
+            if segments[0]["StartSect"] not in library:
+                library[segments[0]["StartSect"]] = \
+                        _FrameSection(segments[0]["StartSect"], csi, self.index, model, library)
+            self.integration.append(self.index)
+
+
+        # 
+        elif section["Shape"] == "Nonprismatic" and \
+             len(segments) == 1: #section["NPSecType"] == "Default":
+
+            segments = find_rows(csi["FRAME SECTION PROPERTIES 05 - NONPRISMATIC"],
+                                 SectionName=section["SectionName"])
+
+
+            assert len(segments) == 1
+            segment = segments[0]
+
+
+            # Create property interpolation
+            def interpolate(point, prop):
+                si = find_row(csi["FRAME SECTION PROPERTIES 01 - GENERAL"],
+                                   SectionName=segment["StartSect"]
+                )
+                sj = find_row(csi["FRAME SECTION PROPERTIES 01 - GENERAL"],
+                                   SectionName=segment["EndSect"]
+                )
+                # TODO: Taking material from first section assumes si and sj have the same
+                # material
+                material = find_row(csi["MATERIAL PROPERTIES 02 - BASIC MECHANICAL PROPERTIES"],
+                                    Material=si["Material"]
+                )
+
+                if prop in material:
+                    start= end = material[prop]
+                else:
+                    start = si[prop]
+                    end = sj[prop]
+
+                power = {
+                        "Linear":    1,
+                        "Parabolic": 2,
+                        "Cubic":     3
+                }[segment.get(f"E{prop}Var", "Linear")]
+
+                return start*(1 + point*((end/start)**(1/power)-1))**power
+            
+
+            # Define a numerical integration scheme
+
+            from numpy.polynomial.legendre import leggauss
+            nip = 5
+            off = 1
+            for x,wi in zip(*leggauss(nip)):
+                xi = (1+x)/2
+
+                model.section("FrameElastic", self.index+off,
+                              A  = interpolate(xi, "Area"),
+                              Ay = interpolate(xi, "AS2"),
+                              Az = interpolate(xi, "AS2"),
+                              Iz = interpolate(xi, "I33"),
+                              Iy = interpolate(xi, "I22"),
+                              J  = interpolate(xi, "TorsConst"),
+                              E  = interpolate(xi, "E1"),
+                              G  = interpolate(xi, "G12")
+                )
+
+
+                self.integration.append((self.index+off, xi, wi/2))
+
+                off += 1
+
 
         else:
             warnings.warn(f"Unknown shape {section['Shape']}")
@@ -113,15 +223,9 @@ class _FrameSection(_Section):
         outline = "FRAME SECTION PROPERTIES 06 - POLYGON DATA"
 
 
-
-def _is_truss(frame, csi):
-    if "FRAME RELEASE ASSIGNMENTS 1 - GENERAL" in csi:
-        release = find_row(csi["FRAME RELEASE ASSIGNMENTS 1 - GENERAL"],
-                        Frame=frame["Frame"])
-    else:
-        return False
-
-    return release and all(release[i] for i in ("TI", "M2I", "M3I", "M2J", "M3J"))
+class _Shell:
+    def __init__(self, csi):
+        pass
 
 
 def _LinkVector(xi, xj, deg):
@@ -159,69 +263,6 @@ def _LinkVector(xi, xj, deg):
     return l_y_rot / np.linalg.norm(l_y_rot)
 
 
-def _GeomTransfVector(xi, xj, angle):
-    """
-    Calculate the coordinate transformation vector
-    Where xi is the location of node I, xj node J,
-    and `angle` is the rotation about the local axis
-
-    By default local axis 2 is always in the 1-Z plane, except if the object
-    is vertical and then it is parallel to the global X axis.
-    The definition of the local axes follows the right-hand rule.
-    """
-
-    # The local 1 axis points from node I to node J
-    d_x, d_y, d_z = e_x = xj - xi
-    # Global z
-    g_z = np.array([0, 0, 1])
-
-    # In Sap2000, if the element is vertical, the local y-axis is the same as the
-    # global x-axis, and the local z-axis can be obtained by cross-multiplying
-    # the local x-axis with the local y-axis.
-    if d_x == 0 and d_y == 0:
-        l_y = np.array([1, 0, 0])
-        l_z = np.cross(e_x, l_y)
-
-    # In other cases, the plane composed of the local x-axis and the local
-    # y-axis is a vertical plane (that is, the normal vector level). In this
-    # case, the local z-axis can be obtained by the cross product of the local
-    # x-axis and the global z-axis.
-    else:
-        l_z = np.cross(e_x, g_z)
-
-    # Rotate the local axis using the Rodrigue rotation formula
-    l_z_rot = l_z * np.cos(angle / 180 * np.pi) + np.cross(e_x, l_z) * np.sin(angle / 180 * np.pi)
-    # Finally, the normalized local z-axis is returned
-    return l_z_rot / np.linalg.norm(l_z_rot)
-
-
-def find_row(table, **kwds) -> dict:
-
-    for row in table:
-        match = True
-        for k, v in kwds.items():
-            if k not in row or row[k] != v:
-                match = False
-                break
-
-        if match:
-            return row
-
-
-def find_rows(table, **kwds) -> list:
-    rows = []
-    for row in table:
-        match = True
-        for k, v in kwds.items():
-            if k not in row or row[k] != v:
-                match = False
-                break
-
-        if match:
-            rows.append(row)
-
-    return rows
-
 
 def _create_links(csi, model):
     # Dictionary for link local axis rotation
@@ -231,7 +272,6 @@ def _create_links(csi, model):
         link = result[0].split('=')
         degree = result[1].split('=')
         link_local[link[1]] = degree[1]
-
 
 
 def _collect_materials(csi, model):
@@ -274,19 +314,15 @@ def _collect_materials(csi, model):
 
 
     # 2) Frame
-    for assign in csi.get("FRAME SECTION ASSIGNMENTS", []):
-        if assign["AnalSect"] not in library["frame_sections"]:
-            tag = len(library["frame_sections"])+1
-            library["frame_sections"][assign["AnalSect"]] = \
-              _FrameSection(assign["AnalSect"], csi, tag, model)
+    tag = _create_frame_sections(csi, model, library)
 
 
     # 3) Shell
     for assign in csi.get("AREA SECTION ASSIGNMENTS", []):
         if assign["Section"] not in library["shell_sections"]:
-            tag = len(library["shell_sections"])+1
             library["shell_sections"][assign["Section"]] = \
-              _ShellSection(assign["Section"], csi, tag, model)
+              _ShellSection(assign["Section"], csi, tag, model, library)
+            tag += len(library["shell_sections"][assign["Section"]].integration)
 
     return library
 
@@ -295,15 +331,6 @@ def find_material(sap, cache, type, section, material):
     return 1
 
 
-TYPES = {
-    "Shell": {
-        "Elastic": "ShellMITC4",
-    },
-    "Frame": {
-        "Elastic": "PrismFrame"
-    }
-}
-
 def create_model(sap, types=None, verbose=False):
 
     import opensees.openseespy as ops
@@ -311,7 +338,9 @@ def create_model(sap, types=None, verbose=False):
     used = {
         "TABLES AUTOMATICALLY SAVED AFTER ANALYSIS"
     }
-    unimpl = []
+    log = []
+
+    config = CONFIG
 
     #
     # Create model
@@ -352,7 +381,7 @@ def create_model(sap, types=None, verbose=False):
                 # map node number to constraint
                 constraints[constraint["Joint"]] = constraint["Constraint"]
             else:
-                unimpl.append(UnimplementedInstance("Joint.Constraint", constraint))
+                log.append(UnimplementedInstance("Joint.Constraint", constraint))
 
         # Sort the dictionary by body name and return a list [(node, body name)]
         constraints = list(sorted(constraints.items(), key=lambda x: x[1]))
@@ -403,66 +432,15 @@ def create_model(sap, types=None, verbose=False):
         "CONNECTIVITY - SOLID",
         "CONNECTIVITY - TENDON"]:
         for elem in sap.get(item, []):
-            unimpl.append(UnimplementedInstance(item, elem))
+            log.append(UnimplementedInstance(item, elem))
 
     # Create frames
+    try:
+        log.extend(create_frames(sap, model, library, config))
+    except Exception as e:
+        print(log)
+        raise e
     
-    transform = 1
-
-    for frame in sap.get("CONNECTIVITY - FRAME",[]):
-        if _is_truss(frame, sap):
-            unimpl.append(UnimplementedInstance("Truss", frame))
-            continue
-
-        if "IsCurved" in frame and frame["IsCurved"]:
-            unimpl.append(UnimplementedInstance("Frame.Curve", frame))
-
-
-        type = TYPES["Frame"]["Elastic"]
-
-        nodes = (frame["JointI"], frame["JointJ"])
-
-        if "FRAME ADDED MASS ASSIGNMENTS" in sap:
-            row = find_row(sap["FRAME ADDED MASS ASSIGNMENTS"],
-                            Frame=frame["Frame"])
-            mass = row["MassPerLen"] if row else 0.0
-        else:
-            mass = 0.0
-        
-        # Geometric transformation
-        if "FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL" in sap:
-            row = find_row(sap["FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL"],
-                            Frame=frame["Frame"])
-            angle = row["Angle"] if row else 0.0
-        else:
-            angle = 0
-            
-        xi = np.array(model.nodeCoord(nodes[0]))
-        xj = np.array(model.nodeCoord(nodes[1]))
-        if np.linalg.norm(xj - xi) <= 1e-8:
-            print(f"ZERO LENGTH FRAME: {frame['Frame']}")
-            continue
-        if ndm == 3:
-            vecxz = _GeomTransfVector(xi, xj, angle)
-            model.geomTransf("Linear", transform, *vecxz)
-        else:
-            model.geomTransf("Linear", transform)
-        transform += 1
-
-
-        # Find section
-        assign  = find_row(sap["FRAME SECTION ASSIGNMENTS"],
-                           Frame=frame["Frame"])
-
-        section = library["frame_sections"][assign["AnalSect"]].index
-
-        model.element(type, None, #frame["Frame"],
-                      nodes,
-                      section=section,
-                      transform=transform-1,
-                      mass=mass
-        )
-
     #
     # Create shells
     #
@@ -491,12 +469,12 @@ def create_model(sap, types=None, verbose=False):
         elif len(nodes) == 3:
             type = "ShellNLDKGT"
 
-        model.element(type, None, #shell["Area"],
+        model.element(type, None,
                       nodes, section
         )
 
     if verbose:
-        for item in unimpl:
+        for item in log:
             print(f"Unimplemented Feature: {item.name} - {item.object}", file=sys.stderr)
 
     if verbose and False:
