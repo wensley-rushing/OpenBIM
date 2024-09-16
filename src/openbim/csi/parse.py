@@ -76,3 +76,4 @@ def load(f, append: dict=None):
                 current_item = None
 
     return tables
+

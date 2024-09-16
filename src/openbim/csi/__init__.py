@@ -15,7 +15,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from .parse import load
-from .utility import UnimplementedInstance, find_row, find_rows
+from .utility import UnimplementedInstance, find_row, find_rows, print_log
 from .frame import create_frames
 
 RE = {
@@ -67,6 +67,7 @@ class _ShellSection(_Section):
         section = find_row(csi["AREA SECTION PROPERTIES"],
                            Section=self.name
         )
+
         if section is None:
             print(self.name)
 
@@ -104,6 +105,8 @@ class _FrameSection(_Section):
     polygon: list
 
     def _create(self, csi, model, library, config=None):
+
+        self.polygon = []
 
         section = find_row(csi["FRAME SECTION PROPERTIES 01 - GENERAL"],
                            SectionName=self.name
@@ -158,7 +161,6 @@ class _FrameSection(_Section):
 
             assert len(segments) == 1
             segment = segments[0]
-
 
             # Create property interpolation
             def interpolate(point, prop):
@@ -474,8 +476,7 @@ def create_model(sap, types=None, verbose=False):
         )
 
     if verbose:
-        for item in log:
-            print(f"Unimplemented Feature: {item.name} - {item.object}", file=sys.stderr)
+        print_log(log)
 
     if verbose and False:
         for table in sap:

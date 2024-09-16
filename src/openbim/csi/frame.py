@@ -103,9 +103,16 @@ def create_frames(sap, model, library, config):
         assign  = find_row(sap["FRAME SECTION ASSIGNMENTS"],
                            Frame=frame["Frame"])
 
+        if assign["MatProp"] != "Default":
+            log.append(UnimplementedInstance("FrameSection.MatProp", assign["MatProp"]))
+
         section = library["frame_sections"][assign["AnalSect"]]
 
-        if len(section.integration) == 1:
+        if assign["SectionType"] != "Nonprismatic" or \
+           assign["NPSectType"] == "Advanced":
+
+            assert len(section.integration) == 1
+
             model.element("PrismFrame", None,
                           nodes,
                           section=section.index,
@@ -114,7 +121,7 @@ def create_frames(sap, model, library, config):
             )
 
 
-        else:
+        elif assign["NPSectType"] == "Default":
             model.beamIntegration("UserDefined",
                                   itag,
                                   len(section.integration),
@@ -130,6 +137,9 @@ def create_frames(sap, model, library, config):
             )
 
             itag += 1
+
+        else:
+            log.append(UnimplementedInstance("FrameSection.NPSectType", assign["NPSectType"]))
 
     return log
 

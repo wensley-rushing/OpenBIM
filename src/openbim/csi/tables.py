@@ -1,6 +1,38 @@
 
+class Tables:
+    def __init__(data: dict):
+        self.data = data
 
-Tables = {
+    def any(self, table, **kwds)->dict:
+        pass
+
+    def get(self, table, _default, **kwds)->dict:
+        for row in self.data:
+            match = True
+            for k, v in kwds.items():
+                if k not in row or row[k] != v:
+                    match = False
+                    break
+
+            if match:
+                return row
+
+    def all(self, table, **kwds)->list:
+        rows = []
+        for row in table:
+            match = True
+            for k, v in kwds.items():
+                if k not in row or row[k] != v:
+                    match = False
+                    break
+
+            if match:
+                rows.append(row)
+
+        return rows
+
+
+_Tables = {
     "General": {
         "ACTIVE DEGREES OF FREEDOM",
         "ANALYSIS OPTIONS",
