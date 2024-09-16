@@ -1,4 +1,3 @@
-
 import numpy as np
 from .utility import UnimplementedInstance, find_row, find_rows
 
@@ -8,9 +7,6 @@ def _orient(xi, xj, deg):
     # Where a is the node number of node i, b is the node number of node j, and degree is the user-specified local axis
     # ------------------------------------------------------------------------------
     d_x, d_y, d_z = e_x = xj - xi
-    # d_x = float(node_lib[node_lib.index(b) + 1]) - float(node_lib[node_lib.index(a) + 1])
-    # d_y = float(node_lib[node_lib.index(b) + 2]) - float(node_lib[node_lib.index(a) + 2])
-    # d_z = float(node_lib[node_lib.index(b) + 3]) - float(node_lib[node_lib.index(a) + 3])
 
     # Local 1-axis points from node I to node J
     l_x = np.array([d_x, d_y, d_z])
@@ -30,6 +26,7 @@ def _orient(xi, xj, deg):
     # z-axis
     else:
         l_z = np.cross(l_x, g_z)
+
     # The local axis may also be rotated using the Rodrigues' rotation formula
     l_z_rot = l_z * np.cos(float(deg) / 180 * np.pi) + np.cross(l_x, l_z) * np.sin(float(deg) / 180 * np.pi)
     # The rotated local y-axis can be obtained by crossing the rotated local z-axis with the local x-axis
@@ -100,3 +97,4 @@ def create_links(csi, model, library, config):
                       )
 
     return log
+
