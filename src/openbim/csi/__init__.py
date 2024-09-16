@@ -17,6 +17,7 @@ import numpy as np
 from .parse import load
 from .utility import UnimplementedInstance, find_row, find_rows, print_log
 from .frame import create_frames
+from .link import create_links
 
 RE = {
     "joint_key": re.compile("Joint[0-9]")
@@ -112,7 +113,7 @@ class _FrameSection(_Section):
                            SectionName=self.name
         )
 
-        segments = find_rows(csi["FRAME SECTION PROPERTIES 05 - NONPRISMATIC"],
+        segments = find_rows(csi.get("FRAME SECTION PROPERTIES 05 - NONPRISMATIC",[]),
                              SectionName=section["SectionName"])
 
         if section is None:
@@ -230,56 +231,13 @@ class _Shell:
         pass
 
 
-def _LinkVector(xi, xj, deg):
-    # Calculate the direction vector of the link element
-    # Where a is the node number of node i, b is the node number of node j, and degree is the user-specified local axis
-    # ------------------------------------------------------------------------------
-    d_x, d_y, d_z = e_x = xj - xi
-    # d_x = float(node_lib[node_lib.index(b) + 1]) - float(node_lib[node_lib.index(a) + 1])
-    # d_y = float(node_lib[node_lib.index(b) + 2]) - float(node_lib[node_lib.index(a) + 2])
-    # d_z = float(node_lib[node_lib.index(b) + 3]) - float(node_lib[node_lib.index(a) + 3])
-
-    # Local 1-axis points from node I to node J
-    l_x = np.array([d_x, d_y, d_z])
-    # Global z-axis
-    g_z = np.array([0, 0, 1])
-
-    # In SAP2000, if the link is vertical, the local y-axis is the same as the
-    # global x-axis, and the local z-axis can be obtained by crossing the local
-    # x-axis with the local y-axis
-    if d_x == 0 and d_y == 0:
-        l_y = np.array([1, 0, 0])
-        l_z = np.cross(l_x, l_y)
-
-    # In other cases, the plane formed by the local x-axis and the local y-axis
-    # is a vertical plane (i.e., the normal vector is horizontal), and the
-    # local z-axis can be obtained by crossing the local x-axis with the global
-    # z-axis
-    else:
-        l_z = np.cross(l_x, g_z)
-    # The local axis may also be rotated using the Rodrigues' rotation formula
-    l_z_rot = l_z * np.cos(float(deg) / 180 * np.pi) + np.cross(l_x, l_z) * np.sin(float(deg) / 180 * np.pi)
-    # The rotated local y-axis can be obtained by crossing the rotated local z-axis with the local x-axis
-    l_y_rot = np.cross(l_z_rot, l_x)
-    # Finally, return the normalized local y-axis
-    return l_y_rot / np.linalg.norm(l_y_rot)
-
-
-
-def _create_links(csi, model):
-    # Dictionary for link local axis rotation
-    link_local = {}
-    for line in csi.get('LINK LOCAL AXES ASSIGNMENTS 1 - TYPICAL', []):
-        result = line.split()
-        link = result[0].split('=')
-        degree = result[1].split('=')
-        link_local[link[1]] = degree[1]
 
 
 def _collect_materials(csi, model):
     library = {
       "frame_sections": {},
       "shell_sections": {},
+      "link_materials": {},
     }
 
     # 1) Material
@@ -288,6 +246,15 @@ def _collect_materials(csi, model):
     # 2) Links
     #
     mat_total = 1
+
+    "LINK PROPERTY DEFINITIONS 02 - LINEAR",
+    "LINK PROPERTY DEFINITIONS 03 - MULTILINEAR",
+    "LINK PROPERTY DEFINITIONS 05 - GAP",
+    "LINK PROPERTY DEFINITIONS 06 - HOOK",
+    "LINK PROPERTY DEFINITIONS 07 - RUBBER ISOLATOR",
+    "LINK PROPERTY DEFINITIONS 08 - SLIDING ISOLATOR",
+    "LINK PROPERTY DEFINITIONS 11 - MULTILINEAR PLASTIC",
+
     for damper in csi.get("LINK PROPERTY DEFINITIONS 04 - DAMPER", []):
         continue
         name = damper["Link"]
@@ -296,14 +263,16 @@ def _collect_materials(csi, model):
         dampcoeff = damper["TransC"]
         exp = damper["CExp"]
         model.eval(f"uniaxialMaterial ViscousDamper {mat_total} {stiff} {dampcoeff}' {exp}\n")
+
+        library["link_materials"][name] = mat_total
         mat_total += 1
 
     for link in csi.get("LINK PROPERTY DEFINITIONS 10 - PLASTIC (WEN)", []):
-        continue
+#       continue
         name = link["Link"]
         dof = link["DOF"]
 
-        if not link["Nonlinear"]:
+        if not link.get("Nonlinear", False):
             stiff = link["TransKE"]
             model.eval(f"uniaxialMaterial Elastic {mat_total} {stiff}\n")
         else:
@@ -312,6 +281,8 @@ def _collect_materials(csi, model):
             exp   = link["YieldExp"] # TODO
             ratio = link["Ratio"]
             model.eval(f"uniaxialMaterial Steel01 {mat_total} {fy} {stiff} {ratio}\n")
+
+        library["link_materials"][name] = mat_total
         mat_total += 1
 
 
@@ -327,10 +298,6 @@ def _collect_materials(csi, model):
             tag += len(library["shell_sections"][assign["Section"]].integration)
 
     return library
-
-
-def find_material(sap, cache, type, section, material):
-    return 1
 
 
 def create_model(sap, types=None, verbose=False):
@@ -422,12 +389,8 @@ def create_model(sap, types=None, verbose=False):
 
     library = _collect_materials(sap, model)
 
-    #
-    # Create Links
-    #
-    # _create_links(sap, model)
 
-
+    # Unimplemented objects
     for item in [
         "CONNECTIVITY - CABLE",
         "CONNECTIVITY - LINK",
@@ -436,12 +399,17 @@ def create_model(sap, types=None, verbose=False):
         for elem in sap.get(item, []):
             log.append(UnimplementedInstance(item, elem))
 
+    #
+    # Create Links
+    #
+    log.extend(create_links(sap, model, library, config))
+
+
+    #
     # Create frames
-    try:
-        log.extend(create_frames(sap, model, library, config))
-    except Exception as e:
-        print(log)
-        raise e
+    #
+    log.extend(create_frames(sap, model, library, config))
+
     
     #
     # Create shells

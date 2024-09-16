@@ -1,8 +1,14 @@
 
+
+class Log:
+    def append(self, table, field, object):
+        pass
+
 class UnimplementedInstance:
-    def __init__(self, name, object):
+    def __init__(self, name, object, table=None):
         self.name = name 
         self.object = object
+        self.table = table
 
     def __repr__(self):
         return f"{self.name}: {self.object}"
