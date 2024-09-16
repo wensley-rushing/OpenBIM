@@ -247,30 +247,22 @@ def _collect_materials(csi, model):
     #
     mat_total = 1
 
-    "LINK PROPERTY DEFINITIONS 02 - LINEAR",
-    "LINK PROPERTY DEFINITIONS 03 - MULTILINEAR",
-    "LINK PROPERTY DEFINITIONS 05 - GAP",
-    "LINK PROPERTY DEFINITIONS 06 - HOOK",
-    "LINK PROPERTY DEFINITIONS 07 - RUBBER ISOLATOR",
-    "LINK PROPERTY DEFINITIONS 08 - SLIDING ISOLATOR",
-    "LINK PROPERTY DEFINITIONS 11 - MULTILINEAR PLASTIC",
 
     for damper in csi.get("LINK PROPERTY DEFINITIONS 04 - DAMPER", []):
         continue
         name = damper["Link"]
-#       dof = damper["DOF"]
         stiff = damper["TransK"]
         dampcoeff = damper["TransC"]
         exp = damper["CExp"]
         model.eval(f"uniaxialMaterial ViscousDamper {mat_total} {stiff} {dampcoeff}' {exp}\n")
 
-        library["link_materials"][name] = mat_total
+        dof = damper["DOF"]
+        library["link_materials"][name+dof] = mat_total
         mat_total += 1
 
     for link in csi.get("LINK PROPERTY DEFINITIONS 10 - PLASTIC (WEN)", []):
 #       continue
         name = link["Link"]
-        dof = link["DOF"]
 
         if not link.get("Nonlinear", False):
             stiff = link["TransKE"]
@@ -282,7 +274,8 @@ def _collect_materials(csi, model):
             ratio = link["Ratio"]
             model.eval(f"uniaxialMaterial Steel01 {mat_total} {fy} {stiff} {ratio}\n")
 
-        library["link_materials"][name] = mat_total
+        dof = link["DOF"]
+        library["link_materials"][name+dof] = mat_total
         mat_total += 1
 
 

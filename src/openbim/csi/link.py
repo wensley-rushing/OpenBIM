@@ -38,10 +38,20 @@ def _orient(xi, xj, deg):
     return l_y_rot / np.linalg.norm(l_y_rot)
 
 
+_link_tables = {
+    "Linear              " : "LINK PROPERTY DEFINITIONS 02 - LINEAR",
+    "??                  " : "LINK PROPERTY DEFINITIONS 03 - MULTILINEAR",
+    "Damper - Exponential" : "LINK PROPERTY DEFINITIONS 04 - DAMPER",
+    "???                 " : "LINK PROPERTY DEFINITIONS 05 - GAP",
+    "????                " : "LINK PROPERTY DEFINITIONS 06 - HOOK",
+    "?????               " : "LINK PROPERTY DEFINITIONS 07 - RUBBER ISOLATOR",
+    "??????              " : "LINK PROPERTY DEFINITIONS 08 - SLIDING ISOLATOR",
+    "Plastic (Wen)"        : "LINK PROPERTY DEFINITIONS 10 - PLASTIC (WEN)",
+    "???????             " : "LINK PROPERTY DEFINITIONS 11 - MULTILINEAR PLASTIC",
+}
 
 def create_links(csi, model, library, config):
     log = []
-
 
     # Dictionary for link local axis rotation
     link_local = {}
@@ -52,19 +62,29 @@ def create_links(csi, model, library, config):
         assign = find_row(csi["LINK PROPERTY ASSIGNMENTS"],
                           Link=link["Link"])
 
+
+        #
+        # Get axes
+        #
         axes   = find_row(csi.get("LINK LOCAL AXES ASSIGNMENTS 1 - TYPICAL",[]),
                           Link=link["Link"])
 
         if not axes or axes["AdvanceAxes"]:
             log.append(UnimplementedInstance("Link.AdvancedAxes", link))
             continue
+
         else:
             angle = axes["Angle"]
 
         props  = find_row(csi["LINK PROPERTY DEFINITIONS 01 - GENERAL"],
                           Link=assign["LinkProp"])
         
-        material = library["link_materials"][assign["LinkProp"]]
+        #
+        # Get mats and dofs
+        #
+        mats, dofs = [], []
+        if False:
+            mats.append(library["link_materials"][assign["LinkProp"]+dof])
 
         if assign["LinkType"] == "Linear":
             pass
@@ -74,7 +94,8 @@ def create_links(csi, model, library, config):
 
         model.element("TwoNodeLink", None,
                       nodes,
-                      mat=material,
+                      mat=tuple(mats),
+                      dir=tuple(dofs),
                       orient=tuple(_orient(xi, xj, angle))
                       )
 

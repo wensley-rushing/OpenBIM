@@ -15,7 +15,7 @@ if __name__ == "__main__":
     elif sys.argv[1] == "-V":
         # Visualize
         import sees
-        sees.serve(sees.render(model, canvas="gltf"))
+        sees.serve(sees.render(model, canvas="gltf", vertical=3))
 
     elif sys.argv[1] == "-Q":
         # Quiet conversion
