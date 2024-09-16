@@ -45,6 +45,9 @@ class _Section:
     def _create(self, csi, model):
         pass
 
+class _Shell:
+    def __init__(self, csi):
+        pass
 
 class _ShellSection(_Section):
     def _create(self, csi, model, options=None):
@@ -465,8 +468,12 @@ def create_model(sap, types=None, verbose=False):
     #
     for shell in sap.get("CONNECTIVITY - AREA", []):
         if "AREA ADDED MASS ASSIGNMENTS" in sap:
-            mass = find_row(sap["AREA ADDED MASS ASSIGNMENTS"],
-                            Area=shell["Area"])["MassPerArea"]
+            row = find_row(sap["AREA ADDED MASS ASSIGNMENTS"],
+                           Area=shell["Area"])
+            if row:
+                mass = row["MassPerArea"]
+            else:
+                mass = 0.0
         else:
             mass = 0.0
 
