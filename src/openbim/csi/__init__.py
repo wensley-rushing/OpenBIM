@@ -10,6 +10,7 @@
 import re
 import sys
 import warnings
+from collections import defaultdict
 from dataclasses import dataclass
 
 import numpy as np
@@ -237,7 +238,7 @@ def _collect_materials(csi, model):
     library = {
       "frame_sections": {},
       "shell_sections": {},
-      "link_materials": {},
+      "link_materials": defaultdict(dict),
     }
 
     # 1) Material
@@ -247,6 +248,23 @@ def _collect_materials(csi, model):
     #
     mat_total = 1
 
+    for link in csi.get("LINK PROPERTY DEFINITIONS 02 - LINEAR", []):
+        if link["Fixed"]:
+            # TODO: log warning
+            pass
+
+        name = link["Link"]
+        if "R" in link["DOF"]:
+            stiff = link["RotKE"]
+            damp  = link["RotCE"]
+        else:
+            stiff = link["TransKE"]
+            damp  = link["TransCE"]
+        model.eval(f"uniaxialMaterial Elastic {mat_total} {stiff}\n")
+
+        dof = link["DOF"]
+        library["link_materials"][name][dof] = mat_total
+        mat_total += 1
 
     for damper in csi.get("LINK PROPERTY DEFINITIONS 04 - DAMPER", []):
         continue
@@ -257,7 +275,7 @@ def _collect_materials(csi, model):
         model.eval(f"uniaxialMaterial ViscousDamper {mat_total} {stiff} {dampcoeff}' {exp}\n")
 
         dof = damper["DOF"]
-        library["link_materials"][name+dof] = mat_total
+        library["link_materials"][name][dof] = mat_total
         mat_total += 1
 
     for link in csi.get("LINK PROPERTY DEFINITIONS 10 - PLASTIC (WEN)", []):
@@ -275,7 +293,7 @@ def _collect_materials(csi, model):
             model.eval(f"uniaxialMaterial Steel01 {mat_total} {fy} {stiff} {ratio}\n")
 
         dof = link["DOF"]
-        library["link_materials"][name+dof] = mat_total
+        library["link_materials"][name][dof] = mat_total
         mat_total += 1
 
 
@@ -329,8 +347,12 @@ def create_model(sap, types=None, verbose=False):
         dofs = dofs + ["R3"]
     for node in sap["JOINT COORDINATES"]:
         model.node(node["Joint"], tuple(node[i] for i in ("XorR", "Y", "Z") if i in node))
+
     for node in sap.get("JOINT RESTRAINT ASSIGNMENTS", []):
         model.fix(node["Joint"], tuple(int(node[i]) for i in dofs))
+
+    used.add("JOINT COORDINATES")
+    used.add("JOINT RESTRAINT ASSIGNMENTS")
 
     if True:
         # TODO
@@ -375,8 +397,7 @@ def create_model(sap, types=None, verbose=False):
                 model.eval(f"rigidLink beam {nodes[0]} {nodes[le + 1]}\n")
 
 
-    used.add("JOINT COORDINATES")
-    used.add("JOINT RESTRAINT ASSIGNMENTS")
+    used.add("JOINT CONSTRAINT ASSIGNMENTS")
 
     # TODO
 

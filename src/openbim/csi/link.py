@@ -59,6 +59,14 @@ def create_links(csi, model, library, config):
         assign = find_row(csi["LINK PROPERTY ASSIGNMENTS"],
                           Link=link["Link"])
 
+        #
+        # Get mats and dofs
+        #
+        mats = tuple(library["link_materials"][assign["LinkProp"]].values())
+        dofs = tuple(library["link_materials"][assign["LinkProp"]].keys())
+        dofs = tuple(["U1", "U2", "U3", "R1", "R2", "R3"].index(i)+1 for i in dofs)
+
+
 
         #
         # Get axes
@@ -66,34 +74,40 @@ def create_links(csi, model, library, config):
         axes   = find_row(csi.get("LINK LOCAL AXES ASSIGNMENTS 1 - TYPICAL",[]),
                           Link=link["Link"])
 
-        if not axes or axes["AdvanceAxes"]:
-            log.append(UnimplementedInstance("Link.AdvancedAxes", link))
-            continue
+        if not axes:
+            orient_vector = None
+
+        elif axes["AdvanceAxes"]:
+
+            axes = find_row(csi.get("LINK LOCAL AXES ASSIGNMENTS 2 - ADVANCED",[]),
+                          Link=link["Link"])
+
+            orient_vector = (
+                    axes["AxVecX"], axes["AxVecY"], axes["AxVecZ"],
+                    axes["PlVecX"], axes["PlVecY"], axes["PlVecZ"],
+            )
 
         else:
-            angle = axes["Angle"]
+            xi = np.array(model.nodeCoord(nodes[0]))
+            xj = np.array(model.nodeCoord(nodes[1]))
+            orient_vector = tuple(_orient(xi, xj, axes["Angle"]))
 
-        props  = find_row(csi["LINK PROPERTY DEFINITIONS 01 - GENERAL"],
-                          Link=assign["LinkProp"])
-        
+
         #
-        # Get mats and dofs
+        # Create the link
         #
-        mats, dofs = [], []
-        if False:
-            mats.append(library["link_materials"][assign["LinkProp"]+dof])
-
-        if assign["LinkType"] == "Linear":
-            pass
-
-        xi = np.array(model.nodeCoord(nodes[0]))
-        xj = np.array(model.nodeCoord(nodes[1]))
-
-        model.element("TwoNodeLink", None,
+        if orient_vector is not None:
+            model.element("TwoNodeLink", None,
                       nodes,
-                      mat=tuple(mats),
-                      dir=tuple(dofs),
-                      orient=tuple(_orient(xi, xj, angle))
+                      mat=mats,
+                      dir=dofs,
+                      orient=orient_vector
+                      )
+        else:
+            model.element("TwoNodeLink", None,
+                      nodes,
+                      mat=mats,
+                      dir=dofs
                       )
 
     return log

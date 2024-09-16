@@ -8,6 +8,8 @@ if __name__ == "__main__":
 
     model = create_model(csi, verbose=True)
 
+    model.eigen(1)
+
     if sys.argv[1] == "-C":
         # Convert
         model.print("-json")
