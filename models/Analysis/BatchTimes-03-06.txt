@@ -1,0 +1,663 @@
+Batch file analysis started  (8/24/2024 6:00:38 PM)
+
+E:\SAP2000\Analysis Examples\Example 3-001-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:00:44 PM)
+    Data exported to Example 3-001-incomp.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:00:05
+
+E:\SAP2000\Analysis Examples\Example 3-001-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:00:49 PM)
+    Data exported to Example 3-001-comp.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:00:11
+
+E:\SAP2000\Analysis Examples\Example 3-002a-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:00:54 PM)
+    Data exported to Example 3-002a-incomp.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:00:16
+
+E:\SAP2000\Analysis Examples\Example 3-002a-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:00:59 PM)
+    Data exported to Example 3-002a-comp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:00:21
+
+E:\SAP2000\Analysis Examples\Example 3-002b-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:04 PM)
+    Data exported to Example 3-002b-incomp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:00:26
+
+E:\SAP2000\Analysis Examples\Example 3-002b-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:09 PM)
+    Data exported to Example 3-002b-comp.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:00:31
+
+E:\SAP2000\Analysis Examples\Example 3-002c-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:14 PM)
+    Data exported to Example 3-002c-incomp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:00:35
+
+E:\SAP2000\Analysis Examples\Example 3-002c-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:19 PM)
+    Data exported to Example 3-002c-comp.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:00:40
+
+E:\SAP2000\Analysis Examples\Example 3-002d-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:24 PM)
+    Data exported to Example 3-002d-incomp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:00:45
+
+E:\SAP2000\Analysis Examples\Example 3-002d-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:28 PM)
+    Data exported to Example 3-002d-comp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:00:50
+
+E:\SAP2000\Analysis Examples\Example 3-002e-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:33 PM)
+    Data exported to Example 3-002e-incomp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:00:55
+
+E:\SAP2000\Analysis Examples\Example 3-002e-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:38 PM)
+    Data exported to Example 3-002e-comp.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:00:60
+
+E:\SAP2000\Analysis Examples\Example 3-002f-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:43 PM)
+    Data exported to Example 3-002f-incomp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:01:05
+
+E:\SAP2000\Analysis Examples\Example 3-002f-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:48 PM)
+    Data exported to Example 3-002f-comp.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:01:10
+
+E:\SAP2000\Analysis Examples\Example 3-002g-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:53 PM)
+    Data exported to Example 3-002g-incomp.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:01:15
+
+E:\SAP2000\Analysis Examples\Example 3-003a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:01:58 PM)
+    Data exported to Example 3-003a.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:01:20
+
+E:\SAP2000\Analysis Examples\Example 3-003b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:02:03 PM)
+    Data exported to Example 3-003b.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:01:25
+
+E:\SAP2000\Analysis Examples\Example 3-004a-strain.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:02:08 PM)
+    Data exported to Example 3-004a-strain.xml
+    Elapsed time for this model 00:00:04
+    Total elapsed time for batch file analysis is 00:01:29
+
+E:\SAP2000\Analysis Examples\Example 3-004a-stress.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:02:13 PM)
+    Data exported to Example 3-004a-stress.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:01:35
+
+E:\SAP2000\Analysis Examples\Example 3-004b-strain.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:02:19 PM)
+    Data exported to Example 3-004b-strain.xml
+    Elapsed time for this model 00:00:05
+    Total elapsed time for batch file analysis is 00:01:40
+
+E:\SAP2000\Analysis Examples\Example 3-004b-stress.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:02:26 PM)
+    Data exported to Example 3-004b-stress.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:01:47
+
+E:\SAP2000\Analysis Examples\Example 3-004c-strain.sdb
+    Could not open SAP2000  model file
+
+E:\SAP2000\Analysis Examples\Example 3-004c-stress.sdb
+    Could not open SAP2000  model file
+
+E:\SAP2000\Analysis Examples\Example 3-004d-strain.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:02:47 PM)
+    Data exported to Example 3-004d-strain.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:02:08
+
+E:\SAP2000\Analysis Examples\Example 3-004d-stress.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:02:54 PM)
+    Data exported to Example 3-004d-stress.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:02:16
+
+E:\SAP2000\Analysis Examples\Example 3-004e-strain.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:01 PM)
+    Data exported to Example 3-004e-strain.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:02:23
+
+E:\SAP2000\Analysis Examples\Example 3-004e-stress.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:08 PM)
+    Data exported to Example 3-004e-stress.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:02:30
+
+E:\SAP2000\Analysis Examples\Example 3-004f-strain.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:15 PM)
+    Data exported to Example 3-004f-strain.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:02:37
+
+E:\SAP2000\Analysis Examples\Example 3-004f-stress.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:22 PM)
+    Data exported to Example 3-004f-stress.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:02:44
+
+E:\SAP2000\Analysis Examples\Example 3-005.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:30 PM)
+    Data exported to Example 3-005.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:02:51
+
+E:\SAP2000\Analysis Examples\Example 4-001-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:38 PM)
+    Data exported to Example 4-001-incomp.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:03:00
+
+E:\SAP2000\Analysis Examples\Example 4-001-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:46 PM)
+    Data exported to Example 4-001-comp.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:03:08
+
+E:\SAP2000\Analysis Examples\Example 4-002a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:03:54 PM)
+    Data exported to Example 4-002a.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:03:16
+
+E:\SAP2000\Analysis Examples\Example 4-002b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:01 PM)
+    Data exported to Example 4-002b.xml
+    Elapsed time for this model 00:00:06
+    Total elapsed time for batch file analysis is 00:03:22
+
+E:\SAP2000\Analysis Examples\Example 4-002c.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:08 PM)
+    Data exported to Example 4-002c.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:03:30
+
+E:\SAP2000\Analysis Examples\Example 4-002d.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:15 PM)
+    Data exported to Example 4-002d.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:03:37
+
+E:\SAP2000\Analysis Examples\Example 4-002e.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:22 PM)
+    Data exported to Example 4-002e.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:03:44
+
+E:\SAP2000\Analysis Examples\Example 4-002f.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:30 PM)
+    Data exported to Example 4-002f.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:03:51
+
+E:\SAP2000\Analysis Examples\Example 4-003.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:37 PM)
+    Data exported to Example 4-003.xml
+    Elapsed time for this model 00:00:06
+    Total elapsed time for batch file analysis is 00:03:58
+
+E:\SAP2000\Analysis Examples\Example 4-004.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:44 PM)
+    Data exported to Example 4-004.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:04:05
+
+E:\SAP2000\Analysis Examples\Example 5-001-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:51 PM)
+    Data exported to Example 5-001-incomp.xml
+    Elapsed time for this model 00:00:06
+    Total elapsed time for batch file analysis is 00:04:12
+
+E:\SAP2000\Analysis Examples\Example 5-001-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:04:58 PM)
+    Data exported to Example 5-001-comp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:04:20
+
+E:\SAP2000\Analysis Examples\Example 5-002a1-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:05:06 PM)
+    Data exported to Example 5-002a1-incomp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:04:27
+
+E:\SAP2000\Analysis Examples\Example 5-002a1-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:05:13 PM)
+    Data exported to Example 5-002a1-comp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:04:34
+
+E:\SAP2000\Analysis Examples\Example 5-002a2-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:05:21 PM)
+    Data exported to Example 5-002a2-incomp.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:04:43
+
+E:\SAP2000\Analysis Examples\Example 5-002a2-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:05:28 PM)
+    Data exported to Example 5-002a2-comp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:04:50
+
+E:\SAP2000\Analysis Examples\Example 5-002a3-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:05:37 PM)
+    Data exported to Example 5-002a3-incomp.xml
+    Elapsed time for this model 00:00:09
+    Total elapsed time for batch file analysis is 00:04:59
+
+E:\SAP2000\Analysis Examples\Example 5-002a3-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:05:58 PM)
+    Data exported to Example 5-002a3-comp.xml
+    Elapsed time for this model 00:00:23
+    Total elapsed time for batch file analysis is 00:05:22
+
+E:\SAP2000\Analysis Examples\Example 5-002b1-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:06:08 PM)
+    Data exported to Example 5-002b1-incomp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:05:30
+
+E:\SAP2000\Analysis Examples\Example 5-002b1-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:06:15 PM)
+    Data exported to Example 5-002b1-comp.xml
+    Elapsed time for this model 00:00:06
+    Total elapsed time for batch file analysis is 00:05:37
+
+E:\SAP2000\Analysis Examples\Example 5-002b2-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:06:23 PM)
+    Data exported to Example 5-002b2-incomp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:05:44
+
+E:\SAP2000\Analysis Examples\Example 5-002b2-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:06:30 PM)
+    Data exported to Example 5-002b2-comp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:05:52
+
+E:\SAP2000\Analysis Examples\Example 5-002b3-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:06:39 PM)
+    Data exported to Example 5-002b3-incomp.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:06:00
+
+E:\SAP2000\Analysis Examples\Example 5-002b3-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:06:59 PM)
+    Data exported to Example 5-002b3-comp.xml
+    Elapsed time for this model 00:00:23
+    Total elapsed time for batch file analysis is 00:06:24
+
+E:\SAP2000\Analysis Examples\Example 5-002c1-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:07:09 PM)
+    Data exported to Example 5-002c1-incomp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:06:31
+
+E:\SAP2000\Analysis Examples\Example 5-002c1-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:07:16 PM)
+    Data exported to Example 5-002c1-comp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:06:38
+
+E:\SAP2000\Analysis Examples\Example 5-002c2-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:07:24 PM)
+    Data exported to Example 5-002c2-incomp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:06:45
+
+E:\SAP2000\Analysis Examples\Example 5-002c2-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:07:31 PM)
+    Data exported to Example 5-002c2-comp.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:06:52
+
+E:\SAP2000\Analysis Examples\Example 5-002c3-incomp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:07:39 PM)
+    Data exported to Example 5-002c3-incomp.xml
+    Elapsed time for this model 00:00:09
+    Total elapsed time for batch file analysis is 00:07:01
+
+E:\SAP2000\Analysis Examples\Example 5-002c3-comp.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:08:02 PM)
+    Data exported to Example 5-002c3-comp.xml
+    Elapsed time for this model 00:00:25
+    Total elapsed time for batch file analysis is 00:07:27
+
+E:\SAP2000\Analysis Examples\Example 5-003a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:08:13 PM)
+    Data exported to Example 5-003a.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:07:35
+
+E:\SAP2000\Analysis Examples\Example 5-003b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:08:21 PM)
+    Data exported to Example 5-003b.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:07:42
+
+E:\SAP2000\Analysis Examples\Example 5-003c.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:08:33 PM)
+    Data exported to Example 5-003c.xml
+    Elapsed time for this model 00:00:12
+    Total elapsed time for batch file analysis is 00:07:55
+
+E:\SAP2000\Analysis Examples\Example 5-004.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:08:41 PM)
+    Data exported to Example 5-004.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:08:03
+
+E:\SAP2000\Analysis Examples\Example 5-005a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:08:49 PM)
+    Data exported to Example 5-005a.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:08:10
+
+E:\SAP2000\Analysis Examples\Example 5-005b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:08:57 PM)
+    Data exported to Example 5-005b.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:08:19
+
+E:\SAP2000\Analysis Examples\Example 5-005c.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:09:04 PM)
+    Data exported to Example 5-005c.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:08:26
+
+E:\SAP2000\Analysis Examples\Example 5-005d.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:09:12 PM)
+    Data exported to Example 5-005d.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:08:33
+
+E:\SAP2000\Analysis Examples\Example 5-005e.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:09:22 PM)
+    Data exported to Example 5-005e.xml
+    Elapsed time for this model 00:00:09
+    Total elapsed time for batch file analysis is 00:08:43
+
+E:\SAP2000\Analysis Examples\Example 5-005f.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:09:29 PM)
+    Data exported to Example 5-005f.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:08:50
+
+E:\SAP2000\Analysis Examples\Example 5-005g.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:09:38 PM)
+    Data exported to Example 5-005g.xml
+    Elapsed time for this model 00:00:09
+    Total elapsed time for batch file analysis is 00:09:00
+
+E:\SAP2000\Analysis Examples\Example 5-005h.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:09:46 PM)
+    Data exported to Example 5-005h.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:09:07
+
+E:\SAP2000\Analysis Examples\Example 5-005i.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:09:53 PM)
+    Data exported to Example 5-005i.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:09:15
+
+E:\SAP2000\Analysis Examples\Example 5-005j.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:10:03 PM)
+    Data exported to Example 5-005j.xml
+    Elapsed time for this model 00:00:09
+    Total elapsed time for batch file analysis is 00:09:24
+
+E:\SAP2000\Analysis Examples\Example 5-006.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:10:11 PM)
+    Data exported to Example 5-006.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:09:32
+
+E:\SAP2000\Analysis Examples\Example 5-007a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:10:19 PM)
+    Data exported to Example 5-007a.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:09:41
+
+E:\SAP2000\Analysis Examples\Example 5-007b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:10:31 PM)
+    Data exported to Example 5-007b.xml
+    Elapsed time for this model 00:00:13
+    Total elapsed time for batch file analysis is 00:09:54
+
+E:\SAP2000\Analysis Examples\Example 5-008a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:10:39 PM)
+    Data exported to Example 5-008a.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:10:01
+
+E:\SAP2000\Analysis Examples\Example 5-008b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:10:47 PM)
+    Data exported to Example 5-008b.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:10:08
+
+E:\SAP2000\Analysis Examples\Example 5-008c.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:10:54 PM)
+    Data exported to Example 5-008c.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:10:16
+
+E:\SAP2000\Analysis Examples\Example 5-008d.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:11:02 PM)
+    Data exported to Example 5-008d.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:10:24
+
+E:\SAP2000\Analysis Examples\Example 5-008e.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:11:10 PM)
+    Data exported to Example 5-008e.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:10:32
+
+E:\SAP2000\Analysis Examples\Example 5-008f.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:11:19 PM)
+    Data exported to Example 5-008f.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:10:40
+
+E:\SAP2000\Analysis Examples\Example 5-009a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:11:27 PM)
+    Data exported to Example 5-009a.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:10:48
+
+E:\SAP2000\Analysis Examples\Example 5-009b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:11:34 PM)
+    Data exported to Example 5-009b.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:10:56
+
+E:\SAP2000\Analysis Examples\Example 5-010.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:11:42 PM)
+    Data exported to Example 5-010.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:11:04
+
+E:\SAP2000\Analysis Examples\Example 5-011.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:11:50 PM)
+    Data exported to Example 5-011.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:11:11
+
+E:\SAP2000\Analysis Examples\Example 5-012a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:12:04 PM)
+    Data exported to Example 5-012a.xml
+    Elapsed time for this model 00:00:14
+    Total elapsed time for batch file analysis is 00:11:26
+
+E:\SAP2000\Analysis Examples\Example 5-012b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:12:39 PM)
+    Data exported to Example 5-012b.xml
+    Elapsed time for this model 00:00:34
+    Total elapsed time for batch file analysis is 00:12:01
+
+E:\SAP2000\Analysis Examples\Example 5-012c.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:12:53 PM)
+    Data exported to Example 5-012c.xml
+    Elapsed time for this model 00:00:14
+    Total elapsed time for batch file analysis is 00:12:15
+
+E:\SAP2000\Analysis Examples\Example 5-012d.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:13:28 PM)
+    Data exported to Example 5-012d.xml
+    Elapsed time for this model 00:00:34
+    Total elapsed time for batch file analysis is 00:12:49
+
+E:\SAP2000\Analysis Examples\Example 5-013.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:13:36 PM)
+    Data exported to Example 5-013.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:12:58
+
+E:\SAP2000\Analysis Examples\Example 6-001.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:13:47 PM)
+    Data exported to Example 6-001.xml
+    Elapsed time for this model 00:00:10
+    Total elapsed time for batch file analysis is 00:13:09
+
+E:\SAP2000\Analysis Examples\Example 6-002.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:13:55 PM)
+    Data exported to Example 6-002.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:13:16
+
+E:\SAP2000\Analysis Examples\Example 6-003a.sdb
+    Analysis successful with 2 warnings  (8/24/2024 6:14:11 PM)
+    Data exported to Example 6-003a.xml
+    Elapsed time for this model 00:00:16
+    Total elapsed time for batch file analysis is 00:13:33
+
+E:\SAP2000\Analysis Examples\Example 6-003b.sdb
+    Analysis successful with 2 warnings  (8/24/2024 6:14:28 PM)
+    Data exported to Example 6-003b.xml
+    Elapsed time for this model 00:00:16
+    Total elapsed time for batch file analysis is 00:13:49
+
+E:\SAP2000\Analysis Examples\Example 6-004.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:14:35 PM)
+    Data exported to Example 6-004.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:13:57
+
+E:\SAP2000\Analysis Examples\Example 6-005a.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:16:26 PM)
+    Data exported to Example 6-005a.xml
+    Elapsed time for this model 00:01:51
+    Total elapsed time for batch file analysis is 00:15:48
+
+E:\SAP2000\Analysis Examples\Example 6-005b.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:16:34 PM)
+    Data exported to Example 6-005b.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:15:56
+
+E:\SAP2000\Analysis Examples\Example 6-006.sdb
+    Analysis successful with 6 warnings  (8/24/2024 6:19:15 PM)
+    Data exported to Example 6-006.xml
+    Elapsed time for this model 00:02:40
+    Total elapsed time for batch file analysis is 00:18:37
+
+E:\SAP2000\Analysis Examples\Example 6-007.sdb
+    Analysis successful with 3 warnings  (8/24/2024 6:20:20 PM)
+    Data exported to Example 6-007.xml
+    Elapsed time for this model 00:01:04
+    Total elapsed time for batch file analysis is 00:19:41
+
+E:\SAP2000\Analysis Examples\Example 6-008.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:20:45 PM)
+    Data exported to Example 6-008.xml
+    Elapsed time for this model 00:00:25
+    Total elapsed time for batch file analysis is 00:20:07
+
+E:\SAP2000\Analysis Examples\Example 6-009.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:20:55 PM)
+    Data exported to Example 6-009.xml
+    Elapsed time for this model 00:00:09
+    Total elapsed time for batch file analysis is 00:20:16
+
+E:\SAP2000\Analysis Examples\Example 6-010.sdb
+    Analysis successful with 2 warnings  (8/24/2024 6:21:44 PM)
+    Data exported to Example 6-010.xml
+    Elapsed time for this model 00:00:48
+    Total elapsed time for batch file analysis is 00:21:05
+
+E:\SAP2000\Analysis Examples\Example 6-011a.sdb
+    Analysis successful with 6 warnings  (8/24/2024 6:27:00 PM)
+    Data exported to Example 6-011a.xml
+    Elapsed time for this model 00:05:16
+    Total elapsed time for batch file analysis is 00:26:22
+
+E:\SAP2000\Analysis Examples\Example 6-011b.sdb
+    Analysis successful with 4 warnings  (8/24/2024 6:32:19 PM)
+    Data exported to Example 6-011b.xml
+    Elapsed time for this model 00:05:19
+    Total elapsed time for batch file analysis is 00:31:41
+
+E:\SAP2000\Analysis Examples\Example 6-012.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:32:27 PM)
+    Data exported to Example 6-012.xml
+    Elapsed time for this model 00:00:08
+    Total elapsed time for batch file analysis is 00:31:49
+
+E:\SAP2000\Analysis Examples\Example 7-001.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:32:35 PM)
+    Data exported to Example 7-001.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:31:56
+
+E:\SAP2000\Analysis Examples\Example 7-002.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:32:42 PM)
+    Data exported to Example 7-002.xml
+    Elapsed time for this model 00:00:07
+    Total elapsed time for batch file analysis is 00:32:04
+
+E:\SAP2000\Analysis Examples\Example 7-003.sdb
+    Analysis successful with 0 warnings  (8/24/2024 6:32:51 PM)
+    Data exported to Example 7-003.xml
+    Elapsed time for this model 00:00:09
+    Total elapsed time for batch file analysis is 00:32:13
+
+SUMMARY
+    Number of models in batch file = 110
+    Number of models run successfully = 108
+    Number of models not run successfully = 0
+    Number of Access database files saved = 108
+    Batch file analysis complete  (8/24/2024 6:32:53 PM)
+    Total elapsed time for batch file analysis is 00:32:14

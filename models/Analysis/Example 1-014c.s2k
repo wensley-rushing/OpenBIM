@@ -1,0 +1,307 @@
+File \\greco-ce-cdot.ist.berkeley.edu\CEE_Students\Users\claudio_perez\Downloads\SAP2000\Analysis Examples\Example 1-014c.$2k was saved on m/d/yy at h:mm:ss
+ 
+TABLE:  "ACTIVE DEGREES OF FREEDOM"
+   UX=No   UY=Yes   UZ=Yes   RX=No   RY=Yes   RZ=Yes
+ 
+TABLE:  "ANALYSIS OPTIONS"
+   Solver=Advanced   SolverProc=Auto   Force32Bit=No   StiffCase=None   GeomMod=None   HingeOpt="In Elements"   NumAThreads=0   MaxFileSize=0   NumDThreads=0   NumRThreads=0   UseMMFiles="Program Determined"   AllowDiff=No
+ 
+TABLE:  "AREA SECTION PROPERTIES"
+   Section=ASEC1   Material=CONC   MatAngle=0   AreaType=Shell   Type=Shell-Thin   DrillDOF=Yes   Thickness=1   BendThick=1   Color=Green   F11Mod=1   F22Mod=1   F12Mod=1   M11Mod=1   M22Mod=1   M12Mod=1   V13Mod=1   V23Mod=1   MMod=1 _
+        WMod=1   GUID=00395f79-96b4-4b7f-add7-12b2405f32c7
+ 
+TABLE:  "AREA SECTION PROPERTY DESIGN PARAMETERS"
+   Section=ASEC1   RebarMat=None   RebarOpt=Default
+ 
+TABLE:  "AREA SECTION PROPERTY - TIME DEPENDENT"
+   Section=ASEC1   TypeSize=User   AutoSFSize=1   UserValSize=3.93700787401575
+ 
+TABLE:  "AUTO WAVE 3 - WAVE CHARACTERISTICS - GENERAL"
+   WaveChar=Default   WaveType="From Theory"   KinFactor=1   SWaterDepth=1800   WaveHeight=720   WavePeriod=12   WaveTheory=Linear
+ 
+TABLE:  "CABLE SECTION DEFINITIONS"
+   CableSect=CAB1   Material=ALUM   Specify=Area   Diameter=1.12837916709551   Area=1   Color=Green   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=b229e29f-380c-4e73-ad65-371f84d39a9d
+ 
+TABLE:  "CASE - MODAL 1 - GENERAL"
+   Case=MODAL1   ModeType=Eigen   MaxNumModes=5   MinNumModes=1   EigenShift=0   EigenCutoff=0   EigenTol=1E-07   AutoShift=No
+ 
+TABLE:  "CONNECTIVITY - FRAME"
+   Frame=1   JointI=1   JointJ=2   IsCurved=No   GUID=f65352f9-5a39-42f4-b26a-03ac248d268f
+ 
+TABLE:  "COORDINATE SYSTEMS"
+   Name=GLOBAL   Type=Cartesian   X=0   Y=0   Z=0   AboutZ=0   AboutY=0   AboutX=0
+ 
+TABLE:  "DATABASE DOCUMENTATION"
+ 
+TABLE:  "DATABASE FORMAT TYPES"
+   UnitsCurr=Yes   OverrideE=No
+ 
+TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
+   Frame=1   AutoMesh=Yes   AtJoints=No   AtFrames=No   NumSegments=4   MaxLength=0   MaxDegrees=0
+ 
+TABLE:  "FRAME DESIGN PROCEDURES"
+   Frame=1   DesignProc="From Material"
+ 
+TABLE:  "FRAME INSERTION POINT ASSIGNMENTS"
+   Frame=1   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+ 
+TABLE:  "FRAME LOAD TRANSFER OPTIONS"
+   Frame=1   Transfer=Yes
+ 
+TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
+   Frame=1   StationType=MaxStaSpcg   MaxStaSpcg=24   AddAtElmInt=Yes   AddAtPtLoad=Yes
+ 
+TABLE:  "FRAME SECTION ASSIGNMENTS"
+   Frame=1   AutoSelect=N.A.   AnalSect=FSEC1   MatProp=Default
+ 
+TABLE:  "FRAME SECTION PROPERTIES 01 - GENERAL"
+   SectionName=FSEC1   Material=CONC   Shape=Rectangular   t3=18   t2=12   Area=216   TorsConst=6085.12013626099   I33=5832   I22=2592   I23=0   AS2=180   AS3=180   S33Top=648   S33Bot=648   S22Left=432   S22Right=432   Z33=972   Z22=648 _
+        R33=5.19615242270663   R22=3.46410161513775   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0   Color=Magenta   FromFile=No   AMod=1   A2Mod=0   A3Mod=0   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=cc793cf9-73fa-40fd-9e75-ad72b6ac9294
+ 
+TABLE:  "FRAME SECTION PROPERTIES 02 - CONCRETE COLUMN"
+   SectionName=FSEC1   RebarMatL=A615Gr60   RebarMatC=A615Gr60   ReinfConfig=Rectangular   LatReinf=Ties   Cover=1.5   NumBars3Dir=3   NumBars2Dir=3   BarSizeL=#9   BarSizeC=#4   SpacingC=6   NumCBars2=3   NumCBars3=3   ReinfType=Design
+ 
+TABLE:  "FRAME SECTION PROPERTIES 13 - TIME DEPENDENT"
+   SectionName=FSEC1   TypeSize=User   AutoSFSize=1   UserValSize=3.93700787401575
+ 
+TABLE:  "FUNCTION - PLOT FUNCTIONS"
+   PlotFunc="Input Energy"   Type=Energy   Component=Input   Mode=All
+ 
+TABLE:  "GRID LINES"
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End   AllVisible=No   BubbleSize=48
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=96   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Y   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Z   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+ 
+TABLE:  "GROUPS 1 - DEFINITIONS"
+   GroupName=All   Selection=Yes   SectionCut=Yes   Steel=Yes   Concrete=Yes   Aluminum=Yes   ColdFormed=Yes   Stage=Yes   Bridge=Yes   AutoSeismic=No   AutoWind=No   SelDesSteel=No   SelDesAlum=No   SelDesCold=No   MassWeight=Yes   Color=Yellow
+ 
+TABLE:  "JOINT COORDINATES"
+   Joint=1   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=0   SpecialJt=Yes
+   Joint=2   CoordSys=GLOBAL   CoordType=Cartesian   XorR=96   Y=0   Z=0   SpecialJt=Yes
+ 
+TABLE:  "JOINT PATTERN DEFINITIONS"
+   Pattern=DEFAULT
+ 
+TABLE:  "JOINT RESTRAINT ASSIGNMENTS"
+   Joint=1   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
+ 
+TABLE:  "LINK PROPERTY DEFINITIONS 01 - GENERAL"
+   Link=LIN1   LinkType=Linear   Mass=0   Weight=0   RotInert1=0   RotInert2=0   RotInert3=0   DefLength=1   DefArea=1   PDM2I=0   PDM2J=0   PDM3I=0   PDM3J=0   StiffDFact=1   Color=Cyan   GUID=e849ae2e-7b94-4dbd-9fcf-be1adec81e76
+ 
+TABLE:  "LOAD CASE DEFINITIONS"
+   Case=MODAL1   Type=LinModal   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Other   DesActOpt="Prog Det"   DesignAct=Other   AutoType=None   RunCase=Yes   GUID=4d900d6b-4081-44be-8163-e002ec37e42f
+ 
+TABLE:  "LOAD PATTERN DEFINITIONS"
+   LoadPat=1   DesignType=Other   SelfWtMult=0   GUID=3cb317b5-d001-4f43-ab78-cd525954fe6e
+ 
+TABLE:  "MASS SOURCE"
+   MassSource=MSSSRC1   Elements=Yes   Masses=Yes   Loads=No   IsDefault=Yes
+ 
+TABLE:  "MATERIAL PROPERTIES 01 - GENERAL"
+   Material=A416Gr270   Type=Tendon   SymType=Uniaxial   TempDepend=No   Color=Blue   GUID=53a88456-195d-4115-9c0d-4f3c69c3d041   Notes="ASTM A416 Grade 270 added 6/26/2008 6:43:19 PM"
+   Material=A615Gr60   Type=Rebar   SymType=Uniaxial   TempDepend=No   Color=Green   GUID=06f1ca21-7e42-4ee8-8b8c-947aaecab625   Notes="ASTM A615 Grade 60 added 9/19/2006 4:29:08 PM"
+   Material=ALUM   Type=Aluminum   SymType=Isotropic   TempDepend=No   Color=Magenta   GUID=ec5cf8f2-2988-435f-aded-85c82838ca7b   Notes="Aluminum Alloy 6061 T6 added 9/19/2006 4:29:08 PM"
+   Material=CONC   Type=Concrete   SymType=Isotropic   TempDepend=No   Color=Red   GUID=d8cdfcb5-3e0e-4ada-a429-2149d019e801   Notes="Normalweight f'c = 4 ksi added 9/19/2006 4:29:08 PM"
+   Material=OTHER   Type=Other   SymType=Isotropic   TempDepend=No   Color=Yellow   GUID=d8d57c31-a637-4eb4-9315-a9a67fc79a34   Notes="Material added 9/19/2006 4:29:08 PM"
+   Material=STEEL   Type=Steel   SymType=Isotropic   TempDepend=No   Color=Cyan   GUID=89393c5a-2e01-47c4-a058-f31d27762b42   Notes="ASTM A36 added 9/19/2006 4:29:08 PM"
+ 
+TABLE:  "MATERIAL PROPERTIES 02 - BASIC MECHANICAL PROPERTIES"
+   Material=A416Gr270   UnitWeight=0.000283564814814815   UnitMass=7.34455290352564E-07   E1=28500   A1=6.5E-06
+   Material=A615Gr60   UnitWeight=0.000283564814814815   UnitMass=7.34455290352564E-07   E1=29000   A1=6.5E-06
+   Material=ALUM   UnitWeight=0.000283   UnitMass=7.324016E-07   E1=10900   G12=4192.30769230769   U12=0.3   A1=6.5E-06
+   Material=CONC   UnitWeight=8.68E-05   UnitMass=2.3E-07   E1=3600   G12=1500   U12=0.2   A1=5.5E-06
+   Material=OTHER   UnitWeight=8.68E-05   UnitMass=2.246377E-07   E1=3600   G12=1500   U12=0.2   A1=5.5E-06
+   Material=STEEL   UnitWeight=0.000283   UnitMass=7.324016E-07   E1=29000   G12=11153.8461538462   U12=0.3   A1=6.5E-06
+ 
+TABLE:  "MATERIAL PROPERTIES 03A - STEEL DATA"
+   Material=STEEL   Fy=36   Fu=58   EffFy=54   EffFu=63.8   SSCurveOpt="User Defined"   SSHysType=Kinematic   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03B - CONCRETE DATA"
+   Material=CONC   Fc=4   eFc=4   LtWtConc=No   SSCurveOpt="User Defined"   SSHysType=Kinematic   FAngle=0   DAngle=0   CoupModType="Modified Darwin-Pecknold"
+ 
+TABLE:  "MATERIAL PROPERTIES 03C - ALUMINUM DATA"
+   Material=ALUM   AlumType=Wrought   Alloy=2014-T6   Fcy=59   Fty=58   Ftu=66   Fsu=40   SSHysType=Kinematic   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03E - REBAR DATA"
+   Material=A615Gr60   Fy=60   Fu=90   EffFy=66   EffFu=99   SSCurveOpt=Simple   SSHysType=Kinematic   SHard=0.01   SCap=0.09   FinalSlope=-0.1   UseCTDef=No   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03F - TENDON DATA"
+   Material=A416Gr270   Fy=245.1   Fu=270   SSCurveOpt="270 ksi"   SSHysType=Kinematic   FinalSlope=-0.1   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03G - OTHER DATA"
+   Material=OTHER   SSHysType=Elastic   FAngle=0   DAngle=0   CoupModType=None
+ 
+TABLE:  "MATERIAL PROPERTIES 03J - COUPLED NONLINEAR VON MISES DATA"
+   Material=A416Gr270   YieldStress=245.1   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+   Material=A615Gr60   YieldStress=66   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+   Material=ALUM   YieldStress=59   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+   Material=STEEL   YieldStress=54   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+ 
+TABLE:  "MATERIAL PROPERTIES 04 - USER STRESS-STRAIN CURVES"
+   Material=ALUM   Strain=-0.000270642201834862   Stress=0   PointID=-E
+   Material=ALUM   Strain=-0.000189449541284404   Stress=-1032.5   PointID=-D
+   Material=ALUM   Strain=-0.000108256880733945   Stress=-2065   PointID=-C
+   Material=ALUM   Strain=-1.87573803251885E-05   Stress=-2065   PointID=-B
+   Material=ALUM   Strain=0   Stress=0   PointID=A
+   Material=ALUM   Strain=1.87573803251885E-05   Stress=2065   PointID=B
+   Material=ALUM   Strain=0.000108256880733945   Stress=2065
+   Material=ALUM   Strain=0.000270642201834862   Stress=2242   PointID=C
+   Material=ALUM   Strain=0.00043302752293578   Stress=2242   PointID=D
+   Material=ALUM   Strain=0.000541284403669725   Stress=2065   PointID=E
+   Material=CONC   Strain=-5.55555555555556E-05   Stress=0   PointID=-E
+   Material=CONC   Strain=-3.88888888888889E-05   Stress=-120   PointID=-D
+   Material=CONC   Strain=-2.22222222222222E-05   Stress=-240   PointID=-C
+   Material=CONC   Strain=-2.29885057471264E-06   Stress=-240   PointID=-B
+   Material=CONC   Strain=0   Stress=0   PointID=A
+   Material=CONC   Strain=2.29885057471264E-06   Stress=240   PointID=B
+   Material=CONC   Strain=2.22222222222222E-05   Stress=240
+   Material=CONC   Strain=5.55555555555556E-05   Stress=300   PointID=C
+   Material=CONC   Strain=8.88888888888889E-05   Stress=300   PointID=D
+   Material=CONC   Strain=0.000111111111111111   Stress=240   PointID=E
+   Material=OTHER   Strain=-0.000277777777777778   Stress=-1
+   Material=OTHER   Strain=0   Stress=0   PointID=A
+   Material=OTHER   Strain=0.000277777777777778   Stress=1
+   Material=STEEL   Strain=-6.20689655172414E-05   Stress=0   PointID=-E
+   Material=STEEL   Strain=-4.3448275862069E-05   Stress=-648   PointID=-D
+   Material=STEEL   Strain=-2.48275862068966E-05   Stress=-1296   PointID=-C
+   Material=STEEL   Strain=-1.5410225921522E-06   Stress=-1296   PointID=-B
+   Material=STEEL   Strain=0   Stress=0   PointID=A
+   Material=STEEL   Strain=1.5410225921522E-06   Stress=1296   PointID=B
+   Material=STEEL   Strain=2.48275862068966E-05   Stress=1296
+   Material=STEEL   Strain=6.20689655172414E-05   Stress=2088   PointID=C
+   Material=STEEL   Strain=9.93103448275862E-05   Stress=2088   PointID=D
+   Material=STEEL   Strain=0.000124137931034483   Stress=1296   PointID=E
+ 
+TABLE:  "MATERIAL PROPERTIES 06 - DAMPING PARAMETERS"
+   Material=A416Gr270   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=A615Gr60   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=ALUM   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=CONC   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=OTHER   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=STEEL   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+ 
+TABLE:  "MATERIAL PROPERTIES 09 - ACCEPTANCE CRITERIA"
+   Material=A416Gr270   IOTens=0.015   LSTens=0.023   CPTens=0.03   IOComp=-0.015   LSComp=-0.023   CPComp=-0.03
+   Material=A615Gr60   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02
+   Material=ALUM   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02
+   Material=CONC   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.003   LSComp=-0.006   CPComp=-0.015   IgnoreTens=Yes
+   Material=OTHER   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02   IgnoreTens=No
+   Material=STEEL   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02
+ 
+TABLE:  "NAMED SETS - DATABASE TABLES 1 - GENERAL"
+   DBNamedSet=DBO1   SortOrder="Elem, Cases"   Unformatted=Yes   ModeStart=1   ModeEnd=All   ModalHist=Envelopes   DirectHist=Envelopes   NLStatic=LastStep   BaseReacX=0   BaseReacY=0   BaseReacZ=0   Combo=Envelopes   Steady=Frequencies _
+        SteadyOpt=Magnitude   PSD=RMS   Multistep=Envelopes
+ 
+TABLE:  "NAMED SETS - DATABASE TABLES 2 - SELECTIONS"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Modal Periods And Frequencies"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Modal Participation Factors"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Modal Participating Mass Ratios"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Modal Load Participation Ratios"
+   DBNamedSet=DBO1   SelectType=LoadCase   Selection=MODAL1
+ 
+TABLE:  "OPTIONS - COLORS - DISPLAY"
+   DeviceType=Screen   Points=Yellow   LinesFrame=Yellow   LinesFrmDL=Yellow   LinesCable=Green   LinesTendon=Green   SpringLinks=Green   Restraints=Green   Releases=Green   Axes=Cyan   Text=Green   ShadowLines=Gray8Dark _
+        GuideLines=Gray8Dark   Highlight=Red   Selection=White   AreaFillBot=Red   AreaFillTop=Yellow   AreaFillSd=Red   AreaEdge=DarkRed   SolidF1=Red   SolidF2=Blue   SolidF3=Green   SolidF4=Yellow   SolidF5=White   SolidF6=Cyan _
+        SolidEdge=DarkRed   Floor=Gray4   Background=Black   BGLowLeft=Black   BGLowRight=Black   BGUpRight=Black   Darkness=0.5
+   DeviceType=Printer   Points=Gray8Dark   LinesFrame=Black   LinesFrmDL=Gray4   LinesCable=Black   LinesTendon=Black   SpringLinks=Gray8Dark   Restraints=Gray8Dark   Releases=Gray4   Axes=Black   Text=Black   ShadowLines=Gray4 _
+        GuideLines=Gray4   Highlight=Black   Selection=Black   AreaFillBot=Gray4   AreaFillTop=Gray8Dark   AreaFillSd=Gray4   AreaEdge=Black   SolidF1=Gray1Light   SolidF2=Gray2   SolidF3=Gray3   SolidF4=Gray4   SolidF5=Gray5 _
+        SolidF6=Gray6   SolidEdge=Black   Floor=Gray4   Background=White   BGLowLeft=White   BGLowRight=White   BGUpRight=White   Darkness=0.5
+   DeviceType="Color Printer"   Points=Yellow   LinesFrame=Blue   LinesFrmDL=7303023   LinesCable=Green   LinesTendon=Green   SpringLinks=Green   Restraints=Green   Releases=Green   Axes=Cyan   Text=Green   ShadowLines=Gray8Dark _
+        GuideLines=Gray8Dark   Highlight=Red   Selection=10504778   AreaFillBot=Red   AreaFillTop=Yellow   AreaFillSd=16634568   AreaEdge=DarkRed   SolidF1=Red   SolidF2=Blue   SolidF3=Green   SolidF4=Yellow   SolidF5=White   SolidF6=Cyan _
+        SolidEdge=DarkRed   Floor=10461087   Background=White   BGLowLeft=White   BGLowRight=14671839   BGUpRight=White   Darkness=0.5
+ 
+TABLE:  "OPTIONS - COLORS - OUTPUT"
+   DeviceType=Screen   Contour1=13107400   Contour2=6553828   Contour3=Red   Contour4=16639   Contour5=Orange   Contour6=43775   Contour7=54527   Contour8=Yellow   Contour9=65408   Contour10=Green   Contour11=8453888   Contour12=Cyan _
+        Contour13=16755200   Contour14=16733440   Contour15=Blue   Transpare=0.5   Ratio1=Cyan   Ratio2=Green   Ratio3=Yellow   Ratio4=Orange   Ratio5=Red   RatioNotD=Gray4   RatioNotC=Red   RatioVal1=0.5   RatioVal2=0.7   RatioVal3=0.9 _
+        RatioVal4=1   DFillPos=Yellow   DFillNeg=Red   DFillRPos=Blue   DFillRNeg=Blue
+   DeviceType=Printer   Contour1=Black   Contour2=3158064   Contour3=4210752   Contour4=5263440   Contour5=6316128   Contour6=7368816   Contour7=Gray8Dark   Contour8=Gray7   Contour9=Gray6   Contour10=Gray5   Contour11=Gray4 _
+        Contour12=Gray3   Contour13=Gray2   Contour14=Gray1Light   Contour15=White   Transpare=0   Ratio1=Gray2   Ratio2=Gray4   Ratio3=Gray8Dark   Ratio4=4210752   Ratio5=Black   RatioNotD=Gray4   RatioNotC=Black   RatioVal1=0.5 _
+        RatioVal2=0.7   RatioVal3=0.9   RatioVal4=1   DFillPos=Gray8Dark   DFillNeg=Gray8Dark   DFillRPos=4210752   DFillRNeg=4210752
+   DeviceType="Color Printer"   Contour1=13107400   Contour2=6553828   Contour3=Red   Contour4=16639   Contour5=Orange   Contour6=43775   Contour7=54527   Contour8=Yellow   Contour9=65408   Contour10=Green   Contour11=8453888 _
+        Contour12=Cyan   Contour13=16755200   Contour14=16733440   Contour15=Blue   Transpare=0.5   Ratio1=Cyan   Ratio2=Green   Ratio3=Yellow   Ratio4=Orange   Ratio5=Red   RatioNotD=Gray4   RatioNotC=Red   RatioVal1=0.5   RatioVal2=0.7 _
+        RatioVal3=0.9   RatioVal4=1   DFillPos=Red   DFillNeg=Red   DFillRPos=Blue   DFillRNeg=Blue
+ 
+TABLE:  "OVERWRITES - CONCRETE DESIGN - ACI 318-08/IBC2009"
+   Frame=1   DesignSect="Program Determined"   FrameType="Program Determined"   RLLF=0   XLMajor=0   XLMinor=0   XKMajor=0   XKMinor=0   CmMajor=0   CmMinor=0   DnsMajor=0   DnsMinor=0   DsMajor=0   DsMinor=0
+ 
+TABLE:  "PREFERENCES - ALUMINUM DESIGN - AA 2015"
+   THDesign=Envelopes   SRatioLimit=1   Provision=ASD   LatFact=1.333333   UseLatFact=No   Bridge=No   OmegaTy=1.65   OmegaTr=1.95   OmegaC=1.65   OmegaBo=1.65   OmegaBr=1.95   OmegaVo=1.65   OmegaVr=1.95
+ 
+TABLE:  "PREFERENCES - COLD FORMED DESIGN - AISI-ASD96"
+   THDesign=Envelopes   FrameType="Moment Frame"   SRatioLimit=1   MaxIter=1   OmegaBS=1.67   OmegaBUS=1.67   OmegaBLTB=1.67   OmegaVS=1.67   OmegaVNS=1.5   OmegaT=1.67   OmegaC=1.8
+ 
+TABLE:  "PREFERENCES - CONCRETE DESIGN - ACI 318-08/IBC2009"
+   THDesign=Envelopes   NumCurves=24   NumPoints=11   MinEccen=Yes   PatLLF=0.75   UFLimit=0.95   Rho=1   Sds=0.5   PhiT=0.9   PhiCTied=0.65   PhiCSpiral=0.7   PhiV=0.75   PhiVSeismic=0.6   PhiVJoint=0.85   TanTheta=1
+ 
+TABLE:  "PREFERENCES - CONCRETE SHELL DESIGN - EUROCODE 2-2004"
+   Country="CEN Default"   GammaS=1.15   GammaC=1.5   AlphaCC=1   AlphaCT=1   CrackCond="Program Determined"   ShrDesMet="Method 1"   CotTheta=1   AddTenForce=Yes
+ 
+TABLE:  "PREFERENCES - DIMENSIONAL"
+   MergeTol=0.1   FineGrid=12   Nudge=12   SelectTol=3   SnapTol=12   SLineThick=1   PLineThick=4   MaxFont=12   MinFont=3   AutoZoom=10   ShrinkFact=70   TextFileLen=240
+ 
+TABLE:  "PREFERENCES - STEEL DESIGN - AISC360-05-IBC2006"
+   THDesign=Envelopes   FrameType=SMF   PatLLF=0.75   SRatioLimit=1   MaxIter=1   SDC=E   SeisCode=No   SeisLoad=No   ImpFactor=1   SystemRho=1   SystemSds=0.5   SystemR=8   SystemCd=5.5   Omega0=2.8   Provision=ASD _
+        AMethod="Direct Analysis"   SOMethod="General 2nd Order"   SRMethod="Tau-b Fixed"   NLCoeff=0.002   OmegaB=1.67   OmegaC=1.67   OmegaTY=1.67   OmegaTF=2   OmegaV=1.67   OmegaVRolledI=1.5   OmegaVT=1.67   PlugWeld=Yes _
+        HSSWelding=ERW   HSSReduceT=No   CheckDefl=No   DLRat=120   SDLAndLLRat=120   LLRat=360   TotalRat=240   NetRat=240
+ 
+TABLE:  "PROGRAM CONTROL"
+   ProgramName=SAP2000   Version=25.2.0   CurrUnits="Kip, in, F"   SteelCode=AISC360-05/IBC2006   ConcCode="ACI 318-08/IBC2009"   AlumCode="AA 2015"   ColdCode=AISI-ASD96   RegenHinge=No
+ 
+TABLE:  "PROJECT INFORMATION"
+   Item="Company Name"
+   Item="Client Name"
+   Item="Project Name"
+   Item="Project Number"
+   Item="Model Name"
+   Item="Model Description"
+   Item="Revision Number"
+   Item="Frame Type"
+   Item=Engineer
+   Item=Checker
+   Item=Supervisor
+   Item="Issue Code"
+   Item="Design Code"
+ 
+TABLE:  "REBAR SIZES"
+   RebarID=#2   Area=0.05   Diameter=0.25
+   RebarID=#3   Area=0.11   Diameter=0.375
+   RebarID=#4   Area=0.2   Diameter=0.5
+   RebarID=#5   Area=0.31   Diameter=0.625
+   RebarID=#6   Area=0.44   Diameter=0.75
+   RebarID=#7   Area=0.6   Diameter=0.875
+   RebarID=#8   Area=0.79   Diameter=1
+   RebarID=#9   Area=1   Diameter=1.128
+   RebarID=#10   Area=1.27   Diameter=1.27
+   RebarID=#11   Area=1.56   Diameter=1.41
+   RebarID=#14   Area=2.25   Diameter=1.693
+   RebarID=#18   Area=4   Diameter=2.257
+   RebarID=10M   Area=0.1550003   Diameter=0.4448819
+   RebarID=15M   Area=0.3100006   Diameter=0.6299213
+   RebarID=20M   Area=0.465001   Diameter=0.7677165
+   RebarID=25M   Area=0.7750016   Diameter=0.992126
+   RebarID=30M   Area=1.085002   Diameter=1.177165
+   RebarID=35M   Area=1.550003   Diameter=1.405512
+   RebarID=45M   Area=2.325005   Diameter=1.720472
+   RebarID=55M   Area=3.875008   Diameter=2.220473
+   RebarID=6Ø   Area=0.04386509   Diameter=0.2362205
+   RebarID=8Ø   Area=0.07796516   Diameter=0.3149606
+   RebarID=10Ø   Area=0.1216752   Diameter=0.3937008
+   RebarID=12Ø   Area=0.1751504   Diameter=0.472441
+   RebarID=14Ø   Area=0.2387005   Diameter=0.5511811
+   RebarID=16Ø   Area=0.3115506   Diameter=0.6299213
+   RebarID=20Ø   Area=0.486701   Diameter=0.7874016
+   RebarID=25Ø   Area=0.7610515   Diameter=0.984252
+   RebarID=26Ø   Area=0.8230517   Diameter=1.023622
+   RebarID=28Ø   Area=0.954802   Diameter=1.102362
+ 
+TABLE:  "SOLID PROPERTY DEFINITIONS"
+   SolidProp=SOLID1   Material=CONC   MatAngleA=0   MatAngleB=0   MatAngleC=0   InComp=Yes   Color=Red   GUID=21a6fb88-4fa1-47cf-aab2-5d4178ccf91a
+ 
+TABLE:  "TABLES AUTOMATICALLY SAVED AFTER ANALYSIS"
+   SaveFile=Yes   FileType=XML   FileName="Example 1-014c.xml"   NamedSet=DBO1   Group=All
+ 
+TABLE:  "TENDON SECTION DEFINITIONS"
+   TendonSect=TEN1   ModelOpt=Loads   PreType="Post Tension"   Material=A416Gr270   Specify=Area   Diameter=1.12837916709551   Area=1   Color=Gray8Dark   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=b0d6a08c-d723-489d-80c9-c6d15fe7de27
+ 
+END TABLE DATA
