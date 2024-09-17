@@ -1,0 +1,933 @@
+File E:\SAP2000\Analysis Examples\Example 6-011a.$2k was saved on m/d/yy at h:mm:ss
+ 
+TABLE:  "ACTIVE DEGREES OF FREEDOM"
+   UX=Yes   UY=No   UZ=Yes   RX=No   RY=Yes   RZ=No
+ 
+TABLE:  "ANALYSIS OPTIONS"
+   Solver=Advanced   SolverProc=Auto   Force32Bit=No   StiffCase=None   GeomMod=None   HingeOpt="In Elements"   NumAThreads=0   MaxFileSize=0   NumDThreads=0   NumRThreads=0   UseMMFiles="Program Determined"   AllowDiff=No
+ 
+TABLE:  "AREA SECTION PROPERTIES"
+   Section=SSEC1   Material=CONC   MatAngle=0   AreaType=Shell   Type=Shell-Thin   DrillDOF=Yes   Thickness=1   BendThick=1   Color=2   F11Mod=1   F22Mod=1   F12Mod=1   M11Mod=1   M22Mod=1   M12Mod=1   V13Mod=1   V23Mod=1   MMod=1   WMod=1   GUID=012d065a-ed0c-4958-be0f-61ab1ecdaf57
+ 
+TABLE:  "AREA SECTION PROPERTY DESIGN PARAMETERS"
+   Section=SSEC1   RebarMat=None   RebarOpt=Default
+ 
+TABLE:  "AREA SECTION PROPERTY - TIME DEPENDENT"
+   Section=SSEC1   TypeSize=User   AutoSFSize=1   UserValSize=3.93700787401575
+ 
+TABLE:  "AUTO WAVE 3 - WAVE CHARACTERISTICS - GENERAL"
+   WaveChar=Default   WaveType="From Theory"   KinFactor=1   SWaterDepth=1800   WaveHeight=720   WavePeriod=12   WaveTheory=Linear
+ 
+TABLE:  "CABLE SECTION DEFINITIONS"
+   CableSect=CAB1   Material=STEEL   Specify=Area   Diameter=1.12837916709551   Area=1   Color=Green   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=9b8accfb-d2f1-4bd3-94be-10cd2e16f998
+ 
+TABLE:  "CASE - DIRECT HISTORY 1 - GENERAL"
+   Case=NLDHIST1A   OutSteps=6000   StepSize=0.005
+ 
+TABLE:  "CASE - DIRECT HISTORY 2 - LOAD ASSIGNMENTS"
+   Case=NLDHIST1A   LoadType=Accel   LoadName="Accel U1"   Function=XACC   TransAccSF=386.22   TimeFactor=1   ArrivalTime=0   CoordSys=GLOBAL   Angle=0
+ 
+TABLE:  "CASE - DIRECT HISTORY 3 - VISCOUS PROPORTIONAL DAMPING"
+   Case=NLDHIST1A   SpecifyType=Period   MassCoeff=0.0674014423861083   StiffCoeff=0.000170729848044033   Period1=1   Damping1=0.0059   Period2=0.1   Damping2=0.0059
+ 
+TABLE:  "CASE - DIRECT HISTORY 4 - INTEGRATION PARAMETERS"
+   Case=NLDHIST1A   IntMethod=HilberHughesTaylor   Gamma=0.8333   Beta=0.4444222225   Alpha=-0.3333
+ 
+TABLE:  "CASE - DIRECT HISTORY 5 - NONLINEAR PARAMETERS"
+   Case=NLDHIST1A   GeoNonLin=None   SolScheme="Iterative Only"   DTMax=0.0005   DTMin=0   MaxIterCS=100   MaxIterNR=100   ItConvTol=0.0001   UseLineSrch=Yes   LSPerIter=20   LSTol=0.1   LSStepFact=1.618
+ 
+TABLE:  "CASE - MODAL 1 - GENERAL"
+   Case=RITZ   ModeType=Ritz   MaxNumModes=99   MinNumModes=1
+ 
+TABLE:  "CASE - MODAL 3 - LOAD ASSIGNMENTS - RITZ"
+   Case=RITZ   LoadType=Accel   LoadName="Accel UX"   MaxCycles=0   TargetPar=99
+   Case=RITZ   LoadType=Accel   LoadName="Accel UZ"   MaxCycles=0   TargetPar=99
+   Case=RITZ   LoadType=Link   LoadName="All Links"   MaxCycles=0   TargetPar=99
+ 
+TABLE:  "CASE - MODAL HISTORY 1 - GENERAL"
+   Case=MGRAV   HistoryType=Transient   OutSteps=1000   StepSize=0.01   ConstDamp=0.99
+   Case=NLMHIST1A   HistoryType=Transient   OutSteps=6000   StepSize=0.005
+   Case=NLMHIST2A   HistoryType=Transient   OutSteps=6000   StepSize=0.005   ConstDamp=0.0059
+   Case=NLMHIST3A   HistoryType=Transient   OutSteps=6000   StepSize=0.005   ConstDamp=0.0059
+ 
+TABLE:  "CASE - MODAL HISTORY 2 - LOAD ASSIGNMENTS"
+   Case=MGRAV   LoadType="Load pattern"   LoadName=WEIGHT   Function=RAMP5   LoadSF=1   TimeFactor=1   ArrivalTime=0
+   Case=NLMHIST1A   LoadType=Accel   LoadName="Accel U1"   Function=XACC   TransAccSF=386.22   TimeFactor=1   ArrivalTime=0   CoordSys=GLOBAL   Angle=0
+   Case=NLMHIST2A   LoadType=Accel   LoadName="Accel U1"   Function=XACC   TransAccSF=386.22   TimeFactor=1   ArrivalTime=0   CoordSys=GLOBAL   Angle=0
+   Case=NLMHIST3A   LoadType=Accel   LoadName="Accel U1"   Function=XACC   TransAccSF=386.22   TimeFactor=1   ArrivalTime=0   CoordSys=GLOBAL   Angle=0
+ 
+TABLE:  "CASE - MODAL HISTORY 4 - PROPORTIONAL DAMPING"
+   Case=NLMHIST1A   SpecifyType=Period   MassCoeff=0.0674014423861083   StiffCoeff=0.000170729848044033   Period1=1   Damping1=0.0059   Period2=0.1   Damping2=0.0059
+ 
+TABLE:  "CASE - MODAL HISTORY 5 - DAMPING OVERRIDES"
+   Case=NLMHIST2A   Mode=40   Damping=0.999
+   Case=NLMHIST2A   Mode=41   Damping=0.999
+   Case=NLMHIST2A   Mode=42   Damping=0.999
+   Case=NLMHIST2A   Mode=43   Damping=0.999
+ 
+TABLE:  "CASE - MODAL HISTORY 6 - NONLINEAR PARAMETERS"
+   Case=MGRAV   PeriodStat=0   DTMax=0.01   DTMin=1E-11   FConvTol=9.99999974737875E-06   EConvTol=9.99999974737875E-06   ForceItMax=100   ForceItMin=2   ConvFactor=1
+   Case=NLMHIST1A   PeriodStat=0   DTMax=0   DTMin=0   FConvTol=1E-05   EConvTol=1E-05   ForceItMax=100   ForceItMin=2   ConvFactor=1
+   Case=NLMHIST2A   PeriodStat=0   DTMax=0.005   DTMin=5E-12   FConvTol=1E-05   EConvTol=1E-05   ForceItMax=100   ForceItMin=2   ConvFactor=1
+   Case=NLMHIST3A   PeriodStat=0   DTMax=0.005   DTMin=5E-12   FConvTol=1E-05   EConvTol=1E-05   ForceItMax=100   ForceItMin=2   ConvFactor=1
+ 
+TABLE:  "CASE - STATIC 1 - LOAD ASSIGNMENTS"
+   Case=DGRAV   LoadType="Load pattern"   LoadName=WEIGHT   LoadSF=1
+ 
+TABLE:  "CASE - STATIC 2 - NONLINEAR LOAD APPLICATION"
+   Case=DGRAV   LoadApp="Full Load"   MonitorDOF=U1   MonitorJt=29
+ 
+TABLE:  "CASE - STATIC 4 - NONLINEAR PARAMETERS"
+   Case=DGRAV   GeoNonLin=None   ResultsSave="Final State"   SolScheme="Iterative Events"   MaxTotal=200   MaxNull=50   EvLumpTol=0.01   MaxEvPerStp=24   MaxIterCS=10   MaxIterNR=10   ItConvTol=0.0001   TFMaxIter=10   TFTol=0.01 _
+        TFAccelFact=4   TFNoStop=No
+ 
+TABLE:  "CONNECTIVITY - FRAME"
+   Frame=1   JointI=1   JointJ=5   IsCurved=No   GUID=af1936b1-ffa8-46c4-8dd5-5fa9758fb4cf
+   Frame=2   JointI=2   JointJ=6   IsCurved=No   GUID=1f607578-04cd-4b92-aff6-45d355834d61
+   Frame=3   JointI=3   JointJ=7   IsCurved=No   GUID=c4e2d6b6-42dd-4142-a4a2-4a4e5fa218f4
+   Frame=4   JointI=4   JointJ=8   IsCurved=No   GUID=5f8163af-4688-4814-a681-a2760d1a6172
+   Frame=5   JointI=5   JointJ=9   IsCurved=No   GUID=f9121e6d-8066-4615-a506-019158218aa7
+   Frame=6   JointI=6   JointJ=10   IsCurved=No   GUID=110166f1-c8bd-4952-a5c7-3dd7d08bfb89
+   Frame=7   JointI=7   JointJ=11   IsCurved=No   GUID=9d0805df-3fff-419b-ace4-aa188b0642e3
+   Frame=8   JointI=8   JointJ=12   IsCurved=No   GUID=1b38d60e-361d-4aad-af4b-7e98a18dc9ea
+   Frame=9   JointI=9   JointJ=13   IsCurved=No   GUID=a05bd220-96f7-466d-ad0a-cee882200e05
+   Frame=10   JointI=10   JointJ=14   IsCurved=No   GUID=6b7a3b0c-4884-4862-9905-5a6484619c2d
+   Frame=11   JointI=11   JointJ=15   IsCurved=No   GUID=0e457a0a-e915-413f-8079-501da45ce143
+   Frame=12   JointI=12   JointJ=16   IsCurved=No   GUID=a9b23ff2-e6bb-4eca-9b48-bc7d25b9f476
+   Frame=13   JointI=13   JointJ=17   IsCurved=No   GUID=33ef02ad-c112-47a2-8aef-7f293e63bd4d
+   Frame=14   JointI=14   JointJ=18   IsCurved=No   GUID=b4c212a4-560e-4535-a04b-9e328f4b67ed
+   Frame=15   JointI=15   JointJ=19   IsCurved=No   GUID=19306b69-2ee8-47c2-b047-99176037b878
+   Frame=16   JointI=16   JointJ=20   IsCurved=No   GUID=bb2c94c6-50e9-42e1-870b-8adb764186b0
+   Frame=17   JointI=17   JointJ=21   IsCurved=No   GUID=bc99794b-2882-47a1-924c-dd3b349b9be9
+   Frame=18   JointI=18   JointJ=22   IsCurved=No   GUID=5404d696-1dee-426c-96dd-7e334a3d65e3
+   Frame=19   JointI=19   JointJ=23   IsCurved=No   GUID=fb5f6a14-7e24-48a0-807d-29e4b5a2e089
+   Frame=20   JointI=20   JointJ=24   IsCurved=No   GUID=55d023ca-c2dc-4359-b4d6-22b48e15bff0
+   Frame=21   JointI=21   JointJ=25   IsCurved=No   GUID=68e6a358-9884-40f5-a197-22227e040b78
+   Frame=22   JointI=22   JointJ=26   IsCurved=No   GUID=e3e9d77a-b7c0-43d3-8e7e-dff2e1809996
+   Frame=23   JointI=23   JointJ=27   IsCurved=No   GUID=d7d73a79-fbdf-4bc8-91eb-50dbf93d4822
+   Frame=24   JointI=24   JointJ=28   IsCurved=No   GUID=0bfc3328-bc7d-4d3e-bf81-9c544cfc7cc6
+   Frame=25   JointI=25   JointJ=29   IsCurved=No   GUID=01392598-4757-482f-85d4-3114807231a4
+   Frame=26   JointI=26   JointJ=30   IsCurved=No   GUID=b6290325-1c17-4405-ae5d-98878c623d8f
+   Frame=27   JointI=27   JointJ=31   IsCurved=No   GUID=4b5143a8-5bde-4905-bb4d-75669b1bcf52
+   Frame=28   JointI=28   JointJ=32   IsCurved=No   GUID=c6bb251f-7154-4cf9-991e-9b91f3d8c594
+   Frame=29   JointI=5   JointJ=6   IsCurved=No   GUID=3fa9145f-20fe-452c-8391-33d6ba848319
+   Frame=30   JointI=6   JointJ=7   IsCurved=No   GUID=a01b39d0-ea32-41e2-ac3b-3e045d20f504
+   Frame=31   JointI=7   JointJ=8   IsCurved=No   GUID=08b6602e-65b4-4aab-93d8-ade4e572b82f
+   Frame=32   JointI=9   JointJ=10   IsCurved=No   GUID=9ba9ec88-b8ab-4e72-9695-41759645f6cb
+   Frame=33   JointI=10   JointJ=11   IsCurved=No   GUID=872f8e4b-5b2d-414b-9ddf-4872848afebc
+   Frame=34   JointI=11   JointJ=12   IsCurved=No   GUID=588ec74c-5bad-4961-885b-06db5ae9a5ac
+   Frame=35   JointI=13   JointJ=14   IsCurved=No   GUID=bd8e2c93-a39b-4744-a078-51bf7cd4536e
+   Frame=36   JointI=14   JointJ=15   IsCurved=No   GUID=08ac52d5-aadf-4ab5-916a-c22ef22e361e
+   Frame=37   JointI=15   JointJ=16   IsCurved=No   GUID=795957f4-324e-4740-93c1-05bdf3bc40a0
+   Frame=38   JointI=17   JointJ=18   IsCurved=No   GUID=794ffa8d-7bfc-40eb-a44c-cb5b1d1d345b
+   Frame=39   JointI=18   JointJ=19   IsCurved=No   GUID=76635b2f-01b9-4ef3-9db7-d5f0ef131b56
+   Frame=40   JointI=19   JointJ=20   IsCurved=No   GUID=81ddcf95-d84c-435b-bd83-7cb88e446041
+   Frame=41   JointI=21   JointJ=22   IsCurved=No   GUID=87f34b17-9d67-4521-a26a-a42a62b16882
+   Frame=42   JointI=22   JointJ=23   IsCurved=No   GUID=62e97a1f-1b92-4b5e-a0b5-ceac2c968117
+   Frame=43   JointI=23   JointJ=24   IsCurved=No   GUID=ec7c6b39-d91e-411a-9e47-a6593be1262b
+   Frame=44   JointI=25   JointJ=26   IsCurved=No   GUID=518ee0ba-0db7-45c0-b47c-b7ec9e27965f
+   Frame=45   JointI=26   JointJ=27   IsCurved=No   GUID=6b8ac1a7-0cc8-4b02-8a92-8f52badb87b7
+   Frame=46   JointI=27   JointJ=28   IsCurved=No   GUID=5a90586a-8031-48c3-b69d-c58138eb3a5a
+   Frame=47   JointI=29   JointJ=30   IsCurved=No   GUID=a5bbd351-edf4-47cb-b6bf-36d334e127c1
+   Frame=48   JointI=30   JointJ=31   IsCurved=No   GUID=639b5303-7397-4bad-9f69-215bd09ce27f
+   Frame=49   JointI=31   JointJ=32   IsCurved=No   GUID=582747bd-b3f5-4318-b1ac-e82b4d0f7185
+ 
+TABLE:  "CONNECTIVITY - LINK"
+   Link=1   JointI=33   JointJ=1
+   Link=2   JointI=34   JointJ=2
+   Link=3   JointI=35   JointJ=3
+   Link=4   JointI=36   JointJ=4
+ 
+TABLE:  "CONSTRAINT DEFINITIONS - DIAPHRAGM"
+   Name=1   CoordSys=GLOBAL   Axis=Z   MultiLevel=No
+   Name=2   CoordSys=GLOBAL   Axis=Z   MultiLevel=No
+   Name=3   CoordSys=GLOBAL   Axis=Z   MultiLevel=No
+   Name=4   CoordSys=GLOBAL   Axis=Z   MultiLevel=No
+   Name=5   CoordSys=GLOBAL   Axis=Z   MultiLevel=No
+   Name=6   CoordSys=GLOBAL   Axis=Z   MultiLevel=No
+   Name=7   CoordSys=GLOBAL   Axis=Z   MultiLevel=No
+ 
+TABLE:  "COORDINATE SYSTEMS"
+   Name=GLOBAL   Type=Cartesian   X=0   Y=0   Z=0   AboutZ=0   AboutY=0   AboutX=0
+ 
+TABLE:  "DATABASE DOCUMENTATION"
+ 
+TABLE:  "DATABASE FORMAT TYPES"
+   UnitsCurr=Yes   OverrideE=No
+ 
+TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
+   Frame=1   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=2   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=3   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=4   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=5   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=6   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=7   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=8   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=9   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=10   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=11   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=12   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=13   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=14   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=15   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=16   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=17   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=18   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=19   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=20   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=21   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=22   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=23   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=24   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=25   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=26   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=27   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=28   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=29   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=30   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=31   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=32   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=33   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=34   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=35   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=36   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=37   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=38   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=39   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=40   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=41   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=42   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=43   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=44   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=45   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=46   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=47   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=48   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=49   AutoMesh=No   AtJoints=No   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+ 
+TABLE:  "FRAME DESIGN PROCEDURES"
+   Frame=1   DesignProc="No Design"
+   Frame=2   DesignProc="No Design"
+   Frame=3   DesignProc="No Design"
+   Frame=4   DesignProc="No Design"
+   Frame=5   DesignProc="No Design"
+   Frame=6   DesignProc="No Design"
+   Frame=7   DesignProc="No Design"
+   Frame=8   DesignProc="No Design"
+   Frame=9   DesignProc="No Design"
+   Frame=10   DesignProc="No Design"
+   Frame=11   DesignProc="No Design"
+   Frame=12   DesignProc="No Design"
+   Frame=13   DesignProc="No Design"
+   Frame=14   DesignProc="No Design"
+   Frame=15   DesignProc="No Design"
+   Frame=16   DesignProc="No Design"
+   Frame=17   DesignProc="No Design"
+   Frame=18   DesignProc="No Design"
+   Frame=19   DesignProc="No Design"
+   Frame=20   DesignProc="No Design"
+   Frame=21   DesignProc="No Design"
+   Frame=22   DesignProc="No Design"
+   Frame=23   DesignProc="No Design"
+   Frame=24   DesignProc="No Design"
+   Frame=25   DesignProc="No Design"
+   Frame=26   DesignProc="No Design"
+   Frame=27   DesignProc="No Design"
+   Frame=28   DesignProc="No Design"
+   Frame=29   DesignProc="No Design"
+   Frame=30   DesignProc="No Design"
+   Frame=31   DesignProc="No Design"
+   Frame=32   DesignProc="No Design"
+   Frame=33   DesignProc="No Design"
+   Frame=34   DesignProc="No Design"
+   Frame=35   DesignProc="No Design"
+   Frame=36   DesignProc="No Design"
+   Frame=37   DesignProc="No Design"
+   Frame=38   DesignProc="No Design"
+   Frame=39   DesignProc="No Design"
+   Frame=40   DesignProc="No Design"
+   Frame=41   DesignProc="No Design"
+   Frame=42   DesignProc="No Design"
+   Frame=43   DesignProc="No Design"
+   Frame=44   DesignProc="No Design"
+   Frame=45   DesignProc="No Design"
+   Frame=46   DesignProc="No Design"
+   Frame=47   DesignProc="No Design"
+   Frame=48   DesignProc="No Design"
+   Frame=49   DesignProc="No Design"
+ 
+TABLE:  "FRAME INSERTION POINT ASSIGNMENTS"
+   Frame=1   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=2   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=3   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=4   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=5   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=6   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=7   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=8   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=9   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=10   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=11   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=12   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=13   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=14   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=15   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=16   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=17   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=18   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=19   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=20   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=21   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=22   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=23   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=24   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=25   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=26   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=27   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=28   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=29   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=30   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=31   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=32   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=33   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=34   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=35   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=36   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=37   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=38   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=39   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=40   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=41   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=42   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=43   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=44   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=45   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=46   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=47   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=48   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+   Frame=49   CardinalPt="10 (centroid)"   Mirror2=No   Mirror3=No   Transform=No
+ 
+TABLE:  "FRAME LOAD TRANSFER OPTIONS"
+   Frame=1   Transfer=Yes
+   Frame=2   Transfer=Yes
+   Frame=3   Transfer=Yes
+   Frame=4   Transfer=Yes
+   Frame=5   Transfer=Yes
+   Frame=6   Transfer=Yes
+   Frame=7   Transfer=Yes
+   Frame=8   Transfer=Yes
+   Frame=9   Transfer=Yes
+   Frame=10   Transfer=Yes
+   Frame=11   Transfer=Yes
+   Frame=12   Transfer=Yes
+   Frame=13   Transfer=Yes
+   Frame=14   Transfer=Yes
+   Frame=15   Transfer=Yes
+   Frame=16   Transfer=Yes
+   Frame=17   Transfer=Yes
+   Frame=18   Transfer=Yes
+   Frame=19   Transfer=Yes
+   Frame=20   Transfer=Yes
+   Frame=21   Transfer=Yes
+   Frame=22   Transfer=Yes
+   Frame=23   Transfer=Yes
+   Frame=24   Transfer=Yes
+   Frame=25   Transfer=Yes
+   Frame=26   Transfer=Yes
+   Frame=27   Transfer=Yes
+   Frame=28   Transfer=Yes
+   Frame=29   Transfer=Yes
+   Frame=30   Transfer=Yes
+   Frame=31   Transfer=Yes
+   Frame=32   Transfer=Yes
+   Frame=33   Transfer=Yes
+   Frame=34   Transfer=Yes
+   Frame=35   Transfer=Yes
+   Frame=36   Transfer=Yes
+   Frame=37   Transfer=Yes
+   Frame=38   Transfer=Yes
+   Frame=39   Transfer=Yes
+   Frame=40   Transfer=Yes
+   Frame=41   Transfer=Yes
+   Frame=42   Transfer=Yes
+   Frame=43   Transfer=Yes
+   Frame=44   Transfer=Yes
+   Frame=45   Transfer=Yes
+   Frame=46   Transfer=Yes
+   Frame=47   Transfer=Yes
+   Frame=48   Transfer=Yes
+   Frame=49   Transfer=Yes
+ 
+TABLE:  "FRAME OFFSET ALONG LENGTH ASSIGNMENTS"
+   Frame=1   Type=User   LengthI=4.5   LengthJ=5.49999994039536   RigidFactor=0.449999988079071
+   Frame=2   Type=User   LengthI=4.5   LengthJ=5.49999994039536   RigidFactor=0.449999988079071
+   Frame=3   Type=User   LengthI=4.5   LengthJ=5.49999994039536   RigidFactor=0.449999988079071
+   Frame=4   Type=User   LengthI=4.5   LengthJ=5.49999994039536   RigidFactor=0.449999988079071
+   Frame=5   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=6   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=7   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=8   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=9   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=10   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=11   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=12   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=13   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=14   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=15   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=16   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=17   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=18   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=19   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=20   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=21   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=22   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=23   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=24   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=25   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=26   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=27   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=28   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=29   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=30   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=31   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=32   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=33   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=34   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=35   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=36   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=37   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=38   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=39   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=40   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=41   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=42   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=43   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=44   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=45   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=46   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=47   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=48   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+   Frame=49   Type=User   LengthI=4.5   LengthJ=4.5   RigidFactor=0.449999988079071
+ 
+TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
+   Frame=1   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=2   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=3   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=4   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=5   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=6   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=7   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=8   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=9   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=10   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=11   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=12   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=13   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=14   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=15   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=16   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=17   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=18   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=19   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=20   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=21   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=22   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=23   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=24   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=25   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=26   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=27   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=28   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=29   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=30   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=31   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=32   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=33   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=34   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=35   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=36   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=37   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=38   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=39   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=40   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=41   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=42   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=43   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=44   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=45   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=46   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=47   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=48   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=49   StationType=MinNumSta   MinNumSta=2   AddAtElmInt=Yes   AddAtPtLoad=Yes
+ 
+TABLE:  "FRAME SECTION ASSIGNMENTS"
+   Frame=1   AutoSelect=N.A.   AnalSect=BOX   MatProp=Default
+   Frame=2   AutoSelect=N.A.   AnalSect=BOX   MatProp=Default
+   Frame=3   AutoSelect=N.A.   AnalSect=BOX   MatProp=Default
+   Frame=4   AutoSelect=N.A.   AnalSect=BOX   MatProp=Default
+   Frame=5   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=6   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=7   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=8   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=9   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=10   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=11   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=12   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=13   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=14   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=15   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=16   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=17   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=18   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=19   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=20   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=21   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=22   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=23   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=24   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=25   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=26   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=27   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=28   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=29   AutoSelect=N.A.   AnalSect=S4X9.5   MatProp=Default
+   Frame=30   AutoSelect=N.A.   AnalSect=S4X9.5   MatProp=Default
+   Frame=31   AutoSelect=N.A.   AnalSect=S4X9.5   MatProp=Default
+   Frame=32   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=33   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=34   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=35   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=36   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=37   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=38   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=39   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=40   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=41   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=42   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=43   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=44   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=45   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=46   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=47   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=48   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+   Frame=49   AutoSelect=N.A.   AnalSect=S3X5.7   MatProp=Default
+ 
+TABLE:  "FRAME SECTION PROPERTIES 01 - GENERAL"
+   SectionName=BOX   Material=STEEL   Shape=General   t3=1   t2=1   Area=7.46000003814697   TorsConst=0   I33=12.1800003051758   I22=0   I23=0   AS2=4.375   AS3=0   S33Top=0   S33Bot=0   S22Left=0   S22Right=0   Z33=0   Z22=0   R33=0 _
+        R22=0   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0   IncludeSCAn=Yes   Color=Black   FromFile=No   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=34166299-f1cf-4bcf-8543-17d502f83ed5
+   SectionName=S3X5.7   Material=STEEL   Shape=General   t3=1   t2=1   Area=3.33999991416931   TorsConst=0   I33=5.03999996185303   I22=0   I23=0   AS2=1.01999998092651   AS3=0   S33Top=0   S33Bot=0   S22Left=0   S22Right=0   Z33=0   Z22=0 _
+        R33=0   R22=0   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0   IncludeSCAn=Yes   Color=Black   FromFile=No   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=8373d5c5-4a63-4aa8-b177-e51d9b72f3e9
+   SectionName=S4X9.5   Material=STEEL   Shape=General   t3=1   t2=1   Area=5.57999992370605   TorsConst=0   I33=13.5799999237061   I22=0   I23=0   AS2=2.60800004005432   AS3=0   S33Top=0   S33Bot=0   S22Left=0   S22Right=0   Z33=0   Z22=0 _
+        R33=0   R22=0   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0   IncludeSCAn=Yes   Color=Black   FromFile=No   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=edb03e37-0679-4a42-9dc2-1beb87646afb
+ 
+TABLE:  "FRAME SECTION PROPERTIES 13 - TIME DEPENDENT"
+   SectionName=BOX   TypeSize=None
+   SectionName=S3X5.7   TypeSize=None
+   SectionName=S4X9.5   TypeSize=None
+ 
+TABLE:  "FUNCTION - PLOT FUNCTIONS"
+   PlotFunc="Input Energy"   Type=Energy   Component=Input   Mode=All
+ 
+TABLE:  "FUNCTION - RESPONSE SPECTRUM - USER"
+   Name=UNIT   Period=0   Accel=1   FuncDamp=0
+   Name=UNIT   Period=1   Accel=1
+   Name=UBC94S1   Period=0   Accel=1   FuncDamp=0
+   Name=UBC94S1   Period=0.15   Accel=2.5
+   Name=UBC94S1   Period=0.2   Accel=2.5
+   Name=UBC94S1   Period=0.39   Accel=2.5
+   Name=UBC94S1   Period=0.45   Accel=2.13
+   Name=UBC94S1   Period=0.585   Accel=1.67
+   Name=UBC94S1   Period=0.75   Accel=1.3
+   Name=UBC94S1   Period=0.915   Accel=1.07
+   Name=UBC94S1   Period=1.1   Accel=0.886
+   Name=UBC94S1   Period=1.25   Accel=0.78
+   Name=UBC94S1   Period=1.5   Accel=0.65
+   Name=UBC94S1   Period=1.75   Accel=0.557
+   Name=UBC94S1   Period=2   Accel=0.488
+   Name=UBC94S1   Period=2.5   Accel=0.39
+   Name=UBC94S1   Period=3   Accel=0.325
+   Name=UBC94S1   Period=10   Accel=0.098
+   Name=UBC94S2   Period=0   Accel=1   FuncDamp=0
+   Name=UBC94S2   Period=0.15   Accel=2.5
+   Name=UBC94S2   Period=0.2   Accel=2.5
+   Name=UBC94S2   Period=0.39   Accel=2.5
+   Name=UBC94S2   Period=0.45   Accel=2.5
+   Name=UBC94S2   Period=0.585   Accel=2.5
+   Name=UBC94S2   Period=0.75   Accel=1.95
+   Name=UBC94S2   Period=0.915   Accel=1.6
+   Name=UBC94S2   Period=1.1   Accel=1.33
+   Name=UBC94S2   Period=1.25   Accel=1.17
+   Name=UBC94S2   Period=1.5   Accel=0.975
+   Name=UBC94S2   Period=1.75   Accel=0.836
+   Name=UBC94S2   Period=2   Accel=0.732
+   Name=UBC94S2   Period=2.5   Accel=0.585
+   Name=UBC94S2   Period=3   Accel=0.488
+   Name=UBC94S2   Period=10   Accel=0.146
+   Name=UBC94S3   Period=0   Accel=1   FuncDamp=0
+   Name=UBC94S3   Period=0.15   Accel=2.5
+   Name=UBC94S3   Period=0.2   Accel=2.5
+   Name=UBC94S3   Period=0.39   Accel=2.5
+   Name=UBC94S3   Period=0.45   Accel=2.5
+   Name=UBC94S3   Period=0.585   Accel=2.5
+   Name=UBC94S3   Period=0.75   Accel=2.5
+   Name=UBC94S3   Period=0.915   Accel=2.5
+   Name=UBC94S3   Period=1.1   Accel=2.08
+   Name=UBC94S3   Period=1.25   Accel=1.83
+   Name=UBC94S3   Period=1.5   Accel=1.53
+   Name=UBC94S3   Period=1.75   Accel=1.31
+   Name=UBC94S3   Period=2   Accel=1.14
+   Name=UBC94S3   Period=2.5   Accel=0.915
+   Name=UBC94S3   Period=3   Accel=0.762
+   Name=UBC94S3   Period=10   Accel=0.229
+ 
+TABLE:  "FUNCTION - TIME HISTORY - FROM FILE"
+   Name=XACC   HeaderLines=0   PrefixChars=0   PtsPerLine=1   DataType="Equal Interval"   FormatType=Free   Interval=0.01   FileName="d:\data\sap verification\6-links\eq6-011.txt"
+ 
+TABLE:  "FUNCTION - TIME HISTORY - USER"
+   Name=RAMP   Time=0   Value=0
+   Name=RAMP   Time=1   Value=1
+   Name=RAMP5   Time=0   Value=0
+   Name=RAMP5   Time=5   Value=1
+ 
+TABLE:  "GRID LINES"
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=-72   LineType=Primary   LineColor=Gray4   Visible=Yes   BubbleLoc=End   AllVisible=No   BubbleSize=48
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=0   LineType=Primary   LineColor=Gray4   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=72   LineType=Primary   LineColor=Gray4   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Y   XRYZCoord=0   LineType=Primary   LineColor=Gray4   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Z   XRYZCoord=0   LineType=Primary   LineColor=Gray4   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Z   XRYZCoord=252   LineType=Primary   LineColor=Gray4   Visible=Yes   BubbleLoc=End
+ 
+TABLE:  "GROUPS 1 - DEFINITIONS"
+   GroupName=ALL   Selection=Yes   SectionCut=Yes   Steel=Yes   Concrete=Yes   Aluminum=Yes   ColdFormed=Yes   Stage=Yes   Bridge=Yes   AutoSeismic=No   AutoWind=No   SelDesSteel=No   SelDesAlum=No   SelDesCold=No   MassWeight=Yes   Color=Yellow
+   GroupName=DBO1   Selection=Yes   SectionCut=Yes   Steel=Yes   Concrete=Yes   Aluminum=Yes   ColdFormed=Yes   Stage=Yes   Bridge=Yes   AutoSeismic=No   AutoWind=No   SelDesSteel=No   SelDesAlum=No   SelDesCold=No   MassWeight=Yes   Color=Magenta
+ 
+TABLE:  "GROUPS 2 - ASSIGNMENTS"
+   GroupName=DBO1   ObjectType=Joint   ObjectLabel=5
+   GroupName=DBO1   ObjectType=Link   ObjectLabel=1
+   GroupName=DBO1   ObjectType=Link   ObjectLabel=2
+ 
+TABLE:  "JOINT ADDED MASS ASSIGNMENTS"
+   Joint=5   CoordSys="Joint Local"   Mass1=0.00327965151518583   Mass2=0   Mass3=0.00327965151518583   MMI1=0   MMI2=0   MMI3=0
+   Joint=6   CoordSys="Joint Local"   Mass1=0.00655930023640394   Mass2=0   Mass3=0.00655930023640394   MMI1=0   MMI2=0   MMI3=0
+   Joint=7   CoordSys="Joint Local"   Mass1=0.00655930023640394   Mass2=0   Mass3=0.00655930023640394   MMI1=0   MMI2=0   MMI3=0
+   Joint=8   CoordSys="Joint Local"   Mass1=0.00327965151518583   Mass2=0   Mass3=0.00327965151518583   MMI1=0   MMI2=0   MMI3=0
+   Joint=9   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=10   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=11   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=12   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=13   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=14   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=15   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=16   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=17   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=18   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=19   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=20   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=21   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=22   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=23   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=24   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=25   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=26   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=27   CoordSys="Joint Local"   Mass1=0.00578254088759422   Mass2=0   Mass3=0.00578254088759422   MMI1=0   MMI2=0   MMI3=0
+   Joint=28   CoordSys="Joint Local"   Mass1=0.00289127184078097   Mass2=0   Mass3=0.00289127184078097   MMI1=0   MMI2=0   MMI3=0
+   Joint=29   CoordSys="Joint Local"   Mass1=0.00276181194931269   Mass2=0   Mass3=0.00276181194931269   MMI1=0   MMI2=0   MMI3=0
+   Joint=30   CoordSys="Joint Local"   Mass1=0.00552362110465765   Mass2=0   Mass3=0.00552362110465765   MMI1=0   MMI2=0   MMI3=0
+   Joint=31   CoordSys="Joint Local"   Mass1=0.00552362110465765   Mass2=0   Mass3=0.00552362110465765   MMI1=0   MMI2=0   MMI3=0
+   Joint=32   CoordSys="Joint Local"   Mass1=0.00276181194931269   Mass2=0   Mass3=0.00276181194931269   MMI1=0   MMI2=0   MMI3=0
+ 
+TABLE:  "JOINT CONSTRAINT ASSIGNMENTS"
+   Joint=5   Constraint=1
+   Joint=6   Constraint=1
+   Joint=7   Constraint=1
+   Joint=8   Constraint=1
+   Joint=9   Constraint=2
+   Joint=10   Constraint=2
+   Joint=11   Constraint=2
+   Joint=12   Constraint=2
+   Joint=13   Constraint=3
+   Joint=14   Constraint=3
+   Joint=15   Constraint=3
+   Joint=16   Constraint=3
+   Joint=17   Constraint=4
+   Joint=18   Constraint=4
+   Joint=19   Constraint=4
+   Joint=20   Constraint=4
+   Joint=21   Constraint=5
+   Joint=22   Constraint=5
+   Joint=23   Constraint=5
+   Joint=24   Constraint=5
+   Joint=25   Constraint=6
+   Joint=26   Constraint=6
+   Joint=27   Constraint=6
+   Joint=28   Constraint=6
+   Joint=29   Constraint=7
+   Joint=30   Constraint=7
+   Joint=31   Constraint=7
+   Joint=32   Constraint=7
+ 
+TABLE:  "JOINT COORDINATES"
+   Joint=1   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=0   SpecialJt=No
+   Joint=2   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=0   SpecialJt=No
+   Joint=3   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=0   SpecialJt=No
+   Joint=4   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=0   SpecialJt=No
+   Joint=5   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=36   SpecialJt=No
+   Joint=6   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=36   SpecialJt=No
+   Joint=7   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=36   SpecialJt=No
+   Joint=8   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=36   SpecialJt=No
+   Joint=9   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=72   SpecialJt=No
+   Joint=10   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=72   SpecialJt=No
+   Joint=11   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=72   SpecialJt=No
+   Joint=12   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=72   SpecialJt=No
+   Joint=13   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=108   SpecialJt=No
+   Joint=14   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=108   SpecialJt=No
+   Joint=15   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=108   SpecialJt=No
+   Joint=16   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=108   SpecialJt=No
+   Joint=17   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=144   SpecialJt=No
+   Joint=18   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=144   SpecialJt=No
+   Joint=19   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=144   SpecialJt=No
+   Joint=20   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=144   SpecialJt=No
+   Joint=21   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=180   SpecialJt=No
+   Joint=22   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=180   SpecialJt=No
+   Joint=23   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=180   SpecialJt=No
+   Joint=24   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=180   SpecialJt=No
+   Joint=25   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=216   SpecialJt=No
+   Joint=26   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=216   SpecialJt=No
+   Joint=27   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=216   SpecialJt=No
+   Joint=28   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=216   SpecialJt=No
+   Joint=29   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=252   SpecialJt=No
+   Joint=30   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=252   SpecialJt=No
+   Joint=31   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=252   SpecialJt=No
+   Joint=32   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=252   SpecialJt=No
+   Joint=33   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-72   Y=0   Z=0   SpecialJt=No
+   Joint=34   CoordSys=GLOBAL   CoordType=Cartesian   XorR=-24   Y=0   Z=0   SpecialJt=No
+   Joint=35   CoordSys=GLOBAL   CoordType=Cartesian   XorR=24   Y=0   Z=0   SpecialJt=No
+   Joint=36   CoordSys=GLOBAL   CoordType=Cartesian   XorR=72   Y=0   Z=0   SpecialJt=No
+ 
+TABLE:  "JOINT LOADS - FORCE"
+   Joint=1   LoadPat=WEIGHT   CoordSys=GLOBAL   F1=0   F2=0   F3=-7.91667   M1=0   M2=0   M3=0   GUID=5ff57456-eee7-4371-b083-4df133abca85
+   Joint=2   LoadPat=WEIGHT   CoordSys=GLOBAL   F1=0   F2=0   F3=-15.8333   M1=0   M2=0   M3=0   GUID=7482ea84-fc4a-4b2c-9736-ddcbf9fb5e29
+   Joint=3   LoadPat=WEIGHT   CoordSys=GLOBAL   F1=0   F2=0   F3=-15.8333   M1=0   M2=0   M3=0   GUID=610302f0-ab40-4498-8436-89906799266b
+   Joint=4   LoadPat=WEIGHT   CoordSys=GLOBAL   F1=0   F2=0   F3=-7.91667   M1=0   M2=0   M3=0   GUID=6d8cdfa0-a665-4584-ae72-9730ba54f8e2
+ 
+TABLE:  "JOINT PATTERN DEFINITIONS"
+   Pattern=DEFAULT
+ 
+TABLE:  "JOINT RESTRAINT ASSIGNMENTS"
+   Joint=33   U1=Yes   U2=No   U3=Yes   R1=No   R2=Yes   R3=No
+   Joint=34   U1=Yes   U2=No   U3=Yes   R1=No   R2=Yes   R3=No
+   Joint=35   U1=Yes   U2=No   U3=Yes   R1=No   R2=Yes   R3=No
+   Joint=36   U1=Yes   U2=No   U3=Yes   R1=No   R2=Yes   R3=No
+ 
+TABLE:  "LINK PROPERTY ASSIGNMENTS"
+   Link=1   LinkProp=FPSEX   LinkFDProp=None   PropMod=1
+   Link=2   LinkProp=FPSIN   LinkFDProp=None   PropMod=1
+   Link=3   LinkProp=FPSIN   LinkFDProp=None   PropMod=1
+   Link=4   LinkProp=FPSEX   LinkFDProp=None   PropMod=1
+ 
+TABLE:  "LINK PROPERTY DEFINITIONS 01 - GENERAL"
+   Link=DAMP   LinkType="Damper - Exponential"   Mass=0   Weight=0   RotInert1=0   RotInert2=0   RotInert3=0   DefLength=1   DefArea=1   PDM2I=0   PDM2J=0   PDM3I=0   PDM3J=0   StiffLOpt="Effective from Zero"   StiffDOpt=Initial _
+        StiffDFact=1   Color=Green   GUID=f3ebb552-2499-4284-bd46-bf5968591323
+   Link=FPSEX   LinkType="Friction Isolator"   Mass=0.0002   Weight=0   RotInert1=0   RotInert2=0   RotInert3=0   DefLength=1   DefArea=1   PDM2I=0   PDM2J=0   PDM3I=0   PDM3J=0   StiffLOpt="Effective from Zero"   StiffDOpt=Initial _
+        StiffDFact=1   Color=Green   GUID=6295c9a9-06cb-48ca-bc97-be87b132f3d8
+   Link=FPSIN   LinkType="Friction Isolator"   Mass=0.0002   Weight=0   RotInert1=0   RotInert2=0   RotInert3=0   DefLength=1   DefArea=1   PDM2I=0   PDM2J=0   PDM3I=0   PDM3J=0   StiffLOpt="Effective from Zero"   StiffDOpt=Initial _
+        StiffDFact=1   Color=Green   GUID=8807f429-861f-4f54-bb81-182b7cb1e673
+ 
+TABLE:  "LINK PROPERTY DEFINITIONS 04 - DAMPER"
+   Link=DAMP   DOF=U1   Fixed=No   NonLinear=Yes   TransKE=9.99999974737875E-06   TransCE=0   TransK=10000   TransC=5   CExp=1   FLDamper=Yes
+ 
+TABLE:  "LINK PROPERTY DEFINITIONS 08 - SLIDING ISOLATOR"
+   Link=FPSEX   DOF=U1   Fixed=No   NonLinear=Yes   TransKE=20000   TransCE=0   TransK=20000   TransC=0
+   Link=FPSEX   DOF=U2   Fixed=No   NonLinear=Yes   TransKE=1.05   TransCE=0   DJ=0   TransK=31.6667   Slow=0.04   Fast=0.06   Rate=1.0897   Radius=9.75
+   Link=FPSEX   DOF=R3   Fixed=No   NonLinear=No   RotKE=10000   RotCE=0
+   Link=FPSIN   DOF=U1   Fixed=No   NonLinear=Yes   TransKE=20000   TransCE=0   TransK=20000   TransC=0
+   Link=FPSIN   DOF=U2   Fixed=No   NonLinear=Yes   TransKE=2.1   TransCE=0   DJ=0   TransK=63.3333   Slow=0.04   Fast=0.06   Rate=1.0897   Radius=9.75
+   Link=FPSIN   DOF=R3   Fixed=No   NonLinear=No   RotKE=10000   RotCE=0
+ 
+TABLE:  "LOAD CASE DEFINITIONS"
+   Case=RITZ   Type=LinModal   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Quake   DesActOpt="Prog Det"   DesignAct=Other   AutoType=None   RunCase=Yes   GUID=19d53cdd-10af-41da-a37f-e4c37da28bc8
+   Case=MGRAV   Type=NonModHist   InitialCond=Zero   ModalCase=RITZ   DesTypeOpt="Prog Det"   DesignType=Dead   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes   GUID=6d14479b-1333-46a4-a1a8-5529b59ac64d
+   Case=NLMHIST1A   Type=NonModHist   InitialCond=MGRAV   ModalCase=RITZ   DesTypeOpt="Prog Det"   DesignType=Quake   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes   GUID=84ac0579-1864-4386-bee4-3d4557731e1b
+   Case=NLDHIST1A   Type=NonDirHist   InitialCond=DGRAV   DesTypeOpt="Prog Det"   DesignType=Quake   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes   GUID=274d10f1-06c2-4228-adf4-f98c9f8809bf
+   Case=DGRAV   Type=NonStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Dead   DesActOpt="Prog Det"   DesignAct=Non-Composite   AutoType=None   RunCase=Yes   GUID=42394db4-6d96-4d78-8b59-977a1ba19aa6
+   Case=NLMHIST2A   Type=NonModHist   InitialCond=MGRAV   ModalCase=RITZ   DesTypeOpt="Prog Det"   DesignType=Quake   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes   GUID=418ce877-e5c1-43f1-99c2-fdd76b9d43ce
+   Case=NLMHIST3A   Type=NonModHist   InitialCond=MGRAV   ModalCase=RITZ   DesTypeOpt="Prog Det"   DesignType=Quake   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes   GUID=0483a8f9-3ab9-425d-9334-3eb84bde0658
+ 
+TABLE:  "LOAD PATTERN DEFINITIONS"
+   LoadPat=WEIGHT   DesignType=Dead   SelfWtMult=1   GUID=ae20eb2e-6d66-424f-add2-27a415308732
+ 
+TABLE:  "MASS SOURCE"
+   MassSource=MSSSRC1   Elements=Yes   Masses=Yes   Loads=No   IsDefault=Yes
+ 
+TABLE:  "MATERIAL PROPERTIES 01 - GENERAL"
+   Material=A416Gr270   Type=Tendon   SymType=Uniaxial   TempDepend=No   Color=Blue   GUID=8f2710ae-909a-4b90-81d4-eeee11c0f3bb   Notes="ASTM A416 Grade 270 added 6/26/2008 9:01:16 PM"
+   Material=A992Fy50   Type=Steel   SymType=Isotropic   TempDepend=No   Color=Cyan   GUID=bee28898-a765-43e7-a7fc-c7cbb1e025f1   Notes="ASTM A992 Grade 50 12/7/2017 3:04:49 PM"
+   Material=CONC   Type=Concrete   SymType=Isotropic   TempDepend=No   Color=Black   GUID=82bf691f-66e6-44e9-99be-b65d29dad535   Notes="Normalweight f'c = 4 ksi added 9/19/2006 6:01:50 PM"
+   Material=STEEL   Type=Other   SymType=Isotropic   TempDepend=No   Color=Black   GUID=d3e43674-ead1-4bd5-8a20-3ac298918302   Notes="Material added 9/19/2006 6:01:50 PM"
+ 
+TABLE:  "MATERIAL PROPERTIES 02 - BASIC MECHANICAL PROPERTIES"
+   Material=A416Gr270   UnitWeight=0.000283564814814815   UnitMass=7.34455290352564E-07   E1=28500   A1=6.5E-06
+   Material=A992Fy50   UnitWeight=0.000283564814814815   UnitMass=7.34455290352564E-07   E1=29000   G12=11153.8461538462   U12=0.3   A1=6.5E-06
+   Material=CONC   UnitWeight=8.68E-05   UnitMass=2.246377E-07   E1=3600   G12=1500   U12=0.2   A1=5.5E-06
+   Material=STEEL   UnitWeight=0   UnitMass=0   E1=29000   G12=11153.8461538462   U12=0.3   A1=0
+ 
+TABLE:  "MATERIAL PROPERTIES 03A - STEEL DATA"
+   Material=A992Fy50   Fy=50   Fu=65   EffFy=55   EffFu=71.5   SSCurveOpt=Simple   SSHysType=Kinematic   SHard=0.015   SMax=0.11   SRup=0.17   FinalSlope=-0.1   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03B - CONCRETE DATA"
+   Material=CONC   Fc=4   eFc=4   LtWtConc=No   SSCurveOpt="User Defined"   SSHysType=Kinematic   FAngle=0   DAngle=0   CoupModType="Modified Darwin-Pecknold"
+ 
+TABLE:  "MATERIAL PROPERTIES 03F - TENDON DATA"
+   Material=A416Gr270   Fy=245.1   Fu=270   SSCurveOpt="270 ksi"   SSHysType=Kinematic   FinalSlope=-0.1   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03G - OTHER DATA"
+   Material=STEEL   SSHysType=Elastic   FAngle=0   DAngle=0   CoupModType=None
+ 
+TABLE:  "MATERIAL PROPERTIES 03J - COUPLED NONLINEAR VON MISES DATA"
+   Material=A416Gr270   YieldStress=245.1   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+   Material=A992Fy50   YieldStress=55   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+ 
+TABLE:  "MATERIAL PROPERTIES 04 - USER STRESS-STRAIN CURVES"
+   Material=CONC   Strain=-5.55555555555556E-05   Stress=0   PointID=-E
+   Material=CONC   Strain=-3.88888888888889E-05   Stress=-120   PointID=-D
+   Material=CONC   Strain=-2.22222222222222E-05   Stress=-240   PointID=-C
+   Material=CONC   Strain=-2.29885057471264E-06   Stress=-240   PointID=-B
+   Material=CONC   Strain=0   Stress=0   PointID=A
+   Material=CONC   Strain=2.29885057471264E-06   Stress=240   PointID=B
+   Material=CONC   Strain=2.22222222222222E-05   Stress=240
+   Material=CONC   Strain=5.55555555555556E-05   Stress=300   PointID=C
+   Material=CONC   Strain=8.88888888888889E-05   Stress=300   PointID=D
+   Material=CONC   Strain=0.000111111111111111   Stress=240   PointID=E
+   Material=STEEL   Strain=-3.44827586206897E-05   Stress=-1
+   Material=STEEL   Strain=0   Stress=0   PointID=A
+   Material=STEEL   Strain=3.44827586206897E-05   Stress=1
+ 
+TABLE:  "MATERIAL PROPERTIES 06 - DAMPING PARAMETERS"
+   Material=A416Gr270   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=A992Fy50   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=CONC   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=STEEL   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+ 
+TABLE:  "MATERIAL PROPERTIES 09 - ACCEPTANCE CRITERIA"
+   Material=A416Gr270   IOTens=0.015   LSTens=0.023   CPTens=0.03   IOComp=-0.015   LSComp=-0.023   CPComp=-0.03
+   Material=A992Fy50   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02
+   Material=CONC   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.003   LSComp=-0.006   CPComp=-0.015   IgnoreTens=Yes
+   Material=STEEL   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02   IgnoreTens=No
+ 
+TABLE:  "NAMED SETS - DATABASE TABLES 1 - GENERAL"
+   DBNamedSet=DBO1   SortOrder="Elem, Cases"   Unformatted=Yes   ModeStart=1   ModeEnd=All   ModalHist=Envelopes   DirectHist=Envelopes   NLStatic=LastStep   BaseReacX=0   BaseReacY=0   BaseReacZ=0   Combo=Envelopes   Steady=Frequencies _
+        SteadyOpt=Magnitude   PSD=RMS   Multistep=Envelopes
+ 
+TABLE:  "NAMED SETS - DATABASE TABLES 2 - SELECTIONS"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Joint Displacements"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Element Forces - Links"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Element Deformations - Links"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Base Reactions"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Modal Periods And Frequencies"
+   DBNamedSet=DBO1   SelectType=LoadCase   Selection=NLMHIST1A
+   DBNamedSet=DBO1   SelectType=LoadCase   Selection=NLDHIST1A
+   DBNamedSet=DBO1   SelectType=LoadCase   Selection=NLMHIST2A
+   DBNamedSet=DBO1   SelectType=LoadCase   Selection=NLMHIST3A
+ 
+TABLE:  "OPTIONS - COLORS - DISPLAY"
+   DeviceType=Screen   Points=Yellow   LinesFrame=Yellow   LinesFrmDL=Yellow   LinesCable=Green   LinesTendon=Green   SpringLinks=Green   Restraints=Green   Releases=Green   Axes=Cyan   Text=Green   ShadowLines=Gray8Dark _
+        GuideLines=Gray8Dark   Highlight=Red   Selection=White   AreaFillBot=Red   AreaFillTop=Yellow   AreaFillSd=Red   AreaEdge=DarkRed   SolidF1=Red   SolidF2=Blue   SolidF3=Green   SolidF4=Yellow   SolidF5=White   SolidF6=Cyan _
+        SolidEdge=DarkRed   Floor=Gray4   Background=Black   BGLowLeft=Black   BGLowRight=Black   BGUpRight=Black   Darkness=0.5
+   DeviceType=Printer   Points=Gray8Dark   LinesFrame=Black   LinesFrmDL=Gray4   LinesCable=Black   LinesTendon=Black   SpringLinks=Gray8Dark   Restraints=Gray8Dark   Releases=Gray4   Axes=Black   Text=Black   ShadowLines=Gray4 _
+        GuideLines=Gray4   Highlight=Black   Selection=Black   AreaFillBot=Gray4   AreaFillTop=Gray8Dark   AreaFillSd=Gray4   AreaEdge=Black   SolidF1=Gray1Light   SolidF2=Gray2   SolidF3=Gray3   SolidF4=Gray4   SolidF5=Gray5 _
+        SolidF6=Gray6   SolidEdge=Black   Floor=Gray4   Background=White   BGLowLeft=White   BGLowRight=White   BGUpRight=White   Darkness=0.5
+   DeviceType="Color Printer"   Points=Yellow   LinesFrame=Blue   LinesFrmDL=7303023   LinesCable=Green   LinesTendon=Green   SpringLinks=Green   Restraints=Green   Releases=Green   Axes=Cyan   Text=Green   ShadowLines=Gray8Dark _
+        GuideLines=Gray8Dark   Highlight=Red   Selection=10504778   AreaFillBot=Red   AreaFillTop=Yellow   AreaFillSd=16634568   AreaEdge=DarkRed   SolidF1=Red   SolidF2=Blue   SolidF3=Green   SolidF4=Yellow   SolidF5=White   SolidF6=Cyan _
+        SolidEdge=DarkRed   Floor=10461087   Background=White   BGLowLeft=White   BGLowRight=14671839   BGUpRight=White   Darkness=0.5
+ 
+TABLE:  "OPTIONS - COLORS - OUTPUT"
+   DeviceType=Screen   Contour1=13107400   Contour2=6553828   Contour3=Red   Contour4=16639   Contour5=Orange   Contour6=43775   Contour7=54527   Contour8=Yellow   Contour9=65408   Contour10=Green   Contour11=8453888   Contour12=Cyan _
+        Contour13=16755200   Contour14=16733440   Contour15=Blue   Transpare=0.5   Ratio1=Cyan   Ratio2=Green   Ratio3=Yellow   Ratio4=Orange   Ratio5=Red   RatioNotD=Gray4   RatioNotC=Red   RatioVal1=0.5   RatioVal2=0.7   RatioVal3=0.9 _
+        RatioVal4=1   DFillPos=Yellow   DFillNeg=Red   DFillRPos=Blue   DFillRNeg=Blue
+   DeviceType=Printer   Contour1=Black   Contour2=3158064   Contour3=4210752   Contour4=5263440   Contour5=6316128   Contour6=7368816   Contour7=Gray8Dark   Contour8=Gray7   Contour9=Gray6   Contour10=Gray5   Contour11=Gray4 _
+        Contour12=Gray3   Contour13=Gray2   Contour14=Gray1Light   Contour15=White   Transpare=0   Ratio1=Gray2   Ratio2=Gray4   Ratio3=Gray8Dark   Ratio4=4210752   Ratio5=Black   RatioNotD=Gray4   RatioNotC=Black   RatioVal1=0.5 _
+        RatioVal2=0.7   RatioVal3=0.9   RatioVal4=1   DFillPos=Gray8Dark   DFillNeg=Gray8Dark   DFillRPos=4210752   DFillRNeg=4210752
+   DeviceType="Color Printer"   Contour1=13107400   Contour2=6553828   Contour3=Red   Contour4=16639   Contour5=Orange   Contour6=43775   Contour7=54527   Contour8=Yellow   Contour9=65408   Contour10=Green   Contour11=8453888 _
+        Contour12=Cyan   Contour13=16755200   Contour14=16733440   Contour15=Blue   Transpare=0.5   Ratio1=Cyan   Ratio2=Green   Ratio3=Yellow   Ratio4=Orange   Ratio5=Red   RatioNotD=Gray4   RatioNotC=Red   RatioVal1=0.5   RatioVal2=0.7 _
+        RatioVal3=0.9   RatioVal4=1   DFillPos=Red   DFillNeg=Red   DFillRPos=Blue   DFillRNeg=Blue
+ 
+TABLE:  "PREFERENCES - ALUMINUM DESIGN - AA 2015"
+   THDesign=Envelopes   SRatioLimit=1   Provision=ASD   LatFact=1.33333333333333   UseLatFact=No   Bridge=No   OmegaTy=1.65   OmegaTr=1.95   OmegaC=1.65   OmegaBo=1.65   OmegaBr=1.95   OmegaVo=1.65   OmegaVr=1.95
+ 
+TABLE:  "PREFERENCES - COLD FORMED DESIGN - AISI-ASD96"
+   THDesign=Envelopes   FrameType="Moment Frame"   SRatioLimit=1   MaxIter=1   OmegaBS=1.67   OmegaBUS=1.67   OmegaBLTB=1.67   OmegaVS=1.67   OmegaVNS=1.5   OmegaT=1.67   OmegaC=1.8
+ 
+TABLE:  "PREFERENCES - CONCRETE DESIGN - ACI 318-08/IBC2009"
+   THDesign=Envelopes   NumCurves=24   NumPoints=11   MinEccen=Yes   PatLLF=0.75   UFLimit=0.95   Rho=1   Sds=0.5   PhiT=0.9   PhiCTied=0.65   PhiCSpiral=0.7   PhiV=0.75   PhiVSeismic=0.6   PhiVJoint=0.85   TanTheta=1
+ 
+TABLE:  "PREFERENCES - CONCRETE SHELL DESIGN - EUROCODE 2-2004"
+   Country="CEN Default"   GammaS=1.15   GammaC=1.5   AlphaCC=1   AlphaCT=1   CrackCond="Program Determined"   ShrDesMet="Method 1"   CotTheta=1   AddTenForce=Yes
+ 
+TABLE:  "PREFERENCES - DIMENSIONAL"
+   MergeTol=0.1   FineGrid=12   Nudge=12   SelectTol=3   SnapTol=12   SLineThick=1   PLineThick=4   MaxFont=12   MinFont=3   AutoZoom=10   ShrinkFact=70   TextFileLen=240
+ 
+TABLE:  "PREFERENCES - STEEL DESIGN - AISC360-05-IBC2006"
+   THDesign=Envelopes   FrameType=SMF   PatLLF=0.75   SRatioLimit=1   MaxIter=1   SDC=E   SeisCode=No   SeisLoad=No   ImpFactor=1   SystemRho=1   SystemSds=0.5   SystemR=8   SystemCd=5.5   Omega0=2.8   Provision=ASD _
+        AMethod="Direct Analysis"   SOMethod="General 2nd Order"   SRMethod="Tau-b Fixed"   NLCoeff=0.002   OmegaB=1.67   OmegaC=1.67   OmegaTY=1.67   OmegaTF=2   OmegaV=1.67   OmegaVRolledI=1.5   OmegaVT=1.67   PlugWeld=Yes _
+        HSSWelding=ERW   HSSReduceT=No   CheckDefl=No   DLRat=120   SDLAndLLRat=120   LLRat=360   TotalRat=240   NetRat=240
+ 
+TABLE:  "PROGRAM CONTROL"
+   ProgramName=SAP2000   Version=25.2.0   CurrUnits="Kip, in, F"   SteelCode=AISC360-05/IBC2006   ConcCode="ACI 318-08/IBC2009"   AlumCode="AA 2015"   ColdCode=AISI-ASD96   RegenHinge=No
+ 
+TABLE:  "PROJECT INFORMATION"
+   Item="Company Name"
+   Item="Client Name"
+   Item="Project Name"
+   Item="Project Number"
+   Item="Model Name"   Data="7-STORY FPS ISOLATED BUILDING (UPLIFT)"
+   Item="Model Description"
+   Item="Revision Number"
+   Item="Frame Type"
+   Item=Engineer
+   Item=Checker
+   Item=Supervisor
+   Item="Issue Code"
+   Item="Design Code"
+ 
+TABLE:  "REBAR SIZES"
+   RebarID=#2   Area=0.05   Diameter=0.25
+   RebarID=#3   Area=0.109999999403954   Diameter=0.375
+   RebarID=#4   Area=0.200000002980232   Diameter=0.5
+   RebarID=#5   Area=0.310000002384186   Diameter=0.625
+   RebarID=#6   Area=0.439999997615814   Diameter=0.75
+   RebarID=#7   Area=0.600000023841858   Diameter=0.875
+   RebarID=#8   Area=0.790000021457672   Diameter=1
+   RebarID=#9   Area=1   Diameter=1.12800002098083
+   RebarID=#10   Area=1.26999998092651   Diameter=1.26999998092651
+   RebarID=#11   Area=1.55999994277954   Diameter=1.4099999666214
+   RebarID=#14   Area=2.25   Diameter=1.692999958992
+   RebarID=#18   Area=4   Diameter=2.25699996948242
+   RebarID=10M   Area=0.155000316452672   Diameter=0.444881903954482
+   RebarID=15M   Area=0.310000632905345   Diameter=0.629921269302988
+   RebarID=20M   Area=0.465000949358017   Diameter=0.767716546963017
+   RebarID=25M   Area=0.775001582263362   Diameter=0.992126029189193
+   RebarID=30M   Area=1.08500221516871   Diameter=1.17716535699147
+   RebarID=35M   Area=1.55000316452672   Diameter=1.40551186216928
+   RebarID=45M   Area=2.32500474679009   Diameter=1.72047249682077
+   RebarID=55M   Area=3.87500791131681   Diameter=2.22047253436701
+   RebarID=6Ø   Area=0.0438650883735477   Diameter=0.23622047598862
+   RebarID=8Ø   Area=0.0779651579931357   Diameter=0.314960634651494
+   RebarID=10Ø   Area=0.121675248415348   Diameter=0.393700793314367
+   RebarID=12Ø   Area=0.17515035759152   Diameter=0.472440951977241
+   RebarID=14Ø   Area=0.238700487337116   Diameter=0.551181110640114
+   RebarID=16Ø   Area=0.311550636069872   Diameter=0.629921269302988
+   RebarID=20Ø   Area=0.486700993661391   Diameter=0.787401586628735
+   RebarID=25Ø   Area=0.761051553782622   Diameter=0.984251983285919
+   RebarID=26Ø   Area=0.823051680363691   Diameter=1.02362206261736
+   RebarID=28Ø   Area=0.954801949348462   Diameter=1.10236222128023
+ 
+TABLE:  "SOLID PROPERTY DEFINITIONS"
+   SolidProp=SOLID1   Material=CONC   MatAngleA=0   MatAngleB=0   MatAngleC=0   InComp=Yes   Color=Cyan   GUID=c2e10f52-f0ee-4cdc-b61c-8635ea7985c4
+ 
+TABLE:  "TABLES AUTOMATICALLY SAVED AFTER ANALYSIS"
+   SaveFile=Yes   FileType=XML   FileName="Example 6-011a.xml"   NamedSet=DBO1   Group=DBO1
+ 
+TABLE:  "TENDON SECTION DEFINITIONS"
+   TendonSect=TEN1   ModelOpt=Loads   PreType="Post Tension"   Material=A416Gr270   Specify=Area   Diameter=1.12837916709551   Area=1   Color=Gray8Dark   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=c77f847a-2a47-41ce-b29f-bd9bc154cf23
+ 
+END TABLE DATA

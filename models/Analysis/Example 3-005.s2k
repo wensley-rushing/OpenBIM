@@ -1,0 +1,1047 @@
+File E:\SAP2000\Analysis Examples\Example 3-005.$2k was saved on m/d/yy at h:mm:ss
+ 
+TABLE:  "ACTIVE DEGREES OF FREEDOM"
+   UX=Yes   UY=No   UZ=Yes   RX=No   RY=No   RZ=No
+ 
+TABLE:  "ANALYSIS OPTIONS"
+   Solver=Advanced   SolverProc=Auto   Force32Bit=No   StiffCase=None   GeomMod=None   HingeOpt="In Elements"   NumAThreads=0   MaxFileSize=0   NumDThreads=0   NumRThreads=0   UseMMFiles="Program Determined"   AllowDiff=No
+ 
+TABLE:  "AREA LOADS - PORE PRESSURE"
+   Area=2   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=3   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=4   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=5   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=6   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=7   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=8   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=9   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=10   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=11   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=12   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=13   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=14   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=15   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=16   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=17   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=18   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=19   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=20   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=21   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=22   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=23   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=24   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=25   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=26   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=27   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=28   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=29   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=30   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=31   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=32   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=33   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=34   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=35   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=36   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=37   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=38   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=39   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=40   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=41   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=42   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=43   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=44   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=45   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=46   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=47   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=48   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=49   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=50   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=51   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=52   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=53   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=54   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=55   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=56   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=57   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=58   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=59   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=60   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=61   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=62   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=63   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=64   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+   Area=65   LoadPat=SOIL   Pressure=1   JtPattern=WATER
+ 
+TABLE:  "AREA SECTION ASSIGNMENTS"
+   Area=2   Section=WET   MatProp=Default
+   Area=3   Section=WET   MatProp=Default
+   Area=4   Section=WET   MatProp=Default
+   Area=5   Section=WET   MatProp=Default
+   Area=6   Section=WET   MatProp=Default
+   Area=7   Section=WET   MatProp=Default
+   Area=8   Section=DRY   MatProp=Default
+   Area=9   Section=DRY   MatProp=Default
+   Area=10   Section=WET   MatProp=Default
+   Area=11   Section=WET   MatProp=Default
+   Area=12   Section=WET   MatProp=Default
+   Area=13   Section=WET   MatProp=Default
+   Area=14   Section=WET   MatProp=Default
+   Area=15   Section=WET   MatProp=Default
+   Area=16   Section=DRY   MatProp=Default
+   Area=17   Section=DRY   MatProp=Default
+   Area=18   Section=WET   MatProp=Default
+   Area=19   Section=WET   MatProp=Default
+   Area=20   Section=WET   MatProp=Default
+   Area=21   Section=WET   MatProp=Default
+   Area=22   Section=WET   MatProp=Default
+   Area=23   Section=WET   MatProp=Default
+   Area=24   Section=DRY   MatProp=Default
+   Area=25   Section=DRY   MatProp=Default
+   Area=26   Section=WET   MatProp=Default
+   Area=27   Section=WET   MatProp=Default
+   Area=28   Section=WET   MatProp=Default
+   Area=29   Section=WET   MatProp=Default
+   Area=30   Section=WET   MatProp=Default
+   Area=31   Section=WET   MatProp=Default
+   Area=32   Section=DRY   MatProp=Default
+   Area=33   Section=DRY   MatProp=Default
+   Area=34   Section=WET   MatProp=Default
+   Area=35   Section=WET   MatProp=Default
+   Area=36   Section=WET   MatProp=Default
+   Area=37   Section=WET   MatProp=Default
+   Area=38   Section=WET   MatProp=Default
+   Area=39   Section=WET   MatProp=Default
+   Area=40   Section=DRY   MatProp=Default
+   Area=41   Section=DRY   MatProp=Default
+   Area=42   Section=WET   MatProp=Default
+   Area=43   Section=WET   MatProp=Default
+   Area=44   Section=WET   MatProp=Default
+   Area=45   Section=WET   MatProp=Default
+   Area=46   Section=WET   MatProp=Default
+   Area=47   Section=WET   MatProp=Default
+   Area=48   Section=DRY   MatProp=Default
+   Area=49   Section=DRY   MatProp=Default
+   Area=50   Section=WET   MatProp=Default
+   Area=51   Section=WET   MatProp=Default
+   Area=52   Section=WET   MatProp=Default
+   Area=53   Section=WET   MatProp=Default
+   Area=54   Section=WET   MatProp=Default
+   Area=55   Section=WET   MatProp=Default
+   Area=56   Section=DRY   MatProp=Default
+   Area=57   Section=DRY   MatProp=Default
+   Area=58   Section=WET   MatProp=Default
+   Area=59   Section=WET   MatProp=Default
+   Area=60   Section=WET   MatProp=Default
+   Area=61   Section=WET   MatProp=Default
+   Area=62   Section=WET   MatProp=Default
+   Area=63   Section=WET   MatProp=Default
+   Area=64   Section=DRY   MatProp=Default
+   Area=65   Section=DRY   MatProp=Default
+ 
+TABLE:  "AREA SECTION PROPERTIES"
+   Section=DRY   Material=SOILDRY   MatAngle=0   AreaType=Plane   Type=Plane-Stress   Thickness=40   InComp=Yes   Color=Magenta   F11Mod=1   F22Mod=1   F12Mod=1   M11Mod=1   M22Mod=1   M12Mod=1   V13Mod=1   V23Mod=1   MMod=1   WMod=1   GUID=b647e9b5-d0da-4c9c-b947-720cf733f110
+   Section=WET   Material=SOILWET   MatAngle=0   AreaType=Plane   Type=Plane-Stress   Thickness=40   InComp=Yes   Color=Cyan   F11Mod=1   F22Mod=1   F12Mod=1   M11Mod=1   M22Mod=1   M12Mod=1   V13Mod=1   V23Mod=1   MMod=1   WMod=1   GUID=4ff9d1f7-82f2-42ef-9e71-b154f56f75c5
+ 
+TABLE:  "AUTO WAVE 3 - WAVE CHARACTERISTICS - GENERAL"
+   WaveChar=Default   WaveType="From Theory"   KinFactor=1   SWaterDepth=150   WaveHeight=60   WavePeriod=12   WaveTheory=Linear
+ 
+TABLE:  "CABLE SECTION DEFINITIONS"
+   CableSect=CAB1   Material=ALUM   Specify=Area   Diameter=0.0940315972579594   Area=0.00694444444444444   Color=Gray8Dark   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   GUID=27d9c4fe-78ae-46d4-a891-e6bc82d9c98d
+ 
+TABLE:  "CASE - STATIC 1 - LOAD ASSIGNMENTS"
+   Case=SOIL   LoadType="Load pattern"   LoadName=SOIL   LoadSF=1
+ 
+TABLE:  "CONNECTIVITY - AREA"
+   Area=2   Joint1=1   Joint2=5   Joint3=6   Joint4=7
+   Area=3   Joint1=7   Joint2=6   Joint3=8   Joint4=9
+   Area=4   Joint1=9   Joint2=8   Joint3=10   Joint4=11
+   Area=5   Joint1=11   Joint2=10   Joint3=12   Joint4=13
+   Area=6   Joint1=13   Joint2=12   Joint3=14   Joint4=15
+   Area=7   Joint1=15   Joint2=14   Joint3=16   Joint4=17
+   Area=8   Joint1=17   Joint2=16   Joint3=18   Joint4=19
+   Area=9   Joint1=19   Joint2=18   Joint3=20   Joint4=4
+   Area=10   Joint1=5   Joint2=21   Joint3=22   Joint4=6
+   Area=11   Joint1=6   Joint2=22   Joint3=23   Joint4=8
+   Area=12   Joint1=8   Joint2=23   Joint3=24   Joint4=10
+   Area=13   Joint1=10   Joint2=24   Joint3=25   Joint4=12
+   Area=14   Joint1=12   Joint2=25   Joint3=26   Joint4=14
+   Area=15   Joint1=14   Joint2=26   Joint3=27   Joint4=16
+   Area=16   Joint1=16   Joint2=27   Joint3=28   Joint4=18
+   Area=17   Joint1=18   Joint2=28   Joint3=29   Joint4=20
+   Area=18   Joint1=21   Joint2=30   Joint3=31   Joint4=22
+   Area=19   Joint1=22   Joint2=31   Joint3=32   Joint4=23
+   Area=20   Joint1=23   Joint2=32   Joint3=33   Joint4=24
+   Area=21   Joint1=24   Joint2=33   Joint3=34   Joint4=25
+   Area=22   Joint1=25   Joint2=34   Joint3=35   Joint4=26
+   Area=23   Joint1=26   Joint2=35   Joint3=36   Joint4=27
+   Area=24   Joint1=27   Joint2=36   Joint3=37   Joint4=28
+   Area=25   Joint1=28   Joint2=37   Joint3=38   Joint4=29
+   Area=26   Joint1=30   Joint2=39   Joint3=40   Joint4=31
+   Area=27   Joint1=31   Joint2=40   Joint3=41   Joint4=32
+   Area=28   Joint1=32   Joint2=41   Joint3=42   Joint4=33
+   Area=29   Joint1=33   Joint2=42   Joint3=43   Joint4=34
+   Area=30   Joint1=34   Joint2=43   Joint3=44   Joint4=35
+   Area=31   Joint1=35   Joint2=44   Joint3=45   Joint4=36
+   Area=32   Joint1=36   Joint2=45   Joint3=46   Joint4=37
+   Area=33   Joint1=37   Joint2=46   Joint3=47   Joint4=38
+   Area=34   Joint1=39   Joint2=48   Joint3=49   Joint4=40
+   Area=35   Joint1=40   Joint2=49   Joint3=50   Joint4=41
+   Area=36   Joint1=41   Joint2=50   Joint3=51   Joint4=42
+   Area=37   Joint1=42   Joint2=51   Joint3=52   Joint4=43
+   Area=38   Joint1=43   Joint2=52   Joint3=53   Joint4=44
+   Area=39   Joint1=44   Joint2=53   Joint3=54   Joint4=45
+   Area=40   Joint1=45   Joint2=54   Joint3=55   Joint4=46
+   Area=41   Joint1=46   Joint2=55   Joint3=56   Joint4=47
+   Area=42   Joint1=48   Joint2=57   Joint3=58   Joint4=49
+   Area=43   Joint1=49   Joint2=58   Joint3=59   Joint4=50
+   Area=44   Joint1=50   Joint2=59   Joint3=60   Joint4=51
+   Area=45   Joint1=51   Joint2=60   Joint3=61   Joint4=52
+   Area=46   Joint1=52   Joint2=61   Joint3=62   Joint4=53
+   Area=47   Joint1=53   Joint2=62   Joint3=63   Joint4=54
+   Area=48   Joint1=54   Joint2=63   Joint3=64   Joint4=55
+   Area=49   Joint1=55   Joint2=64   Joint3=65   Joint4=56
+   Area=50   Joint1=57   Joint2=66   Joint3=67   Joint4=58
+   Area=51   Joint1=58   Joint2=67   Joint3=68   Joint4=59
+   Area=52   Joint1=59   Joint2=68   Joint3=69   Joint4=60
+   Area=53   Joint1=60   Joint2=69   Joint3=70   Joint4=61
+   Area=54   Joint1=61   Joint2=70   Joint3=71   Joint4=62
+   Area=55   Joint1=62   Joint2=71   Joint3=72   Joint4=63
+   Area=56   Joint1=63   Joint2=72   Joint3=73   Joint4=64
+   Area=57   Joint1=64   Joint2=73   Joint3=74   Joint4=65
+   Area=58   Joint1=66   Joint2=2   Joint3=75   Joint4=67
+   Area=59   Joint1=67   Joint2=75   Joint3=76   Joint4=68
+   Area=60   Joint1=68   Joint2=76   Joint3=77   Joint4=69
+   Area=61   Joint1=69   Joint2=77   Joint3=78   Joint4=70
+   Area=62   Joint1=70   Joint2=78   Joint3=79   Joint4=71
+   Area=63   Joint1=71   Joint2=79   Joint3=80   Joint4=72
+   Area=64   Joint1=72   Joint2=80   Joint3=81   Joint4=73
+   Area=65   Joint1=73   Joint2=81   Joint3=3   Joint4=74
+ 
+TABLE:  "COORDINATE SYSTEMS"
+   Name=GLOBAL   Type=Cartesian   X=0   Y=0   Z=0   AboutZ=0   AboutY=0   AboutX=0
+ 
+TABLE:  "DATABASE DOCUMENTATION"
+ 
+TABLE:  "DATABASE FORMAT TYPES"
+   UnitsCurr=Yes   OverrideE=No
+ 
+TABLE:  "FRAME SECTION PROPERTIES 01 - GENERAL"
+   SectionName=W10X112   Material=STEEL   Shape="I/Wide Flange"   t3=0.949999968210856   t2=0.866666634877523   tf=0.104166666666667   tw=0.0629166662693024   t2b=0.866666634877523   tfb=0.104166666666667   FilletRadius=0.0416666666666667 _
+        Area=0.228472232818604   TorsConst=0.000728202178890322   I33=0.0345293209876543   I22=0.0113811728395062   I23=0   AS2=0.059770835770501   AS3=0.150462958547804   S33Top=0.0726933097749123   S33Bot=0.0726933097749123 _
+        S22Left=0.0262642459776118   S22Right=0.0262642459776118   Z33=0.0850694444444444   Z22=0.0400462945302327   R33=0.388756180048965   R22=0.223191060823595   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00202135836923836 _
+        Color=Blue   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W10X112   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=faeb6e75-4950-4ba9-85cc-d557cc3319a8
+   SectionName=W10X12   Material=STEEL   Shape="I/Wide Flange"   t3=0.822499990463257   t2=0.330000003178914   tf=0.0174999994536241   tw=0.0158333331346512   t2b=0.330000003178914   tfb=0.0174999994536241   FilletRadius=0.0249999997516473 _
+        Area=0.0245833330684238   TorsConst=2.63792430309372E-06   I33=0.00259452156814528   I22=0.000105131176058893   I23=0   AS2=0.0130229170123736   AS3=0.00962500025828679   S33Top=0.00630886710815393   S33Bot=0.00630886710815393 _
+        S22Left=0.000637158636643373   S22Right=0.000637158636643373   Z33=0.00729166688742461   Z22=0.00100694444996339   R33=0.324868991343319   R22=0.0653951256749208   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0 _
+        Cw=1.6980887182838E-05   Color=Magenta   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W10X12   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=da3b84ab-ea66-4388-8d3f-a8e0e89644e3
+   SectionName=W10X49   Material=STEEL   Shape="I/Wide Flange"   t3=0.831666628519694   t2=0.833333333333333   tf=0.0466666668653488   tw=0.0283333336313566   t2b=0.833333333333333   tfb=0.0466666668653488   FilletRadius=0.0416666616996129 _
+        Area=0.0999999973509047   TorsConst=6.70331783224771E-05   I33=0.0131172839506173   I22=0.00450424390074647   I23=0   AS2=0.0235638883378771   AS3=0.0648148126072354   S33Top=0.0315445720696166   S33Bot=0.0315445720696166 _
+        S22Left=0.0108101853617915   S22Right=0.0108101853617915   Z33=0.0349537045867355   Z22=0.0163773143732989   R33=0.362177916197366   R22=0.212232043293848   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000693411554293049 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W10X49   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=d63cb2d3-1f65-4148-b95e-ef800be576b5
+   SectionName=W10X68   Material=STEEL   Shape="I/Wide Flange"   t3=0.866666634877523   t2=0.841666698455811   tf=0.0641666650772095   tw=0.0391666665673256   t2b=0.841666698455811   tfb=0.0641666650772095   FilletRadius=0.0416666666666667 _
+        Area=0.138888888888889   TorsConst=0.000171682096005958   I33=0.0190007716049383   I22=0.00646219135802469   I23=0   AS2=0.0339444445239173   AS3=0.0900115768114726   S33Top=0.0438479360812672   S33Bot=0.0438479360812672 _
+        S22Left=0.0153557016569166   S22Right=0.0153557016569166   Z33=0.0493634276919895   Z22=0.0232060176354867   R33=0.369872350352869   R22=0.215702985092413   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00102661760743174 _
+        Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W10X68   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=b31976b6-1ef7-4df5-bb28-40d519cf9648
+   SectionName=W10X88   Material=STEEL   Shape="I/Wide Flange"   t3=0.900000015894572   t2=0.858333349227905   tf=0.0825000007947286   tw=0.0504166682561239   t2b=0.858333349227905   tfb=0.0825000007947286   FilletRadius=0.0416666666666667 _
+        Area=0.179861108462016   TorsConst=0.000363136584192146   I33=0.0257523148148148   I22=0.00863233024691358   I23=0   AS2=0.04537499944369   AS3=0.118020839161343   S33Top=0.0572273652444724   S33Bot=0.0572273652444724 _
+        S22Left=0.0201141671931508   S22Right=0.0201141671931508   Z33=0.0653935185185185   Z22=0.0307291657836349   R33=0.378389872073384   R22=0.219076296530026   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00145273436423665 _
+        Color=Gray8Dark   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W10X88   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=a47b49e7-12e9-4c4e-848d-fcf8e94c1e90
+   SectionName=W12X136   Material=STEEL   Shape="I/Wide Flange"   t3=1.11666663487752   t2=1.03333330154419   tf=0.104166666666667   tw=0.0658333351214727   t2b=1.03333330154419   tfb=0.104166666666667   FilletRadius=0.0500000019868215 _
+        Area=0.277083343929715   TorsConst=0.000892168209876543   I33=0.0597993827160494   I22=0.0191936728395062   I23=0   AS2=0.0735138919618395   AS3=0.179398152563307   S33Top=0.107103375077752   S33Bot=0.107103375077752 _
+        S22Left=0.0371490453483374   S22Right=0.0371490453483374   Z33=0.123842592592593   Z22=0.056712962962963   R33=0.46456141986509   R22=0.2631926966477   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0049094047562058 _
+        Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W12X136   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=68cccc1b-999a-4347-bf88-2204d11f84fd
+   SectionName=W12X14   Material=STEEL   Shape="I/Wide Flange"   t3=0.991666634877523   t2=0.330833335717519   tf=0.0187499995032946   tw=0.0166666669150194   t2b=0.330833335717519   tfb=0.0187499995032946   FilletRadius=0.0249999985098839 _
+        Area=0.0288888878292508   TorsConst=3.39506170999857E-06   I33=0.00427276227209303   I22=0.000113811723336026   I23=0   AS2=0.0165277785725064   AS3=0.0103385415342119   S33Top=0.0086173359510492   S33Bot=0.0086173359510492 _
+        S22Left=0.000688030564327431   S22Right=0.000688030564327431   Z33=0.0100694442236865   Z22=0.00109953702323967   R33=0.38458200015558   R22=0.0627665254854949   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0 _
+        Cw=2.67774408609652E-05   Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W12X14   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=530a51eb-d57a-4dc9-bd55-93a3091e5ebc
+   SectionName=W12X16   Material=STEEL   Shape="I/Wide Flange"   t3=1   t2=0.332500000794729   tf=0.0220833321412404   tw=0.0183333332339923   t2b=0.332500000794729   tfb=0.0220833321412404   FilletRadius=0.0250000009934107 _
+        Area=0.0327083335982429   TorsConst=4.96720679587236E-06   I33=0.00496720679012346   I22=0.000135995367150984   I23=0   AS2=0.0183333340618345   AS3=0.0122378468513489   S33Top=0.00993441358024691   S33Bot=0.00993441358024691 _
+        S22Left=0.000818017244065762   S22Right=0.000818017244065762   Z33=0.0116319446652024   Z22=0.00130787036485142   R33=0.389696864057964   R22=0.0644811608806859   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0 _
+        Cw=3.23468512651873E-05   Color=Cyan   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W12X16   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=a7770604-7d9f-45a4-a7aa-d2971848bcc6
+   SectionName=W12X19   Material=STEEL   Shape="I/Wide Flange"   t3=1.01666665077209   t2=0.334166685740153   tf=0.0291666661699613   tw=0.0195833332836628   t2b=0.334166685740153   tfb=0.0291666661699613   FilletRadius=0.0249999985098839 _
+        Area=0.0386805567476484   TorsConst=8.68055590048984E-06   I33=0.00626929012345679   I22=0.000181327160033915   I23=0   AS2=0.019909722937478   AS3=0.0162442127863566   S33Top=0.0123330299438772   S33Bot=0.0123330299438772 _
+        S22Left=0.00108524977367082   S22Right=0.00108524977367082   Z33=0.0142939819229974   Z22=0.00172453704807493   R33=0.402589854139694   R22=0.068467594767479   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=4.42220833017336E-05 _
+        Color=Red   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W12X19   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=58fea40a-b3c3-4840-82ee-b4d31fdb3aa5
+   SectionName=W12X190   Material=STEEL   Shape="I/Wide Flange"   t3=1.19999996821086   t2=1.05833331743876   tf=0.145000000794729   tw=0.0883333285649617   t2b=1.05833331743876   tfb=0.145000000794729   FilletRadius=0.0491666595141093 _
+        Area=0.387499994701809   TorsConst=0.0023533950249354   I33=0.0911458333333333   I22=0.0284047067901235   I23=0   AS2=0.105999999576145   AS3=0.255763901604546   S33Top=0.151909726246456   S33Bot=0.151909726246456 _
+        S22Left=0.0536781868662413   S22Right=0.0536781868662413   Z33=0.179976851851852   Z22=0.0827546296296296   R33=0.484989749355053   R22=0.270744289206714   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00797129828173654 _
+        Color=Gray8Dark   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W12X190   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=559c8605-36d2-4738-a4f1-136614dcfa67
+   SectionName=W12X65   Material=STEEL   Shape="I/Wide Flange"   t3=1.00833336512248   t2=1   tf=0.0504166682561239   tw=0.0324999988079071   t2b=1   tfb=0.0504166682561239   FilletRadius=0.0495833357175191   Area=0.132638891537984 _
+        TorsConst=0.000105131176058893   I33=0.0257040895061728   I22=0.0083912037037037   I23=0   AS2=0.032770832379659   AS3=0.0840277804268731   S33Top=0.0509833164214509   S33Bot=0.0509833164214509   S22Left=0.0167824074074074 _
+        S22Right=0.0167824074074074   Z33=0.0560185202845821   Z22=0.0255208324503016   R33=0.440215845139909   R22=0.251522412603521   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00192760652213124   Color=Magenta   FromFile=Yes _
+        AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W12X65   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=86551183-da86-4bb6-9886-f03016bad2ad
+   SectionName=W12X96   Material=STEEL   Shape="I/Wide Flange"   t3=1.05833331743876   t2=1.01666665077209   tf=0.0749999980131785   tw=0.0458333343267441   t2b=1.01666665077209   tfb=0.0749999980131785   FilletRadius=0.0500000019868215 _
+        Area=0.195833338631524   TorsConst=0.000330343359598407   I33=0.0401716820987654   I22=0.0130208333333333   I23=0   AS2=0.0485069453716278   AS3=0.127083328035143   S33Top=0.0759149909330713   S33Bot=0.0759149909330713 _
+        S22Left=0.0256147544988219   S22Right=0.0256147544988219   Z33=0.0850694444444444   Z22=0.0390625   R33=0.452914989977216   R22=0.257855308076613   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00317531820931624 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W12X96   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=af5d287e-80ec-497d-887b-8fb498710325
+   SectionName=W14X109   Material=STEEL   Shape="I/Wide Flange"   t3=1.19166668256124   t2=1.21666669845581   tf=0.0716666678587596   tw=0.0437499980131785   t2b=1.21666669845581   tfb=0.0716666678587596   FilletRadius=0.0500000019868215 _
+        Area=0.222222222222222   TorsConst=0.000343364192011916   I33=0.0597993827160494   I22=0.021556712962963   I23=0   AS2=0.0521354178587596   AS3=0.145324071248372   S33Top=0.100362599023954   S33Bot=0.100362599023954 _
+        S22Left=0.0354356916159909   S22Right=0.0354356916159909   Z33=0.111111111111111   Z22=0.0536458315672698   R33=0.518745816582864   R22=0.311456591410959   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00674616393746548 _
+        Color=Cyan   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X109   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=c8b9d432-2df4-4080-8a02-fcc3108cffff
+   SectionName=W14X132   Material=STEEL   Shape="I/Wide Flange"   t3=1.22499998410543   t2=1.22499998410543   tf=0.0858333309491475   tw=0.0537499984105428   t2b=1.22499998410543   tfb=0.0858333309491475   FilletRadius=0.0500000019868215 _
+        Area=0.269444439146254   TorsConst=0.000593171305494544   I33=0.0737847222222222   I22=0.0264274691358025   I23=0   AS2=0.065843747721778   AS3=0.175243059794108   S33Top=0.120464854170761   S33Bot=0.120464854170761 _
+        S22Left=0.0431468889448214   S22Right=0.0431468889448214   Z33=0.135416666666667   Z22=0.0653935185185185   R33=0.523297440821368   R22=0.313179390573587   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00853154136564251 _
+        Color=Red   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X132   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=1af4e942-e119-4087-8216-2c0341868751
+   SectionName=W14X159   Material=STEEL   Shape="I/Wide Flange"   t3=1.25   t2=1.30000003178914   tf=0.0991666714350382   tw=0.0620833337306976   t2b=1.30000003178914   tfb=0.0991666714350382   FilletRadius=0.049999992052714 _
+        Area=0.324305560853746   TorsConst=0.000950038617039904   I33=0.0916280864197531   I22=0.0360725308641975   I23=0   AS2=0.0776041679912143   AS3=0.214861114819845   S33Top=0.146604938271605   S33Bot=0.146604938271605 _
+        S22Left=0.0554961999724757   S22Right=0.0554961999724757   Z33=0.166087962962963   Z22=0.0844907407407407   R33=0.531541417945152   R22=0.333511726839808   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0120229058098172 _
+        Color=Magenta   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X159   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=e988c4d5-b893-4e02-bedd-1e06ad72005c
+   SectionName=W14X211   Material=STEEL   Shape="I/Wide Flange"   t3=1.30833331743876   t2=1.31666668256124   tf=0.129999995231628   tw=0.0816666682561239   t2b=1.31666668256124   tfb=0.129999995231628   FilletRadius=0.050000011920929 _
+        Area=0.430555555555556   TorsConst=0.00215084869184612   I33=0.128279320987654   I22=0.0496720679012346   I23=0   AS2=0.106847219996982   AS3=0.285277790493435   S33Top=0.196095779688281   S33Bot=0.196095779688281 _
+        S22Left=0.0754512414707878   S22Right=0.0754512414707878   Z33=0.225694444444444   Z22=0.114583333333333   R33=0.545837950403193   R22=0.3396577446674   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0171670610556688 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X211   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=1a544cee-d433-44eb-9cdb-10daa8f9354d
+   SectionName=W14X22   Material=STEEL   Shape="I/Wide Flange"   t3=1.14166665077209   t2=0.416666666666667   tf=0.0279166673620542   tw=0.0191666670143604   t2b=0.416666666666667   tfb=0.0279166673620542   FilletRadius=0.0333333338300387 _
+        Area=0.0450694428549872   TorsConst=1.00308644044914E-05   I33=0.00959683641975309   I22=0.000337577160493827   I23=0   AS2=0.0218819446033902   AS3=0.0193865746259689   S33Top=0.016811976443847   S33Bot=0.016811976443847 _
+        S22Left=0.00162037037037037   S22Right=0.00162037037037037   Z33=0.0192129634044788   Z22=0.00254050918199398   R33=0.461448194866607   R22=0.0865456876995886   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000104374408212392 _
+        Color=Blue   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X22   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=a6b9113c-c650-43d2-a81a-ac7ea3aa69a6
+   SectionName=W14X257   Material=STEEL   Shape="I/Wide Flange"   t3=1.36666663487752   t2=1.33333333333333   tf=0.157499998807907   tw=0.098333328962326   t2b=1.33333333333333   tfb=0.157499998807907   FilletRadius=0.0500000019868215 _
+        Area=0.524999989403619   TorsConst=0.00381462183999427   I33=0.163966049382716   I22=0.0622106481481481   I23=0   AS2=0.13438888390859   AS3=0.350000010596381   S33Top=0.239950321751157   S33Bot=0.239950321751157 _
+        S22Left=0.0933159722222222   S22Right=0.0933159722222222   Z33=0.281828703703704   Z22=0.142361111111111   R33=0.558852655752989   R22=0.344233169602848   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0227435279978297 _
+        Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X257   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=36352c07-e9b7-487b-a20a-d61a86d03361
+   SectionName=W14X311   Material=STEEL   Shape="I/Wide Flange"   t3=1.42500003178914   t2=1.35000006357829   tf=0.188333332538605   tw=0.11749999721845   t2b=1.35000006357829   tfb=0.188333332538605   FilletRadius=0.049999992052714 _
+        Area=0.634722232818604   TorsConst=0.00655864197530864   I33=0.208815586419753   I22=0.0776427469135802   I23=0   AS2=0.167437500423855   AS3=0.423750003178914   S33Top=0.293074500717838   S33Bot=0.293074500717838 _
+        S22Left=0.115026286306656   S22Right=0.115026286306656   Z33=0.348958333333333   Z22=0.175925925925926   R33=0.573574190203794   R22=0.349750698472604   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0295272260640698 _
+        Color=Gray8Dark   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X311   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=93aec11c-c60e-492a-bab1-74ad2cf02c2e
+   SectionName=W14X370   Material=STEEL   Shape="I/Wide Flange"   t3=1.49166663487752   t2=1.375   tf=0.221666673819224   tw=0.138333330551783   t2b=1.375   tfb=0.221666673819224   FilletRadius=0.049999992052714   Area=0.756944444444444 _
+        TorsConst=0.0107060185185185   I33=0.262345679012346   I22=0.0959683641975309   I23=0   AS2=0.206347227096558   AS3=0.507986121707492   S33Top=0.3517484039373   S33Bot=0.3517484039373   S22Left=0.139590347923681 _
+        S22Right=0.139590347923681   Z33=0.425925925925926   Z22=0.21412037037037   R33=0.588714801264007   R22=0.356067260479995   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0387261811527848   Color=Blue   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X370   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=6b89dee9-991c-4c15-8ebf-35d0d3b285f9
+   SectionName=W14X426   Material=STEEL   Shape="I/Wide Flange"   t3=1.55833339691162   t2=1.39166673024495   tf=0.253333330154419   tw=0.156666666269302   t2b=1.39166673024495   tfb=0.253333330154419   FilletRadius=0.0491666793823242 _
+        Area=0.868055555555555   TorsConst=0.0159625771604938   I33=0.318287037037037   I22=0.113811728395062   I23=0   AS2=0.244138876597087   AS3=0.587592601776123   S33Top=0.408496715359927   S33Bot=0.408496715359927 _
+        S22Left=0.163561757885854   S22Right=0.163561757885854   Z33=0.502893518518518   Z22=0.251157407407407   R33=0.605530070819498   R22=0.362092683040007   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0484515743209968 _
+        Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X426   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=77f60a3f-4b81-4f7c-bebb-2af9df2cf347
+   SectionName=W14X90   Material=STEEL   Shape="I/Wide Flange"   t3=1.16666666666667   t2=1.20833333333333   tf=0.0591666648785273   tw=0.0366666664679845   t2b=1.20833333333333   tfb=0.0591666648785273   FilletRadius=0.0499999970197678 _
+        Area=0.184027777777778   TorsConst=0.000195794750326945   I33=0.0481770833333333   I22=0.0174575617283951   I23=0   AS2=0.0427777767181396   AS3=0.119155089060465   S33Top=0.0825892857142857   S33Bot=0.0825892857142857 _
+        S22Left=0.0288952745849298   S22Right=0.0288952745849298   Z33=0.0908564814814815   Z22=0.0437499991169682   R33=0.511656577041856   R22=0.307999564376615   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00533474404853905 _
+        Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W14X90   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=6d641df8-0200-40c8-96a9-3227dd836baf
+   SectionName=W16X26   Material=STEEL   Shape="I/Wide Flange"   t3=1.30833331743876   t2=0.458333333333333   tf=0.0287499999006589   tw=0.0208333333333333   t2b=0.458333333333333   tfb=0.0287499999006589   FilletRadius=0.0334999983509382 _
+        Area=0.0533333321412404   TorsConst=1.26350305997479E-05   I33=0.0145158179012346   I22=0.000462480717235141   I23=0   AS2=0.0272569441133075   AS3=0.0219618048932817   S33Top=0.0221897855963054   S33Bot=0.0221897855963054 _
+        S22Left=0.00201809767520789   S22Right=0.00201809767520789   Z33=0.0255787041452196   Z22=0.00317129630733419   R33=0.521700672542845   R22=0.0931209624197599   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000188846123730461 _
+        Color=Cyan   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W16X26   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=fa904240-9acc-4700-a583-066ba5840dbe
+   SectionName=W16X31   Material=STEEL   Shape="I/Wide Flange"   t3=1.32499996821086   t2=0.460833350817362   tf=0.0366666664679845   tw=0.022916667163372   t2b=0.460833350817362   tfb=0.0366666664679845   FilletRadius=0.033500000834465 _
+        Area=0.0634027785725064   TorsConst=2.22318670654922E-05   I33=0.0180844907407407   I22=0.000597993808763998   I23=0   AS2=0.030364582935969   AS3=0.0281620356771681   S33Top=0.0272973451692383   S33Bot=0.0272973451692383 _
+        S22Left=0.00259527140430856   S22Right=0.00259527140430856   Z33=0.03125   Z22=0.00406828715845391   R33=0.534070999831846   R22=0.0971167629701334   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000248169472366631 _
+        Color=Red   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W16X31   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=48d682e5-ee35-4eba-88b3-0ca6197c6a13
+   SectionName=W18X119   Material=STEEL   Shape="I/Wide Flange"   t3=1.58333333333333   t2=0.941666682561239   tf=0.0883333285649617   tw=0.0545833309491475   t2b=0.941666682561239   tfb=0.0883333285649617   FilletRadius=0.0333333412806193 _
+        Area=0.243749989403619   TorsConst=0.000511188290001434   I33=0.105613425925926   I22=0.0122010030864198   I23=0   AS2=0.0864236089918348   AS3=0.138634257846408   S33Top=0.133406432748538   S33Bot=0.133406432748538 _
+        S22Left=0.0259136344364107   S22Right=0.0259136344364107   Z33=0.15162037037037   Z22=0.0399884250428941   R33=0.658244535707258   R22=0.223730640399666   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00686890257251017 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W18X119   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=b7daf376-fee8-4843-9d18-906f82959f42
+   SectionName=W18X35   Material=STEEL   Shape="I/Wide Flange"   t3=1.47500006357829   t2=0.5   tf=0.0354166676600774   tw=0.0250000009934107   t2b=0.5   tfb=0.0354166676600774   FilletRadius=0.033500000834465   Area=0.0715277791023254 _
+        TorsConst=2.44020053220016E-05   I33=0.0245949074074074   I22=0.00073784723142047   I23=0   AS2=0.0368749996026357   AS3=0.0295138888888889   S33Top=0.0333490255556209   S33Bot=0.0333490255556209   S22Left=0.00295138892568188 _
+        S22Right=0.00295138892568188   Z33=0.0384837962962963   Z22=0.00466435209468559   R33=0.586388204450488   R22=0.101565416939807   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000382278721819178   Color=Gray8Dark _
+        FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W18X35   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=ba0284fd-1fd9-408d-8863-a6c7403c9ded
+   SectionName=W18X40   Material=STEEL   Shape="I/Wide Flange"   t3=1.49166663487752   t2=0.501666665077209   tf=0.0437499980131785   tw=0.0262499998013178   t2b=0.501666665077209   tfb=0.0437499980131785   FilletRadius=0.033500000834465 _
+        Area=0.0819444457689921   TorsConst=3.90625001149781E-05   I33=0.0295138888888889   I22=0.000921103413458224   I23=0   AS2=0.0391562514834934   AS3=0.036579860581292   S33Top=0.0395716954429462   S33Bot=0.0395716954429462 _
+        S22Left=0.0036721730885446   S22Right=0.0036721730885446   Z33=0.0453703712534021   Z22=0.00575810174147288   R33=0.600141221466793   R22=0.106021619714803   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00048250258451757 _
+        Color=Blue   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W18X40   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=e04fd931-5b54-4505-8a5c-bf05b5fa8c92
+   SectionName=W18X55   Material=STEEL   Shape="I/Wide Flange"   t3=1.50833336512248   t2=0.627500017484029   tf=0.0524999996026357   tw=0.0324999988079071   t2b=0.627500017484029   tfb=0.0524999996026357   FilletRadius=0.0333333313465118 _
+        Area=0.112500005298191   TorsConst=8.00540107359857E-05   I33=0.042920524691358   I22=0.00216531643161067   I23=0   AS2=0.0490208334392971   AS3=0.0549062490463257   S33Top=0.0569111917614749   S33Bot=0.0569111917614749 _
+        S22Left=0.00690140676104693   S22Right=0.00690140676104693   Z33=0.0648148148148148   Z22=0.0107060185185185   R33=0.617669618053858   R22=0.13873448116248   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00114554623487435 _
+        Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W18X55   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=77ff6468-8ae4-4b55-86d2-5ec13803b385
+   SectionName=W18X65   Material=STEEL   Shape="I/Wide Flange"   t3=1.53333330154419   t2=0.632500012715657   tf=0.0625   tw=0.0374999990065892   t2b=0.632500012715657   tfb=0.0625   FilletRadius=0.0333333313465118   Area=0.132638891537984 _
+        TorsConst=0.000131655093512417   I33=0.0516010802469136   I22=0.00264274687678726   I23=0   AS2=0.0574999981456333   AS3=0.0658854179912143   S33Top=0.0673057582391867   S33Bot=0.0673057582391867   S22Left=0.00835651169536122 _
+        S22Right=0.00835651169536122   Z33=0.0769675925925926   Z22=0.0130208333333333   R33=0.623726153460403   R22=0.14115372457392   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00142553308075128   Color=Cyan   FromFile=Yes _
+        AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W18X65   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=80fd37a0-e32d-40b8-adda-5f367c7bd687
+   SectionName=W18X76   Material=STEEL   Shape="I/Wide Flange"   t3=1.51666673024495   t2=0.916666666666667   tf=0.0566666672627131   tw=0.0354166676600774   t2b=0.916666666666667   tfb=0.0566666672627131   FilletRadius=0.0333333363135656 _
+        Area=0.15486110581292   TorsConst=0.000136477619777491   I33=0.0641396604938272   I22=0.00733024691358025   I23=0   AS2=0.0537152787049611   AS3=0.0865740709834629   S33Top=0.0845797685342093   S33Bot=0.0845797685342093 _
+        S22Left=0.015993265993266   S22Right=0.015993265993266   Z33=0.0943287037037037   Z22=0.0244212967378122   R33=0.643564604619046   R22=0.217564545514585   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00387664913424426 _
+        Color=Red   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W18X76   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=ad1b917f-131e-4bb1-9c3a-3f87872eb44d
+   SectionName=W18X97   Material=STEEL   Shape="I/Wide Flange"   t3=1.55000003178914   t2=0.925000031789144   tf=0.0725000003973643   tw=0.044583335518837   t2b=0.925000031789144   tfb=0.0725000003973643   FilletRadius=0.0333333313465118 _
+        Area=0.197916666666667   TorsConst=0.000282600315080749   I33=0.0843942901234568   I22=0.00969328703703704   I23=0   AS2=0.06910416815016   AS3=0.111770828564962   S33Top=0.108895855990456   S33Bot=0.108895855990456 _
+        S22Left=0.0209584577381866   S22Right=0.0209584577381866   Z33=0.122106481481481   Z22=0.0320023143732989   R33=0.653003258307816   R22=0.221306593184963   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00521923687549609 _
+        Color=Magenta   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W18X97   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=e1f7c0d2-8657-431a-9352-b4cdd5bd684c
+   SectionName=W21X44   Material=STEEL   Shape="I/Wide Flange"   t3=1.72500006357829   t2=0.541666666666667   tf=0.0374999990065892   tw=0.0291666661699613   t2b=0.541666666666667   tfb=0.0374999990065892   FilletRadius=0.0416666666666667 _
+        Area=0.0902777777777778   TorsConst=3.71334867344962E-05   I33=0.0406539351851852   I22=0.000998263925681879   I23=0   AS2=0.0503124992052714   AS3=0.0338541666666667   S33Top=0.0471349955789032   S33Bot=0.0471349955789032 _
+        S22Left=0.00368589757174848   S22Right=0.00368589757174848   Z33=0.0552083342163651   Z22=0.00590277766739881   R33=0.671059246878033   R22=0.10515556435703   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00070713762007036 _
+        Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W21X44   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=205d2222-9f23-497e-8010-09f65be8e53f
+   SectionName=W21X50   Material=STEEL   Shape="I/Wide Flange"   t3=1.73333326975505   t2=0.544166684150696   tf=0.044583335518837   tw=0.0316666662693024   t2b=0.544166684150696   tfb=0.044583335518837   FilletRadius=0.0420833279689153 _
+        Area=0.102083332008786   TorsConst=5.49768511619833E-05   I33=0.0474537037037037   I22=0.00120081016678869   I23=0   AS2=0.0548888875378503   AS3=0.0404346055454678   S33Top=0.0547542755126484   S33Bot=0.0547542755126484 _
+        S22Left=0.0044133909765639   S22Right=0.0044133909765639   Z33=0.0636574074074074   Z22=0.00706018507480621   R33=0.681801007436398   R22=0.108457542481699   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000853665741994342 _
+        Color=Gray8Dark   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W21X50   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=c9865080-d1b5-4659-91de-4355043ac7de
+   SectionName=W24X103   Material=STEEL   Shape="I/Wide Flange"   t3=2.04166666666667   t2=0.75   tf=0.0816666682561239   tw=0.0458333343267441   t2b=0.75   tfb=0.0816666682561239   FilletRadius=0.0416666666666667   Area=0.210416661368476 _
+        TorsConst=0.000340952940377188   I33=0.144675925925926   I22=0.00573881172839506   I23=0   AS2=0.0935763915379842   AS3=0.102083332008786   S33Top=0.14172335600907   S33Bot=0.14172335600907   S22Left=0.0153034979423868 _
+        S22Right=0.0153034979423868   Z33=0.162037037037037   Z22=0.0240162037037037   R33=0.829197668947724   R22=0.165147090123131   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00551479697338864   Color=Magenta   FromFile=Yes _
+        AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X103   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=07c47baa-d9ea-4eae-ba3d-cfb1675db2b6
+   SectionName=W24X117   Material=STEEL   Shape="I/Wide Flange"   t3=2.02499993642171   t2=1.06666668256124   tf=0.0708333353201548   tw=0.0458333343267441   t2b=1.06666668256124   tfb=0.0708333353201548   FilletRadius=0.0416666666666667 _
+        Area=0.23888889948527   TorsConst=0.000324074063956002   I33=0.170717592592593   I22=0.0143229166666667   I23=0   AS2=0.0928124984105428   AS3=0.125925925042894   S33Top=0.168609973286478   S33Bot=0.168609973286478 _
+        S22Left=0.0268554683498223   S22Right=0.0268554683498223   Z33=0.189236111111111   Z22=0.0413194453274762   R33=0.845358948167496   R22=0.244859945048909   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0136784161723883 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X117   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=729bec54-5a6e-4458-9dc9-d2f791e0b513
+   SectionName=W24X131   Material=STEEL   Shape="I/Wide Flange"   t3=2.04166666666667   t2=1.07499996821086   tf=0.0799999982118607   tw=0.0504166682561239   t2b=1.07499996821086   tfb=0.0799999982118607   FilletRadius=0.0416666716337204 _
+        Area=0.267361111111111   TorsConst=0.000458140432098765   I33=0.193865740740741   I22=0.0163966049382716   I23=0   AS2=0.102934029367235   AS3=0.143333329094781   S33Top=0.189909297052154   S33Bot=0.189909297052154 _
+        S22Left=0.0305053124151451   S22Right=0.0305053124151451   Z33=0.21412037037037   Z22=0.0471643518518518   R33=0.85153286789661   R22=0.247644021384651   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.01593508981057 _
+        Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X131   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=0895fe87-0c2f-4020-9535-40feb6f0e866
+   SectionName=W24X146   Material=STEEL   Shape="I/Wide Flange"   t3=2.05833339691162   t2=1.07499996821086   tf=0.0908333361148834   tw=0.0541666646798452   t2b=1.07499996821086   tfb=0.0908333361148834   FilletRadius=0.0416666666666667 _
+        Area=0.298611111111111   TorsConst=0.000646219117405974   I33=0.220871913580247   I22=0.0188560956790123   I23=0   AS2=0.111493057674832   AS3=0.162743051846822   S33Top=0.214612379036019   S33Bot=0.214612379036019 _
+        S22Left=0.0350811092774169   S22Right=0.0350811092774169   Z33=0.241898148148148   Z22=0.0539351834191216   R33=0.860037256569353   R22=0.251288668331943   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0182007333304821 _
+        Color=Gray8Dark   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X146   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=c7815168-4140-4aa8-b52a-8c5eed2a6997
+   SectionName=W24X162   Material=STEEL   Shape="I/Wide Flange"   t3=2.08333333333333   t2=1.08333333333333   tf=0.101666669050852   tw=0.058749998609225   t2b=1.08333333333333   tfb=0.101666669050852   FilletRadius=0.0416666666666667 _
+        Area=0.331250005298191   TorsConst=0.000892168209876543   I33=0.249324845679012   I22=0.0213638117283951   I23=0   AS2=0.122395833333333   AS3=0.183564808633592   S33Top=0.239351851851852   S33Bot=0.239351851851852 _
+        S22Left=0.0394408831908832   S22Right=0.0394408831908832   Z33=0.270833333333333   Z22=0.0607638888888889   R33=0.867570612324778   R22=0.253957722743281   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0211502195193942 _
+        Color=Blue   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X162   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=0977e170-ddd3-40f3-9b05-6be65b788848
+   SectionName=W24X176   Material=STEEL   Shape="I/Wide Flange"   t3=2.10000006357829   t2=1.07499996821086   tf=0.111666669448217   tw=0.0625   t2b=1.07499996821086   tfb=0.111666669448217   FilletRadius=0.0416666666666667 _
+        Area=0.359027783075968   TorsConst=0.00115258485814671   I33=0.27391975308642   I22=0.0230999228395062   I23=0   AS2=0.131249997350905   AS3=0.200069440735711   S33Top=0.260875947422283   S33Bot=0.260875947422283 _
+        S22Left=0.0429766019025132   S22Right=0.0429766019025132   Z33=0.295717592592593   Z22=0.0665509259259259   R33=0.873469303427539   R22=0.253653719995065   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.022851572392765 _
+        Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X176   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=59692cf8-09d0-45df-89d1-db8d01f020ae
+   SectionName=W24X207   Material=STEEL   Shape="I/Wide Flange"   t3=2.14166673024495   t2=1.08333333333333   tf=0.130833337704341   tw=0.0725000003973643   t2b=1.08333333333333   tfb=0.130833337704341   FilletRadius=0.0416666567325592 _
+        Area=0.421527783075968   TorsConst=0.00184702928419466   I33=0.328896604938272   I22=0.0278742283950617   I23=0   AS2=0.155270828141106   AS3=0.236226850085788   S33Top=0.307140789268043   S33Bot=0.307140789268043 _
+        S22Left=0.051460113960114   S22Right=0.051460113960114   Z33=0.350694444444444   Z22=0.0792824074074074   R33=0.883317008586272   R22=0.257151063572585   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0280250034824973 _
+        Color=Cyan   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X207   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=a9792e11-c4c8-4974-9eca-cb0db34526f5
+   SectionName=W24X250   Material=STEEL   Shape="I/Wide Flange"   t3=2.19166660308838   t2=1.09999998410543   tf=0.157499998807907   tw=0.0866666634877523   t2b=1.09999998410543   tfb=0.157499998807907   FilletRadius=0.0416666766007741 _
+        Area=0.510416666666667   TorsConst=0.00321180548196957   I33=0.40943287037037   I22=0.0349151234567901   I23=0   AS2=0.189944439464145   AS3=0.288750012715658   S33Top=0.373626964788732   S33Bot=0.373626964788732 _
+        S22Left=0.0634820435660001   S22Right=0.0634820435660001   Z33=0.430555555555556   Z22=0.0989583333333333   R33=0.895630613038287   R22=0.261543762750541   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0361426831022716 _
+        Color=Red   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X250   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=a87e8aa4-04ad-4e8b-bda5-f51f2ba349dc
+   SectionName=W24X335   Material=STEEL   Shape="I/Wide Flange"   t3=2.29166666666667   t2=1.125   tf=0.206666668256124   tw=0.114999999602636   t2b=1.125   tfb=0.206666668256124   FilletRadius=0.0416666666666667   Area=0.683333343929715 _
+        TorsConst=0.00733024691358025   I33=0.573881172839506   I22=0.0496720679012346   I23=0   AS2=0.263541671964857   AS3=0.387499994701809   S33Top=0.500841750841751   S33Bot=0.500841750841751   S22Left=0.0883058984910837 _
+        S22Right=0.0883058984910837   Z33=0.590277777777778   Z22=0.137731481481481   R33=0.916420260345274   R22=0.269612369797396   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0533002052847177   Color=Magenta   FromFile=Yes _
+        AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X335   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=a4e292dc-3378-457e-88a6-b2c2a8e2fea9
+   SectionName=W24X55   Material=STEEL   Shape="I/Wide Flange"   t3=1.96666669845581   t2=0.584166685740153   tf=0.042083332935969   tw=0.0329166675607363   t2b=0.584166685740153   tfb=0.042083332935969   FilletRadius=0.0504166682561239 _
+        Area=0.113194439146254   TorsConst=5.97993831759618E-05   I33=0.0655864197530864   I22=0.00140335649987798   I23=0   AS2=0.0647361079851786   AS3=0.040972802374098   S33Top=0.0666980529080842   S33Bot=0.0666980529080842 _
+        S22Left=0.00480464406524618   S22Right=0.00480464406524618   Z33=0.078125   Z22=0.00775462940887169   R33=0.761192351983334   R22=0.11134518963143   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00129474040171708   Color=Blue _
+        FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X55   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=36a24ca3-a5e7-432d-88a1-1045981e19e8
+   SectionName=W24X62   Material=STEEL   Shape="I/Wide Flange"   t3=1.97500006357829   t2=0.586666663487752   tf=0.049166664481163   tw=0.0358333339293798   t2b=0.586666663487752   tfb=0.049166664481163   FilletRadius=0.0500000069538752 _
+        Area=0.127083328035143   TorsConst=8.53587953764715E-05   I33=0.0752314814814815   I22=0.00166377314814815   I23=0   AS2=0.0707708332273695   AS3=0.0480740732616848   S33Top=0.0761837762629513   S33Bot=0.0761837762629513 _
+        S22Left=0.00567195394487549   S22Right=0.00567195394487549   Z33=0.0891203703703704   Z22=0.00914351862889749   R33=0.769405908952666   R22=0.114420216630912   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00153416180189168 _
+        Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X62   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=5c0fac6b-2fea-4a6e-a0ed-9801a7efbff0
+   SectionName=W24X68   Material=STEEL   Shape="I/Wide Flange"   t3=1.97500006357829   t2=0.747500022252401   tf=0.0487499982118607   tw=0.0345833326379458   t2b=0.747500022252401   tfb=0.0487499982118607   FilletRadius=0.0420833379030228 _
+        Area=0.139583335982429   TorsConst=9.018132739045E-05   I33=0.0882523148148148   I22=0.00339506180198104   I23=0   AS2=0.0683020816908942   AS3=0.0607343779669868   S33Top=0.0893694298469237   S33Bot=0.0893694298469237 _
+        S22Left=0.00908377712618895   S22Right=0.00908377712618895   Z33=0.102430555555556   Z22=0.0141782407407407   R33=0.795144878445909   R22=0.155957783898559   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00314791012962851 _
+        Color=Cyan   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X68   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=4ed8bf74-259f-4f50-a535-452a57fd7ede
+   SectionName=W24X76   Material=STEEL   Shape="I/Wide Flange"   t3=1.99166663487752   t2=0.74916664759318   tf=0.0566666672627131   tw=0.0366666664679845   t2b=0.74916664759318   tfb=0.0566666672627131   FilletRadius=0.0416666616996129 _
+        Area=0.15555555290646   TorsConst=0.00012924383037988   I33=0.101273148148148   I22=0.00397858796296296   I23=0   AS2=0.0730277763472663   AS3=0.0707546273867289   S33Top=0.10169688679288   S33Bot=0.10169688679288 _
+        S22Left=0.0106213696932313   S22Right=0.0106213696932313   Z33=0.115740740740741   Z22=0.0165509261466839   R33=0.806871537330349   R22=0.159926975024007   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00371718056299723 _
+        Color=Red   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W24X76   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=a89a0139-384b-4431-8e0c-0723c4cf21d1
+   SectionName=W27X84   Material=STEEL   Shape="I/Wide Flange"   t3=2.22500006357829   t2=0.830000003178914   tf=0.0533333321412404   tw=0.0383333340287209   t2b=0.830000003178914   tfb=0.0533333321412404   FilletRadius=0.0500000019868215 _
+        Area=0.172222216924032   TorsConst=0.000135513114524476   I33=0.13744212962963   I22=0.00511188271604938   I23=0   AS2=0.0852916638056437   AS3=0.0737777749697367   S33Top=0.123543483777338   S33Bot=0.123543483777338 _
+        S22Left=0.0123177896300501   S22Right=0.0123177896300501   Z33=0.141203703703704   Z22=0.0192129634044788   R33=0.893337058349094   R22=0.172284359576549   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00599250100028606 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W27X84   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=0845921a-8ec3-4521-9aa5-6532fba1966b
+   SectionName=W27X94   Material=STEEL   Shape="I/Wide Flange"   t3=2.24166663487752   t2=0.832499980926514   tf=0.0620833337306976   tw=0.0408333341280619   t2b=0.832499980926514   tfb=0.0620833337306976   FilletRadius=0.0495833357175191 _
+        Area=0.192361116409302   TorsConst=0.000194348003945233   I33=0.157696759259259   I22=0.00597993827160494   I23=0   AS2=0.0915347205268012   AS3=0.0861406260066562   S33Top=0.140695995386375   S33Bot=0.140695995386375 _
+        S22Left=0.0143662183990676   S22Right=0.0143662183990676   Z33=0.16087962962963   Z22=0.0224537032621878   R33=0.905425537864143   R22=0.176315180475744   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00709028068815408 _
+        Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W27X94   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=2b2cbeab-284e-443d-a628-d145ab2a1371
+   SectionName=W30X108   Material=STEEL   Shape="I/Wide Flange"   t3=2.48333326975505   t2=0.875   tf=0.0633333325386047   tw=0.0454166680574417   t2b=0.875   tfb=0.0633333325386047   FilletRadius=0.0541666646798452   Area=0.22013889418708 _
+        TorsConst=0.00024064427908556   I33=0.21556712962963   I22=0.0070408950617284   I23=0   AS2=0.112784716818068   AS3=0.0923611124356588   S33Top=0.173611115555902   S33Bot=0.173611115555902   S22Left=0.0160934744268078 _
+        S22Right=0.0160934744268078   Z33=0.200231481481481   Z22=0.0254050934756244   R33=0.989561702671151   R22=0.17884036415566   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.010353232514307   Color=Blue   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W30X108   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=7bdbe7af-95ef-4d64-8c16-becfc5f29ced
+   SectionName=W30X116   Material=STEEL   Shape="I/Wide Flange"   t3=2.5   t2=0.875   tf=0.0708333353201548   tw=0.0470833331346512   t2b=0.875   tfb=0.0708333353201548   FilletRadius=0.0541666646798452   Area=0.237500005298191 _
+        TorsConst=0.000310088726289478   I33=0.237750771604938   I22=0.00790895061728395   I23=0   AS2=0.117708338631524   AS3=0.103298611111111   S33Top=0.190200617283951   S33Bot=0.190200617283951   S22Left=0.0180776014109347 _
+        S22Right=0.0180776014109347   Z33=0.21875   Z22=0.0284722226637381   R33=1.00052778977404   R22=0.182485188334485   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0116671621731688   Color=Green   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W30X116   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=e6a34a09-e212-4a3f-952f-677dbb5204b2
+   SectionName=W30X148   Material=STEEL   Shape="I/Wide Flange"   t3=2.55833339691162   t2=0.875   tf=0.098333328962326   tw=0.0541666646798452   t2b=0.875   tfb=0.098333328962326   FilletRadius=0.0541666746139526   Area=0.302083333333333 _
+        TorsConst=0.000699266975308642   I33=0.322145061728395   I22=0.0109471450617284   I23=0   AS2=0.13857638835907   AS3=0.143402775128682   S33Top=0.251839781411823   S33Bot=0.251839781411823   S22Left=0.0250220458553792 _
+        S22Right=0.0250220458553792   Z33=0.289351851851852   Z22=0.0393518518518518   R33=1.03267189311273   R22=0.190364978480624   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.016610545589424   Color=Cyan   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W30X148   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=bc97c467-5228-4bcd-bf3a-3550e591f109
+   SectionName=W30X173   Material=STEEL   Shape="I/Wide Flange"   t3=2.53333330154419   t2=1.25   tf=0.089166671037674   tw=0.0545833309491475   t2b=1.25   tfb=0.089166671037674   FilletRadius=0.0649999976158142   Area=0.354166666666667 _
+        TorsConst=0.00075231483321131   I33=0.396894290123457   I22=0.0288387345679012   I23=0   AS2=0.138277782334222   AS3=0.185763888888889   S33Top=0.313337601397756   S33Bot=0.313337601397756   S22Left=0.046141975308642 _
+        S22Right=0.046141975308642   Z33=0.351273148148148   Z22=0.0711805555555556   R33=1.05860412880597   R22=0.285354192628293   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0433493880701054   Color=Red   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W30X173   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=af6154ee-d1d3-49e3-b02e-2d2bd3d41ed4
+   SectionName=W30X191   Material=STEEL   Shape="I/Wide Flange"   t3=2.55833339691162   t2=1.25   tf=0.0991666714350382   tw=0.0591666648785273   t2b=1.25   tfb=0.0991666714350382   FilletRadius=0.0649999976158142   Area=0.390972216924032 _
+        TorsConst=0.00101273148148148   I33=0.443672839506173   I22=0.0324556327160494   I23=0   AS2=0.151368061701457   AS3=0.206597222222222   S33Top=0.346845207932451   S33Bot=0.346845207932451   S22Left=0.051929012345679 _
+        S22Right=0.051929012345679   Z33=0.390625   Z22=0.0798611111111111   R33=1.06526699890034   R22=0.288119127919179   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0488045689333315   Color=Magenta   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W30X191   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=6ed1fe8f-6269-4a06-9870-99e501e05f9a
+   SectionName=W30X99   Material=STEEL   Shape="I/Wide Flange"   t3=2.47500006357829   t2=0.875   tf=0.0558333347241084   tw=0.0433333317438761   t2b=0.875   tfb=0.0558333347241084   FilletRadius=0.0541666696468989   Area=0.202083335982429 _
+        TorsConst=0.000181809412660422   I33=0.192418981481481   I22=0.00617283950617284   I23=0   AS2=0.107250001695421   AS3=0.0814236137602064   S33Top=0.155490082051382   S33Bot=0.155490082051382   S22Left=0.0141093474426808 _
+        S22Right=0.0141093474426808   Z33=0.180555555555556   Z22=0.0223379620799312   R33=0.975795260659387   R22=0.174774167218808   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.00912090824316777   Color=Gray8Dark   FromFile=Yes _
+        AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W30X99   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=f776900b-59c6-47b8-9d8d-cc3928406c65
+   SectionName=W33X118   Material=STEEL   Shape="I/Wide Flange"   t3=2.74166679382324   t2=0.958333333333333   tf=0.0616666674613953   tw=0.0458333343267441   t2b=0.958333333333333   tfb=0.0616666674613953   FilletRadius=0.0583333373069763 _
+        Area=0.240972227520413   TorsConst=0.000255594145000717   I33=0.284529320987654   I22=0.00901813271604938   I23=0   AS2=0.125659717453851   AS3=0.0984953708118863   S33Top=0.20755937346484   S33Bot=0.20755937346484 _
+        S22Left=0.0188204508856683   S22Right=0.0188204508856683   Z33=0.240162037037037   Z22=0.0296874995584841   R33=1.08662581309141   R22=0.193452708706857   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0162427159497974 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W33X118   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=6f675c14-87d6-4ab2-8dc5-56986878b4c9
+   SectionName=W33X130   Material=STEEL   Shape="I/Wide Flange"   t3=2.75833320617676   t2=0.958333333333333   tf=0.0712500015894572   tw=0.0483333319425583   t2b=0.958333333333333   tfb=0.0712500015894572   FilletRadius=0.0587499936421712 _
+        Area=0.265972216924032   TorsConst=0.000355420519172409   I33=0.323591820987654   I22=0.0105131172839506   I23=0   AS2=0.133319444126553   AS3=0.113802088631524   S33Top=0.234628521502067   S33Bot=0.234628521502067 _
+        S22Left=0.0219404186795491   S22Right=0.0219404186795491   Z33=0.27025462962963   Z22=0.0344328703703704   R33=1.10301300090626   R22=0.198814299846986   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0188662527522826 _
+        Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W33X130   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=c2351e28-d9d1-4e51-91ae-1f01c23023f6
+   SectionName=W36X135   Material=STEEL   Shape="I/Wide Flange"   t3=2.96666653951009   t2=1   tf=0.0658333351214727   tw=0.0500000019868215   t2b=1   tfb=0.0658333351214727   FilletRadius=0.0624999950329463   Area=0.275694449742635 _
+        TorsConst=0.000337577160493827   I33=0.376157407407407   I22=0.0108506944444444   I23=0   AS2=0.148333337571886   AS3=0.10972222354677   S33Top=0.253589274290008   S33Bot=0.253589274290008   S22Left=0.0217013888888889 _
+        S22Right=0.0217013888888889   Z33=0.294560185185185   Z22=0.034548611552627   R33=1.168075185049   R22=0.198387705927778   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0230823558038636   Color=Gray8Dark   FromFile=Yes _
+        AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W36X135   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=5adcd65a-710e-4c4e-8a77-70a33420f1ff
+   SectionName=W36X150   Material=STEEL   Shape="I/Wide Flange"   t3=2.99166679382324   t2=1   tf=0.0783333331346512   tw=0.0520833333333333   t2b=1   tfb=0.0783333331346512   FilletRadius=0.0625000049670537   Area=0.306944449742635 _
+        TorsConst=0.000487075635680446   I33=0.435956790123457   I22=0.0130208333333333   I23=0   AS2=0.155815972222222   AS3=0.130555550257365   S33Top=0.291447423906671   S33Bot=0.291447423906671   S22Left=0.0260416666666667 _
+        S22Right=0.0260416666666667   Z33=0.336226851851852   Z22=0.0410300934756244   R33=1.1917683037878   R22=0.205963136865336   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0277022955616038   Color=Blue   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W36X150   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=e3c54cf7-f815-4184-8f47-ca4f736295f4
+   SectionName=W36X194   Material=STEEL   Shape="I/Wide Flange"   t3=3.04166666666667   t2=1.00833336512248   tf=0.104999999205271   tw=0.0637499988079071   t2b=1.00833336512248   tfb=0.104999999205271   FilletRadius=0.0625 _
+        Area=0.395833333333333   TorsConst=0.00107060188864484   I33=0.583526234567901   I22=0.0180844907407407   I23=0   AS2=0.193906254238553   AS3=0.176458332273695   S33Top=0.383688483003552   S33Bot=0.383688483003552 _
+        S22Left=0.0358700631483004   S22Right=0.0358700631483004   Z33=0.443865740740741   Z22=0.0565393500857883   R33=1.21415466064296   R22=0.21374549001774   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.038681185474304 _
+        Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W36X194   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=c83f8e0f-6275-46c4-bb8c-478f439267c6
+   SectionName=W36X210   Material=STEEL   Shape="I/Wide Flange"   t3=3.05833339691162   t2=1.01666665077209   tf=0.113333334525426   tw=0.0691666652758916   t2b=1.01666665077209   tfb=0.113333334525426   FilletRadius=0.0624999900658925 _
+        Area=0.429166661368476   TorsConst=0.00135030864197531   I33=0.636574074074074   I22=0.0198206018518518   I23=0   AS2=0.211534725295173   AS3=0.19203703933292   S33Top=0.416288214173708   S33Bot=0.416288214173708 _
+        S22Left=0.0389913485148733   S22Right=0.0389913485148733   Z33=0.482060185185185   Z22=0.0619212962962963   R33=1.21789959118652   R22=0.214904460668563   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0430380687862493 _
+        Color=Cyan   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W36X210   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=b1afccb1-9194-4ecc-82a9-b40e995ac3d8
+   SectionName=W36X230   Material=STEEL   Shape="I/Wide Flange"   t3=2.99166679382324   t2=1.375   tf=0.104999999205271   tw=0.0633333325386047   t2b=1.375   tfb=0.104999999205271   FilletRadius=0.0791666706403097   Area=0.469444433848063 _
+        TorsConst=0.00137924384555699   I33=0.72337962962963   I22=0.0453317901234568   I23=0   AS2=0.189472224977281   AS3=0.240625010596381   S33Top=0.483596389225671   S33Bot=0.483596389225671   S22Left=0.0659371492704826 _
+        S22Right=0.0659371492704826   Z33=0.545717592592593   Z22=0.101851851851852   R33=1.241340830102   R22=0.310748712315876   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.0947718725388003   Color=Red   FromFile=Yes   AMod=1 _
+        A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W36X230   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=29aa6edb-469d-4463-b442-2a5e2f58f636
+   SectionName=W36X260   Material=STEEL   Shape="I/Wide Flange"   t3=3.02499993642171   t2=1.38333336512248   tf=0.120000004768372   tw=0.0699999978144964   t2b=1.38333336512248   tfb=0.120000004768372   FilletRadius=0.0791666706403096 _
+        Area=0.53125   TorsConst=0.00200135030864198   I33=0.834297839506173   I22=0.0525655864197531   I23=0   AS2=0.211750004026625   AS3=0.276666667726305   S33Top=0.55160188895281   S33Bot=0.55160188895281   S22Left=0.0759984364507814 _
+        S22Right=0.0759984364507814   Z33=0.625   Z22=0.118055555555556   R33=1.25317316920353   R22=0.314558398714592   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.111697339931073   Color=Magenta   FromFile=Yes   AMod=1   A2Mod=1 _
+        A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W36X260   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=e2bedf90-4160-409c-94ac-75c3f1bd68ec
+   SectionName=W36X300   Material=STEEL   Shape="I/Wide Flange"   t3=3.05833339691162   t2=1.39166673024495   tf=0.139999995628993   tw=0.0787499994039536   t2b=1.39166673024495   tfb=0.139999995628993   FilletRadius=0.0791666805744171 _
+        Area=0.613194465637207   TorsConst=0.00309606466764285   I33=0.978973765432099   I22=0.0626929012345679   I23=0   AS2=0.24084374639723   AS3=0.324722210566203   S33Top=0.640200814221687   S33Bot=0.640200814221687 _
+        S22Left=0.0900975784964451   S22Right=0.0900975784964451   Z33=0.729166666666667   Z22=0.139467592592593   R33=1.26353248979801   R22=0.319749644877668   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.13390362271464 _
+        Color=Yellow   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W36X300   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=6322027a-b65f-435b-a22c-6da7c775ed1b
+   SectionName=W8X10   Material=STEEL   Shape="I/Wide Flange"   t3=0.6574999888738   t2=0.328333338101705   tf=0.0170833331843217   tw=0.0141666668156783   t2b=0.328333338101705   tfb=0.0170833331843217   FilletRadius=0.0249999997516473 _
+        Area=0.0205555558204651   TorsConst=2.05439807168771E-06   I33=0.00148533946937985   I22=0.000100790890922517   I23=0   AS2=0.009314583407508   AS3=0.00934837924109565   S33Top=0.00451814294909424   S33Bot=0.00451814294909424 _
+        S22Left=0.000613954656601431   S22Right=0.000613954656601431   Z33=0.00513310178562447   Z22=0.000960648128831828   R33=0.268811750186973   R22=0.0700238571936882   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0 _
+        Cw=1.03331218917615E-05   Color=White   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W8X10   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=7655eca8-befc-473a-81e4-0334cf500bcb
+   SectionName=W8X24   Material=STEEL   Shape="I/Wide Flange"   t3=0.660833319028219   t2=0.541666666666667   tf=0.0333333338300387   tw=0.020416667064031   t2b=0.541666666666667   tfb=0.0333333338300387   FilletRadius=0.0328333353002866 _
+        Area=0.0491666661368476   TorsConst=1.66859561117527E-05   I33=0.0039882328775194   I22=0.000882523111355157   I23=0   AS2=0.0134920138451788   AS3=0.0300925936963823   S33Top=0.0120703141402865   S33Bot=0.0120703141402865 _
+        S22Left=0.00325854687269597   S22Right=0.00325854687269597   Z33=0.0133680557763135   Z22=0.00495949056413439   R33=0.284809764180954   R22=0.133976202354219   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=8.6914308984439E-05 _
+        Color=Gray8Dark   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W8X24   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=80b3d0e8-16d4-457b-8172-14d747093fae
+   SectionName=W8X31   Material=STEEL   Shape="I/Wide Flange"   t3=0.666666666666667   t2=0.666666666666667   tf=0.0362500001986821   tw=0.0237499997019768   t2b=0.666666666666667   tfb=0.0362500001986821   FilletRadius=0.0328333328167597 _
+        Area=0.0633333325386047   TorsConst=2.58487660759761E-05   I33=0.00530478395061728   I22=0.0017891588770313   I23=0   AS2=0.0158333331346512   AS3=0.0402777791023254   S33Top=0.0159143518518518   S33Bot=0.0159143518518518 _
+        S22Left=0.00536747663109391   S22Right=0.00536747663109391   Z33=0.0175925923718346   Z22=0.00815972244298017   R33=0.289412763436135   R22=0.168076998308057   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000177860032262756 _
+        Color=Blue   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W8X31   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=46aec6b6-7cb0-4aa2-a4e3-e0e51584ee45
+   SectionName=W8X40   Material=STEEL   Shape="I/Wide Flange"   t3=0.6875   t2=0.672499974568685   tf=0.0466666668653488   tw=0.0300000011920929   t2b=0.672499974568685   tfb=0.0466666668653488   FilletRadius=0.0328333328167597 _
+        Area=0.0812499986754523   TorsConst=5.40123459089685E-05   I33=0.0070408950617284   I22=0.00236786258073501   I23=0   AS2=0.0206250001986821   AS3=0.0523055560059018   S33Top=0.0204826038159371   S33Bot=0.0204826038159371 _
+        S22Left=0.0070419707666269   S22Right=0.0070419707666269   Z33=0.0230324069658915   Z22=0.0107060185185185   R33=0.294375901532716   R22=0.170712988801896   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000242863665290096 _
+        Color=Green   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W8X40   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=b69b3ea6-6b8c-4d88-8aff-c63dac1920c5
+   SectionName=W8X58   Material=STEEL   Shape="I/Wide Flange"   t3=0.729166666666667   t2=0.685000022252401   tf=0.0675000001986821   tw=0.0424999992052714   t2b=0.685000022252401   tfb=0.0675000001986821   FilletRadius=0.0325000037749608 _
+        Area=0.118750002649095   TorsConst=0.000160590274098479   I33=0.0109953703703704   I22=0.00362172060542636   I23=0   AS2=0.0309895839956072   AS3=0.0770625008477105   S33Top=0.0301587301587302   S33Bot=0.0301587301587302 _
+        S22Left=0.0105743663876609   S22Right=0.0105743663876609   Z33=0.0346064810399656   Z22=0.0161458331125754   R33=0.304290306331012   R22=0.174638767617042   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000395769936935782 _
+        Color=Cyan   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W8X58   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=be7fe985-d7a1-4a07-bc70-a4b0555db135
+   SectionName=W8X67   Material=STEEL   Shape="I/Wide Flange"   t3=0.75   t2=0.689999977747599   tf=0.0779166668653488   tw=0.0474999994039536   t2b=0.689999977747599   tfb=0.0779166668653488   FilletRadius=0.0329166700442632 _
+        Area=0.136805560853746   TorsConst=0.000243537817840223   I33=0.0131172839506173   I22=0.00427276227209303   I23=0   AS2=0.0356250007947286   AS3=0.0896041658189562   S33Top=0.0349794238683128   S33Bot=0.0349794238683128 _
+        S22Left=0.0123848185793884   S22Right=0.0123848185793884   Z33=0.0405671287465979   Z22=0.018923611552627   R33=0.309649287100484   R22=0.176726830897391   CGOffset3=0   CGOffset2=0   EccV2=0   EccV3=0   Cw=0.000481739885984294 _
+        Color=Red   FromFile=Yes   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1   WMod=1   SectInFile=W8X67   FileName="W:\DEVEL\SAP2000 Bug Fix\Sections8.pro"   GUID=ed9f73f8-2fc1-4c47-b89f-33105ac1bae5
+ 
+TABLE:  "FRAME SECTION PROPERTIES 13 - TIME DEPENDENT"
+   SectionName=W10X112   TypeSize=Auto   AutoSFSize=1
+   SectionName=W10X12   TypeSize=Auto   AutoSFSize=1
+   SectionName=W10X49   TypeSize=Auto   AutoSFSize=1
+   SectionName=W10X68   TypeSize=Auto   AutoSFSize=1
+   SectionName=W10X88   TypeSize=Auto   AutoSFSize=1
+   SectionName=W12X136   TypeSize=Auto   AutoSFSize=1
+   SectionName=W12X14   TypeSize=Auto   AutoSFSize=1
+   SectionName=W12X16   TypeSize=Auto   AutoSFSize=1
+   SectionName=W12X19   TypeSize=Auto   AutoSFSize=1
+   SectionName=W12X190   TypeSize=Auto   AutoSFSize=1
+   SectionName=W12X65   TypeSize=Auto   AutoSFSize=1
+   SectionName=W12X96   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X109   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X132   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X159   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X211   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X22   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X257   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X311   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X370   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X426   TypeSize=Auto   AutoSFSize=1
+   SectionName=W14X90   TypeSize=Auto   AutoSFSize=1
+   SectionName=W16X26   TypeSize=Auto   AutoSFSize=1
+   SectionName=W16X31   TypeSize=Auto   AutoSFSize=1
+   SectionName=W18X119   TypeSize=Auto   AutoSFSize=1
+   SectionName=W18X35   TypeSize=Auto   AutoSFSize=1
+   SectionName=W18X40   TypeSize=Auto   AutoSFSize=1
+   SectionName=W18X55   TypeSize=Auto   AutoSFSize=1
+   SectionName=W18X65   TypeSize=Auto   AutoSFSize=1
+   SectionName=W18X76   TypeSize=Auto   AutoSFSize=1
+   SectionName=W18X97   TypeSize=Auto   AutoSFSize=1
+   SectionName=W21X44   TypeSize=Auto   AutoSFSize=1
+   SectionName=W21X50   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X103   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X117   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X131   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X146   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X162   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X176   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X207   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X250   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X335   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X55   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X62   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X68   TypeSize=Auto   AutoSFSize=1
+   SectionName=W24X76   TypeSize=Auto   AutoSFSize=1
+   SectionName=W27X84   TypeSize=Auto   AutoSFSize=1
+   SectionName=W27X94   TypeSize=Auto   AutoSFSize=1
+   SectionName=W30X108   TypeSize=Auto   AutoSFSize=1
+   SectionName=W30X116   TypeSize=Auto   AutoSFSize=1
+   SectionName=W30X148   TypeSize=Auto   AutoSFSize=1
+   SectionName=W30X173   TypeSize=Auto   AutoSFSize=1
+   SectionName=W30X191   TypeSize=Auto   AutoSFSize=1
+   SectionName=W30X99   TypeSize=Auto   AutoSFSize=1
+   SectionName=W33X118   TypeSize=Auto   AutoSFSize=1
+   SectionName=W33X130   TypeSize=Auto   AutoSFSize=1
+   SectionName=W36X135   TypeSize=Auto   AutoSFSize=1
+   SectionName=W36X150   TypeSize=Auto   AutoSFSize=1
+   SectionName=W36X194   TypeSize=Auto   AutoSFSize=1
+   SectionName=W36X210   TypeSize=Auto   AutoSFSize=1
+   SectionName=W36X230   TypeSize=Auto   AutoSFSize=1
+   SectionName=W36X260   TypeSize=Auto   AutoSFSize=1
+   SectionName=W36X300   TypeSize=Auto   AutoSFSize=1
+   SectionName=W8X10   TypeSize=Auto   AutoSFSize=1
+   SectionName=W8X24   TypeSize=Auto   AutoSFSize=1
+   SectionName=W8X31   TypeSize=Auto   AutoSFSize=1
+   SectionName=W8X40   TypeSize=Auto   AutoSFSize=1
+   SectionName=W8X58   TypeSize=Auto   AutoSFSize=1
+   SectionName=W8X67   TypeSize=Auto   AutoSFSize=1
+ 
+TABLE:  "FUNCTION - PLOT FUNCTIONS"
+   PlotFunc="Input Energy"   Type=Energy   Component=Input   Mode=All
+ 
+TABLE:  "FUNCTION - POWER SPECTRAL DENSITY - USER"
+   Name=UNIFPSD   Frequency=0   Value=1
+   Name=UNIFPSD   Frequency=1   Value=1
+ 
+TABLE:  "FUNCTION - RESPONSE SPECTRUM - USER"
+   Name=UNIFRS   Period=0   Accel=1   FuncDamp=0
+   Name=UNIFRS   Period=1   Accel=1
+ 
+TABLE:  "FUNCTION - STEADY STATE - USER"
+   Name=UNIFSS   Frequency=0   Value=1
+   Name=UNIFSS   Frequency=1   Value=1
+ 
+TABLE:  "FUNCTION - TIME HISTORY - USER"
+   Name=RAMPTH   Time=0   Value=0
+   Name=RAMPTH   Time=1   Value=1
+   Name=RAMPTH   Time=4   Value=1
+   Name=UNIFTH   Time=0   Value=1
+   Name=UNIFTH   Time=1   Value=1
+ 
+TABLE:  "GRID LINES"
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End   AllVisible=No   BubbleSize=4
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=40   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Y   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Z   XRYZCoord=-40   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Z   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+ 
+TABLE:  "GROUPS 1 - DEFINITIONS"
+   GroupName=All   Selection=Yes   SectionCut=Yes   Steel=Yes   Concrete=Yes   Aluminum=Yes   ColdFormed=Yes   Stage=Yes   Bridge=Yes   AutoSeismic=No   AutoWind=No   SelDesSteel=No   SelDesAlum=No   SelDesCold=No   MassWeight=Yes   Color=Cyan
+ 
+TABLE:  "JOINT COORDINATES"
+   Joint=1   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-40   SpecialJt=No
+   Joint=2   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-40   SpecialJt=No
+   Joint=3   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=0   SpecialJt=No
+   Joint=4   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=0   SpecialJt=No
+   Joint=5   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-40   SpecialJt=No
+   Joint=6   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-35   SpecialJt=No
+   Joint=7   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-35   SpecialJt=No
+   Joint=8   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-30   SpecialJt=No
+   Joint=9   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-30   SpecialJt=No
+   Joint=10   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-25   SpecialJt=No
+   Joint=11   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-25   SpecialJt=No
+   Joint=12   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-20   SpecialJt=No
+   Joint=13   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-20   SpecialJt=No
+   Joint=14   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-15   SpecialJt=No
+   Joint=15   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-15   SpecialJt=No
+   Joint=16   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-10   SpecialJt=No
+   Joint=17   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-10   SpecialJt=No
+   Joint=18   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=-5   SpecialJt=No
+   Joint=19   CoordSys=GLOBAL   CoordType=Cartesian   XorR=0   Y=0   Z=-5   SpecialJt=No
+   Joint=20   CoordSys=GLOBAL   CoordType=Cartesian   XorR=5   Y=0   Z=0   SpecialJt=No
+   Joint=21   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-40   SpecialJt=No
+   Joint=22   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-35   SpecialJt=No
+   Joint=23   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-30   SpecialJt=No
+   Joint=24   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-25   SpecialJt=No
+   Joint=25   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-20   SpecialJt=No
+   Joint=26   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-15   SpecialJt=No
+   Joint=27   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-10   SpecialJt=No
+   Joint=28   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=-5   SpecialJt=No
+   Joint=29   CoordSys=GLOBAL   CoordType=Cartesian   XorR=10   Y=0   Z=0   SpecialJt=No
+   Joint=30   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-40   SpecialJt=No
+   Joint=31   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-35   SpecialJt=No
+   Joint=32   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-30   SpecialJt=No
+   Joint=33   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-25   SpecialJt=No
+   Joint=34   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-20   SpecialJt=No
+   Joint=35   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-15   SpecialJt=No
+   Joint=36   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-10   SpecialJt=No
+   Joint=37   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=-5   SpecialJt=No
+   Joint=38   CoordSys=GLOBAL   CoordType=Cartesian   XorR=15   Y=0   Z=0   SpecialJt=No
+   Joint=39   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-40   SpecialJt=No
+   Joint=40   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-35   SpecialJt=No
+   Joint=41   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-30   SpecialJt=No
+   Joint=42   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-25   SpecialJt=No
+   Joint=43   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-20   SpecialJt=No
+   Joint=44   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-15   SpecialJt=No
+   Joint=45   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-10   SpecialJt=No
+   Joint=46   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=-5   SpecialJt=No
+   Joint=47   CoordSys=GLOBAL   CoordType=Cartesian   XorR=20   Y=0   Z=0   SpecialJt=No
+   Joint=48   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-40   SpecialJt=No
+   Joint=49   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-35   SpecialJt=No
+   Joint=50   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-30   SpecialJt=No
+   Joint=51   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-25   SpecialJt=No
+   Joint=52   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-20   SpecialJt=No
+   Joint=53   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-15   SpecialJt=No
+   Joint=54   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-10   SpecialJt=No
+   Joint=55   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=-5   SpecialJt=No
+   Joint=56   CoordSys=GLOBAL   CoordType=Cartesian   XorR=25   Y=0   Z=0   SpecialJt=No
+   Joint=57   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-40   SpecialJt=No
+   Joint=58   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-35   SpecialJt=No
+   Joint=59   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-30   SpecialJt=No
+   Joint=60   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-25   SpecialJt=No
+   Joint=61   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-20   SpecialJt=No
+   Joint=62   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-15   SpecialJt=No
+   Joint=63   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-10   SpecialJt=No
+   Joint=64   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=-5   SpecialJt=No
+   Joint=65   CoordSys=GLOBAL   CoordType=Cartesian   XorR=30   Y=0   Z=0   SpecialJt=No
+   Joint=66   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-40   SpecialJt=No
+   Joint=67   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-35   SpecialJt=No
+   Joint=68   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-30   SpecialJt=No
+   Joint=69   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-25   SpecialJt=No
+   Joint=70   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-20   SpecialJt=No
+   Joint=71   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-15   SpecialJt=No
+   Joint=72   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-10   SpecialJt=No
+   Joint=73   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=-5   SpecialJt=No
+   Joint=74   CoordSys=GLOBAL   CoordType=Cartesian   XorR=35   Y=0   Z=0   SpecialJt=No
+   Joint=75   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-35   SpecialJt=No
+   Joint=76   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-30   SpecialJt=No
+   Joint=77   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-25   SpecialJt=No
+   Joint=78   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-20   SpecialJt=No
+   Joint=79   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-15   SpecialJt=No
+   Joint=80   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-10   SpecialJt=No
+   Joint=81   CoordSys=GLOBAL   CoordType=Cartesian   XorR=40   Y=0   Z=-5   SpecialJt=No
+ 
+TABLE:  "JOINT PATTERN ASSIGNMENTS"
+   Joint=1   Pattern=WATER   Value=1872
+   Joint=2   Pattern=WATER   Value=1872
+   Joint=3   Pattern=WATER   Value=0
+   Joint=4   Pattern=WATER   Value=0
+   Joint=5   Pattern=WATER   Value=1872
+   Joint=6   Pattern=WATER   Value=1560
+   Joint=7   Pattern=WATER   Value=1560
+   Joint=8   Pattern=WATER   Value=1248
+   Joint=9   Pattern=WATER   Value=1248
+   Joint=10   Pattern=WATER   Value=936
+   Joint=11   Pattern=WATER   Value=936
+   Joint=12   Pattern=WATER   Value=624
+   Joint=13   Pattern=WATER   Value=624
+   Joint=14   Pattern=WATER   Value=312
+   Joint=15   Pattern=WATER   Value=312
+   Joint=16   Pattern=WATER   Value=0
+   Joint=17   Pattern=WATER   Value=0
+   Joint=18   Pattern=WATER   Value=0
+   Joint=19   Pattern=WATER   Value=0
+   Joint=20   Pattern=WATER   Value=0
+   Joint=21   Pattern=WATER   Value=1872
+   Joint=22   Pattern=WATER   Value=1560
+   Joint=23   Pattern=WATER   Value=1248
+   Joint=24   Pattern=WATER   Value=936
+   Joint=25   Pattern=WATER   Value=624
+   Joint=26   Pattern=WATER   Value=312
+   Joint=27   Pattern=WATER   Value=0
+   Joint=28   Pattern=WATER   Value=0
+   Joint=29   Pattern=WATER   Value=0
+   Joint=30   Pattern=WATER   Value=1872
+   Joint=31   Pattern=WATER   Value=1560
+   Joint=32   Pattern=WATER   Value=1248
+   Joint=33   Pattern=WATER   Value=936
+   Joint=34   Pattern=WATER   Value=624
+   Joint=35   Pattern=WATER   Value=312
+   Joint=36   Pattern=WATER   Value=0
+   Joint=37   Pattern=WATER   Value=0
+   Joint=38   Pattern=WATER   Value=0
+   Joint=39   Pattern=WATER   Value=1872
+   Joint=40   Pattern=WATER   Value=1560
+   Joint=41   Pattern=WATER   Value=1248
+   Joint=42   Pattern=WATER   Value=936
+   Joint=43   Pattern=WATER   Value=624
+   Joint=44   Pattern=WATER   Value=312
+   Joint=45   Pattern=WATER   Value=0
+   Joint=46   Pattern=WATER   Value=0
+   Joint=47   Pattern=WATER   Value=0
+   Joint=48   Pattern=WATER   Value=1872
+   Joint=49   Pattern=WATER   Value=1560
+   Joint=50   Pattern=WATER   Value=1248
+   Joint=51   Pattern=WATER   Value=936
+   Joint=52   Pattern=WATER   Value=624
+   Joint=53   Pattern=WATER   Value=312
+   Joint=54   Pattern=WATER   Value=0
+   Joint=55   Pattern=WATER   Value=0
+   Joint=56   Pattern=WATER   Value=0
+   Joint=57   Pattern=WATER   Value=1872
+   Joint=58   Pattern=WATER   Value=1560
+   Joint=59   Pattern=WATER   Value=1248
+   Joint=60   Pattern=WATER   Value=936
+   Joint=61   Pattern=WATER   Value=624
+   Joint=62   Pattern=WATER   Value=312
+   Joint=63   Pattern=WATER   Value=0
+   Joint=64   Pattern=WATER   Value=0
+   Joint=65   Pattern=WATER   Value=0
+   Joint=66   Pattern=WATER   Value=1872
+   Joint=67   Pattern=WATER   Value=1560
+   Joint=68   Pattern=WATER   Value=1248
+   Joint=69   Pattern=WATER   Value=936
+   Joint=70   Pattern=WATER   Value=624
+   Joint=71   Pattern=WATER   Value=312
+   Joint=72   Pattern=WATER   Value=0
+   Joint=73   Pattern=WATER   Value=0
+   Joint=74   Pattern=WATER   Value=0
+   Joint=75   Pattern=WATER   Value=1560
+   Joint=76   Pattern=WATER   Value=1248
+   Joint=77   Pattern=WATER   Value=936
+   Joint=78   Pattern=WATER   Value=624
+   Joint=79   Pattern=WATER   Value=312
+   Joint=80   Pattern=WATER   Value=0
+   Joint=81   Pattern=WATER   Value=0
+ 
+TABLE:  "JOINT PATTERN DEFINITIONS"
+   Pattern=DEFAULT
+   Pattern=WATER
+ 
+TABLE:  "JOINT RESTRAINT ASSIGNMENTS"
+   Joint=1   U1=Yes   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=2   U1=Yes   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=3   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=4   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=5   U1=No   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=7   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=9   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=11   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=13   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=15   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=17   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=19   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=21   U1=No   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=30   U1=No   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=39   U1=No   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=48   U1=No   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=57   U1=No   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=66   U1=No   U2=No   U3=Yes   R1=No   R2=No   R3=No
+   Joint=75   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=76   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=77   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=78   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=79   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=80   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+   Joint=81   U1=Yes   U2=No   U3=No   R1=No   R2=No   R3=No
+ 
+TABLE:  "LINK PROPERTY DEFINITIONS 01 - GENERAL"
+   Link=LIN1   LinkType=Linear   Mass=0   Weight=0   RotInert1=0   RotInert2=0   RotInert3=0   DefLength=1   DefArea=1   PDM2I=0   PDM2J=0   PDM3I=0   PDM3J=0   StiffDFact=1   Color=Yellow   GUID=82f9c559-70f5-4055-848e-c317f2adc30f
+ 
+TABLE:  "LOAD CASE DEFINITIONS"
+   Case=SOIL   Type=LinStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Other   DesActOpt="Prog Det"   DesignAct=Other   AutoType=None   RunCase=Yes   GUID=96a42275-792a-40db-b54c-432f50481705
+ 
+TABLE:  "LOAD PATTERN DEFINITIONS"
+   LoadPat=SOIL   DesignType=Other   SelfWtMult=1   GUID=38365227-cc40-4a1b-af72-40d3fcadd983
+ 
+TABLE:  "MASS SOURCE"
+   MassSource=MSSSRC1   Elements=Yes   Masses=Yes   Loads=No   IsDefault=Yes
+ 
+TABLE:  "MATERIAL PROPERTIES 01 - GENERAL"
+   Material=A416Gr270   Type=Tendon   SymType=Uniaxial   TempDepend=No   Color=Yellow   GUID=c0eada92-a68a-45d1-8b68-5a038cf809c1   Notes="ASTM A416 Grade 270 added 6/26/2008 7:19:44 PM"
+   Material=ALUM   Type=Aluminum   SymType=Isotropic   TempDepend=No   Color=Magenta   GUID=45057efb-dc90-4acf-9fc4-dc73fcde538d   Notes="Aluminum Alloy 6061 T6 added 9/19/2006 5:15:43 PM"
+   Material=CLDFRM   Type=ColdFormed   SymType=Isotropic   TempDepend=No   Color=Yellow   GUID=469f9ac7-36bb-46f5-bb2e-3ef0f1609cfd   Notes="ASTM A653 SQ Grade 50 added 9/19/2006 5:15:43 PM"
+   Material=CONC   Type=Concrete   SymType=Isotropic   TempDepend=No   Color=Red   GUID=32593846-0bc6-46cb-b855-154733709c55   Notes="Normalweight f'c = 4 ksi added 9/19/2006 5:15:43 PM"
+   Material=OTHER   Type=Other   SymType=Isotropic   TempDepend=No   Color=White   GUID=aaa328df-fc47-437b-abf4-699474bed2cd   Notes="Material added 9/19/2006 5:15:43 PM"
+   Material=SOILDRY   Type=Other   SymType=Isotropic   TempDepend=No   Color=Gray8Dark   GUID=07ce3a7f-1378-4aa2-a1dd-237df1579a76   Notes="Material added 9/19/2006 5:15:43 PM"
+   Material=SOILWET   Type=Other   SymType=Isotropic   TempDepend=No   Color=Blue   GUID=56386edc-7e9e-45b1-a5c3-c96a9acff896   Notes="Material added 9/19/2006 5:15:43 PM"
+   Material=STEEL   Type=Steel   SymType=Isotropic   TempDepend=No   Color=Cyan   GUID=5d328bb8-26a7-4599-9507-39bf02353722   Notes="ASTM A36 added 9/19/2006 5:15:43 PM"
+ 
+TABLE:  "MATERIAL PROPERTIES 02 - BASIC MECHANICAL PROPERTIES"
+   Material=A416Gr270   UnitWeight=490   UnitMass=15.2296649007508   E1=4104000000   A1=6.5E-06
+   Material=ALUM   UnitWeight=169.344   UnitMass=5.266944   E1=1454400000   G12=546766917.293233   U12=0.33   A1=1.31E-05
+   Material=CLDFRM   UnitWeight=490   UnitMass=15.2296649007508   E1=4248000000   G12=1633846153.84615   U12=0.3   A1=6.5E-06
+   Material=CONC   UnitWeight=150   UnitMass=4.66214231655636   E1=518400000   G12=216000000   U12=0.2   A1=5.5E-06
+   Material=OTHER   UnitWeight=149.9904   UnitMass=4.6580873472   E1=518400000   G12=216000000   U12=0.2   A1=5.5E-06
+   Material=SOILDRY   UnitWeight=125   UnitMass=0   E1=2000000   G12=800000   U12=0.25   A1=0
+   Material=SOILWET   UnitWeight=150   UnitMass=0   E1=2000000   G12=800000   U12=0.25   A1=0
+   Material=STEEL   UnitWeight=490   UnitMass=15.2296649007508   E1=4176000000   G12=1606153846.15385   U12=0.3   A1=6.5E-06
+ 
+TABLE:  "MATERIAL PROPERTIES 03A - STEEL DATA"
+   Material=STEEL   Fy=5184000   Fu=8352000   EffFy=7776000   EffFu=9187200   SSCurveOpt="User Defined"   SSHysType=Kinematic   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03B - CONCRETE DATA"
+   Material=CONC   Fc=576000   eFc=576000   LtWtConc=No   SSCurveOpt="User Defined"   SSHysType=Kinematic   FAngle=0   DAngle=0   CoupModType="Modified Darwin-Pecknold"
+ 
+TABLE:  "MATERIAL PROPERTIES 03C - ALUMINUM DATA"
+   Material=ALUM   AlumType=Wrought   Alloy=6061-T6   Fcy=35   Fty=35   Ftu=38   Fsu=24   SSHysType=Kinematic   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03D - COLD FORMED DATA"
+   Material=CLDFRM   Fy=5184000   Fu=8352000   SSHysType=Kinematic   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03F - TENDON DATA"
+   Material=A416Gr270   Fy=35294400   Fu=38880000   SSCurveOpt="270 ksi"   SSHysType=Kinematic   FinalSlope=-0.1   CoupModType="Von Mises"
+ 
+TABLE:  "MATERIAL PROPERTIES 03G - OTHER DATA"
+   Material=OTHER   SSHysType=Elastic   FAngle=0   DAngle=0   CoupModType=None
+   Material=SOILDRY   SSHysType=Elastic   FAngle=0   DAngle=0   CoupModType=None
+   Material=SOILWET   SSHysType=Elastic   FAngle=0   DAngle=0   CoupModType=None
+ 
+TABLE:  "MATERIAL PROPERTIES 03J - COUPLED NONLINEAR VON MISES DATA"
+   Material=A416Gr270   YieldStress=35294400   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+   Material=ALUM   YieldStress=35   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+   Material=CLDFRM   YieldStress=5184000   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+   Material=STEEL   YieldStress=7776000   LinIsoHard=No   LinKinHard=No   NLIsoSaHard=No
+ 
+TABLE:  "MATERIAL PROPERTIES 04 - USER STRESS-STRAIN CURVES"
+   Material=ALUM   Strain=-1.20324532453245E-09   Stress=0   PointID=-E
+   Material=ALUM   Strain=-8.42271727172717E-10   Stress=-612.5   PointID=-D
+   Material=ALUM   Strain=-4.81298129812981E-10   Stress=-1225   PointID=-C
+   Material=ALUM   Strain=-5.79119724403684E-16   Stress=-1225   PointID=-B
+   Material=ALUM   Strain=0   Stress=0   PointID=A
+   Material=ALUM   Strain=5.79119724403684E-16   Stress=1225   PointID=B
+   Material=ALUM   Strain=4.81298129812981E-10   Stress=1225
+   Material=ALUM   Strain=1.20324532453245E-09   Stress=1330   PointID=C
+   Material=ALUM   Strain=1.92519251925193E-09   Stress=1330   PointID=D
+   Material=ALUM   Strain=2.40649064906491E-09   Stress=1225   PointID=E
+   Material=CLDFRM   Strain=-6.10169491525424E-05   Stress=0   PointID=-E
+   Material=CLDFRM   Strain=-4.27118644067797E-05   Stress=-13436928000000   PointID=-D
+   Material=CLDFRM   Strain=-2.44067796610169E-05   Stress=-26873856000000   PointID=-C
+   Material=CLDFRM   Strain=-1.48922723355358E-06   Stress=-26873856000000   PointID=-B
+   Material=CLDFRM   Strain=0   Stress=0   PointID=A
+   Material=CLDFRM   Strain=1.48922723355358E-06   Stress=26873856000000   PointID=B
+   Material=CLDFRM   Strain=2.44067796610169E-05   Stress=26873856000000
+   Material=CLDFRM   Strain=6.10169491525424E-05   Stress=43296768000000   PointID=C
+   Material=CLDFRM   Strain=9.76271186440678E-05   Stress=43296768000000   PointID=D
+   Material=CLDFRM   Strain=0.000122033898305085   Stress=26873856000000   PointID=E
+   Material=CONC   Strain=-5.55555555555556E-05   Stress=0   PointID=-E
+   Material=CONC   Strain=-3.88888888888889E-05   Stress=-2488320000000   PointID=-D
+   Material=CONC   Strain=-2.22222222222222E-05   Stress=-4976640000000   PointID=-C
+   Material=CONC   Strain=-2.29885057471264E-06   Stress=-4976640000000   PointID=-B
+   Material=CONC   Strain=0   Stress=0   PointID=A
+   Material=CONC   Strain=2.29885057471264E-06   Stress=4976640000000   PointID=B
+   Material=CONC   Strain=2.22222222222222E-05   Stress=4976640000000
+   Material=CONC   Strain=5.55555555555556E-05   Stress=6220800000000   PointID=C
+   Material=CONC   Strain=8.88888888888889E-05   Stress=6220800000000   PointID=D
+   Material=CONC   Strain=0.000111111111111111   Stress=4976640000000   PointID=E
+   Material=OTHER   Strain=-1.92901234567901E-09   Stress=-1
+   Material=OTHER   Strain=0   Stress=0   PointID=A
+   Material=OTHER   Strain=1.92901234567901E-09   Stress=1
+   Material=SOILDRY   Strain=-5E-07   Stress=-1
+   Material=SOILDRY   Strain=0   Stress=0   PointID=A
+   Material=SOILDRY   Strain=5E-07   Stress=1
+   Material=SOILWET   Strain=-5E-07   Stress=-1
+   Material=SOILWET   Strain=0   Stress=0   PointID=A
+   Material=SOILWET   Strain=5E-07   Stress=1
+   Material=STEEL   Strain=-6.20689655172414E-05   Stress=0   PointID=-E
+   Material=STEEL   Strain=-4.3448275862069E-05   Stress=-13436928000000   PointID=-D
+   Material=STEEL   Strain=-2.48275862068966E-05   Stress=-26873856000000   PointID=-C
+   Material=STEEL   Strain=-1.5410225921522E-06   Stress=-26873856000000   PointID=-B
+   Material=STEEL   Strain=0   Stress=0   PointID=A
+   Material=STEEL   Strain=1.5410225921522E-06   Stress=26873856000000   PointID=B
+   Material=STEEL   Strain=2.48275862068966E-05   Stress=26873856000000
+   Material=STEEL   Strain=6.20689655172414E-05   Stress=43296768000000   PointID=C
+   Material=STEEL   Strain=9.93103448275862E-05   Stress=43296768000000   PointID=D
+   Material=STEEL   Strain=0.000124137931034483   Stress=26873856000000   PointID=E
+ 
+TABLE:  "MATERIAL PROPERTIES 06 - DAMPING PARAMETERS"
+   Material=A416Gr270   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=ALUM   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=CLDFRM   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=CONC   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=OTHER   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=SOILDRY   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=SOILWET   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+   Material=STEEL   ModalRatio=0   VisMass=0   VisStiff=0   HysMass=0   HysStiff=0
+ 
+TABLE:  "MATERIAL PROPERTIES 09 - ACCEPTANCE CRITERIA"
+   Material=A416Gr270   IOTens=0.015   LSTens=0.023   CPTens=0.03   IOComp=-0.015   LSComp=-0.023   CPComp=-0.03
+   Material=ALUM   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02
+   Material=CLDFRM   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02
+   Material=CONC   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.003   LSComp=-0.006   CPComp=-0.015   IgnoreTens=Yes
+   Material=OTHER   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02   IgnoreTens=No
+   Material=SOILDRY   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02   IgnoreTens=No
+   Material=SOILWET   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02   IgnoreTens=No
+   Material=STEEL   IOTens=0.01   LSTens=0.02   CPTens=0.05   IOComp=-0.005   LSComp=-0.01   CPComp=-0.02
+ 
+TABLE:  "NAMED SETS - DATABASE TABLES 1 - GENERAL"
+   DBNamedSet=DBO1   SortOrder="Elem, Cases"   Unformatted=Yes   ModeStart=1   ModeEnd=All   ModalHist=Envelopes   DirectHist=Envelopes   NLStatic=LastStep   BaseReacX=0   BaseReacY=0   BaseReacZ=0   Combo=Envelopes   Steady=Frequencies _
+        SteadyOpt=Magnitude   PSD=RMS   Multistep=Envelopes
+ 
+TABLE:  "NAMED SETS - DATABASE TABLES 2 - SELECTIONS"
+   DBNamedSet=DBO1   SelectType=Table   Selection="Element Stresses - Area Planes"
+   DBNamedSet=DBO1   SelectType=LoadCase   Selection=SOIL
+ 
+TABLE:  "OPTIONS - COLORS - DISPLAY"
+   DeviceType=Screen   Points=Yellow   LinesFrame=Yellow   LinesFrmDL=Yellow   LinesCable=Green   LinesTendon=Green   SpringLinks=Green   Restraints=Green   Releases=Green   Axes=Cyan   Text=Green   ShadowLines=Gray8Dark _
+        GuideLines=Gray8Dark   Highlight=Red   Selection=White   AreaFillBot=Red   AreaFillTop=Yellow   AreaFillSd=Red   AreaEdge=DarkRed   SolidF1=Red   SolidF2=Blue   SolidF3=Green   SolidF4=Yellow   SolidF5=White   SolidF6=Cyan _
+        SolidEdge=DarkRed   Floor=Gray4   Background=Black   BGLowLeft=Black   BGLowRight=Black   BGUpRight=Black   Darkness=0.5
+   DeviceType=Printer   Points=Gray8Dark   LinesFrame=Black   LinesFrmDL=Gray4   LinesCable=Black   LinesTendon=Black   SpringLinks=Gray8Dark   Restraints=Gray8Dark   Releases=Gray4   Axes=Black   Text=Black   ShadowLines=Gray4 _
+        GuideLines=Gray4   Highlight=Black   Selection=Black   AreaFillBot=Gray4   AreaFillTop=Gray8Dark   AreaFillSd=Gray4   AreaEdge=Black   SolidF1=Gray1Light   SolidF2=Gray2   SolidF3=Gray3   SolidF4=Gray4   SolidF5=Gray5 _
+        SolidF6=Gray6   SolidEdge=Black   Floor=Gray4   Background=White   BGLowLeft=White   BGLowRight=White   BGUpRight=White   Darkness=0.5
+   DeviceType="Color Printer"   Points=Yellow   LinesFrame=Blue   LinesFrmDL=7303023   LinesCable=Green   LinesTendon=Green   SpringLinks=Green   Restraints=Green   Releases=Green   Axes=Cyan   Text=Green   ShadowLines=Gray8Dark _
+        GuideLines=Gray8Dark   Highlight=Red   Selection=10504778   AreaFillBot=Red   AreaFillTop=Yellow   AreaFillSd=16634568   AreaEdge=DarkRed   SolidF1=Red   SolidF2=Blue   SolidF3=Green   SolidF4=Yellow   SolidF5=White   SolidF6=Cyan _
+        SolidEdge=DarkRed   Floor=10461087   Background=White   BGLowLeft=White   BGLowRight=14671839   BGUpRight=White   Darkness=0.5
+ 
+TABLE:  "OPTIONS - COLORS - OUTPUT"
+   DeviceType=Screen   Contour1=13107400   Contour2=6553828   Contour3=Red   Contour4=16639   Contour5=Orange   Contour6=43775   Contour7=54527   Contour8=Yellow   Contour9=65408   Contour10=Green   Contour11=8453888   Contour12=Cyan _
+        Contour13=16755200   Contour14=16733440   Contour15=Blue   Transpare=0.5   Ratio1=Cyan   Ratio2=Green   Ratio3=Yellow   Ratio4=Orange   Ratio5=Red   RatioNotD=Gray4   RatioNotC=Red   RatioVal1=0.5   RatioVal2=0.7   RatioVal3=0.9 _
+        RatioVal4=1   DFillPos=Yellow   DFillNeg=Red   DFillRPos=Blue   DFillRNeg=Blue
+   DeviceType=Printer   Contour1=Black   Contour2=3158064   Contour3=4210752   Contour4=5263440   Contour5=6316128   Contour6=7368816   Contour7=Gray8Dark   Contour8=Gray7   Contour9=Gray6   Contour10=Gray5   Contour11=Gray4 _
+        Contour12=Gray3   Contour13=Gray2   Contour14=Gray1Light   Contour15=White   Transpare=0   Ratio1=Gray2   Ratio2=Gray4   Ratio3=Gray8Dark   Ratio4=4210752   Ratio5=Black   RatioNotD=Gray4   RatioNotC=Black   RatioVal1=0.5 _
+        RatioVal2=0.7   RatioVal3=0.9   RatioVal4=1   DFillPos=Gray8Dark   DFillNeg=Gray8Dark   DFillRPos=4210752   DFillRNeg=4210752
+   DeviceType="Color Printer"   Contour1=13107400   Contour2=6553828   Contour3=Red   Contour4=16639   Contour5=Orange   Contour6=43775   Contour7=54527   Contour8=Yellow   Contour9=65408   Contour10=Green   Contour11=8453888 _
+        Contour12=Cyan   Contour13=16755200   Contour14=16733440   Contour15=Blue   Transpare=0.5   Ratio1=Cyan   Ratio2=Green   Ratio3=Yellow   Ratio4=Orange   Ratio5=Red   RatioNotD=Gray4   RatioNotC=Red   RatioVal1=0.5   RatioVal2=0.7 _
+        RatioVal3=0.9   RatioVal4=1   DFillPos=Red   DFillNeg=Red   DFillRPos=Blue   DFillRNeg=Blue
+ 
+TABLE:  "PREFERENCES - ALUMINUM DESIGN - AA 2015"
+   THDesign=Envelopes   SRatioLimit=1   Provision=ASD   LatFact=1.33333333333333   UseLatFact=No   Bridge=No   OmegaTy=1.65   OmegaTr=1.95   OmegaC=1.65   OmegaBo=1.65   OmegaBr=1.95   OmegaVo=1.65   OmegaVr=1.95
+ 
+TABLE:  "PREFERENCES - COLD FORMED DESIGN - AISI-ASD96"
+   THDesign=Envelopes   FrameType="Moment Frame"   SRatioLimit=1   MaxIter=1   OmegaBS=1.67   OmegaBUS=1.67   OmegaBLTB=1.67   OmegaVS=1.67   OmegaVNS=1.5   OmegaT=1.67   OmegaC=1.8
+ 
+TABLE:  "PREFERENCES - CONCRETE DESIGN - ACI 318-08/IBC2009"
+   THDesign=Envelopes   NumCurves=24   NumPoints=11   MinEccen=Yes   PatLLF=0.75   UFLimit=0.95   Rho=1   Sds=0.5   PhiT=0.9   PhiCTied=0.65   PhiCSpiral=0.7   PhiV=0.75   PhiVSeismic=0.6   PhiVJoint=0.85   TanTheta=1
+ 
+TABLE:  "PREFERENCES - CONCRETE SHELL DESIGN - EUROCODE 2-2004"
+   Country="CEN Default"   GammaS=1.15   GammaC=1.5   AlphaCC=1   AlphaCT=1   CrackCond="Program Determined"   ShrDesMet="Method 1"   CotTheta=1   AddTenForce=Yes
+ 
+TABLE:  "PREFERENCES - DIMENSIONAL"
+   MergeTol=0.00833333333333333   FineGrid=1   Nudge=1   SelectTol=3   SnapTol=12   SLineThick=1   PLineThick=4   MaxFont=8   MinFont=3   AutoZoom=10   ShrinkFact=70   TextFileLen=240
+ 
+TABLE:  "PREFERENCES - STEEL DESIGN - AISC360-05-IBC2006"
+   THDesign=Envelopes   FrameType=SMF   PatLLF=0.75   SRatioLimit=1   MaxIter=1   SDC=E   SeisCode=No   SeisLoad=No   ImpFactor=1   SystemRho=1   SystemSds=0.5   SystemR=8   SystemCd=5.5   Omega0=2.8   Provision=ASD _
+        AMethod="Direct Analysis"   SOMethod="General 2nd Order"   SRMethod="Tau-b Fixed"   NLCoeff=0.002   OmegaB=1.67   OmegaC=1.67   OmegaTY=1.67   OmegaTF=2   OmegaV=1.67   OmegaVRolledI=1.5   OmegaVT=1.67   PlugWeld=Yes _
+        HSSWelding=ERW   HSSReduceT=No   CheckDefl=No   DLRat=120   SDLAndLLRat=120   LLRat=360   TotalRat=240   NetRat=240
+ 
+TABLE:  "PROGRAM CONTROL"
+   ProgramName=SAP2000   Version=25.2.0   CurrUnits="lb, ft, F"   SteelCode=AISC360-05/IBC2006   ConcCode="ACI 318-08/IBC2009"   AlumCode="AA 2015"   ColdCode=AISI-ASD96   RegenHinge=No
+ 
+TABLE:  "PROJECT INFORMATION"
+   Item="Company Name"
+   Item="Client Name"
+   Item="Project Name"
+   Item="Project Number"
+   Item="Model Name"
+   Item="Model Description"
+   Item="Revision Number"
+   Item="Frame Type"
+   Item=Engineer
+   Item=Checker
+   Item=Supervisor
+   Item="Issue Code"
+   Item="Design Code"
+ 
+TABLE:  "REBAR SIZES"
+   RebarID=#2   Area=0.000347222222222222   Diameter=0.0208333333333333
+   RebarID=#3   Area=0.000763888884749677   Diameter=0.03125
+   RebarID=#4   Area=0.00138888890958495   Diameter=0.0416666666666667
+   RebarID=#5   Area=0.00215277779433462   Diameter=0.0520833333333333
+   RebarID=#6   Area=0.00305555553899871   Diameter=0.0625
+   RebarID=#7   Area=0.00416666683223512   Diameter=0.0729166666666667
+   RebarID=#8   Area=0.00548611126012272   Diameter=0.0833333333333333
+   RebarID=#9   Area=0.00694444444444444   Diameter=0.0940000017484029
+   RebarID=#10   Area=0.00881944431198968   Diameter=0.105833331743876
+   RebarID=#11   Area=0.010833332935969   Diameter=0.11749999721845
+   RebarID=#14   Area=0.015625   Diameter=0.141083329916
+   RebarID=#18   Area=0.0277777777777778   Diameter=0.188083330790202
+   RebarID=10M   Area=0.00107639108647689   Diameter=0.0370734919962068
+   RebarID=15M   Area=0.00215278217295378   Diameter=0.0524934391085823
+   RebarID=20M   Area=0.00322917325943068   Diameter=0.0639763789135847
+   RebarID=25M   Area=0.00538195543238446   Diameter=0.0826771690990994
+   RebarID=30M   Area=0.00753473760533824   Diameter=0.0980971130826221
+   RebarID=35M   Area=0.0107639108647689   Diameter=0.117125988514107
+   RebarID=45M   Area=0.0161458662971534   Diameter=0.143372708068398
+   RebarID=55M   Area=0.0269097771619223   Diameter=0.185039377863917
+   RebarID=6Ø   Area=0.000304618669260748   Diameter=0.0196850396657184
+   RebarID=8Ø   Area=0.000541424708285664   Diameter=0.0262467195542912
+   RebarID=10Ø   Area=0.00084496700288436   Diameter=0.032808399442864
+   RebarID=12Ø   Area=0.00121632192771889   Diameter=0.0393700793314367
+   RebarID=14Ø   Area=0.00165764227317441   Diameter=0.0459317592200095
+   RebarID=16Ø   Area=0.00216354608381855   Diameter=0.0524934391085823
+   RebarID=20Ø   Area=0.00337986801153744   Diameter=0.0656167988857279
+   RebarID=25Ø   Area=0.00528508023460154   Diameter=0.0820209986071599
+   RebarID=26Ø   Area=0.0057156366691923   Diameter=0.0853018385514463
+   RebarID=28Ø   Area=0.00663056909269765   Diameter=0.0918635184400191
+ 
+TABLE:  "SOLID PROPERTY DEFINITIONS"
+   SolidProp=DRY   Material=SOILDRY   MatAngleA=0   MatAngleB=0   MatAngleC=0   InComp=Yes   Color=White   GUID=dfb91408-ffe8-4dd6-a24f-ab42f54cc576
+   SolidProp=Solid1   Material=CONC   MatAngleA=0   MatAngleB=0   MatAngleC=0   InComp=Yes   Color=Magenta   GUID=56633382-ca47-4796-a57e-6a8e95088b67
+   SolidProp=WET   Material=SOILWET   MatAngleA=0   MatAngleB=0   MatAngleC=0   InComp=Yes   Color=White   GUID=2b715015-5bdf-44e4-a051-66a3f5363233
+ 
+TABLE:  "TABLES AUTOMATICALLY SAVED AFTER ANALYSIS"
+   SaveFile=Yes   FileType=XML   FileName="Example 3-005.xml"   NamedSet=DBO1   Group=All
+ 
+TABLE:  "TENDON SECTION DEFINITIONS"
+   TendonSect=TEN1   ModelOpt=Loads   PreType="Post Tension"   Material=A416Gr270   Specify=Area   Diameter=0.0940315972579594   Area=0.00694444444444444   Color=Green   AMod=1   A2Mod=1   A3Mod=1   JMod=1   I2Mod=1   I3Mod=1   MMod=1 _
+        WMod=1   GUID=4801f79e-dfd2-4a7f-855f-a7c9afbb704c
+ 
+END TABLE DATA
