@@ -310,6 +310,16 @@ def _collect_materials(csi, model):
 
     return library
 
+def apply_loads(csi, model):
+    "LOAD CASE DEFINITIONS",
+    "LOAD PATTERN DEFINITIONS",
+
+    "JOINT LOADS - FORCE",
+    "FRAME LOADS - DISTRIBUTED",
+    "FRAME LOADS - GRAVITY",
+    "FRAME LOADS - POINT",
+    "CABLE LOADS - DISTRIBUTED",
+    pass
 
 def create_model(sap, types=None, verbose=False):
 

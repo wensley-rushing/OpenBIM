@@ -1,4 +1,4 @@
-from openbim.csi import create_model, load 
+from openbim.csi import create_model, apply_loads, load
 
 if __name__ == "__main__":
     import sys
@@ -8,11 +8,18 @@ if __name__ == "__main__":
 
     model = create_model(csi, verbose=True)
 
-    model.eigen(1)
-
     if sys.argv[1] == "-C":
         # Convert
         model.print("-json")
+
+    elif sys.argv[1] == "-E":
+        # Eigen
+        model.eigen(1)
+
+    elif sys.argv[1] == "-A":
+        # Apply loads and analyze
+        apply_loads(csi, model)
+        model.analyze(1)
 
     elif sys.argv[1] == "-V":
         # Visualize
