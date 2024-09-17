@@ -26,6 +26,24 @@ if __name__ == "__main__":
         import sees
         sees.serve(sees.render(model, canvas="gltf", vertical=3))
 
+    elif sys.argv[1] == "-Vn":
+        # Visualize
+        from scipy.linalg import null_space
+        model.analysis("Static")
+        K = model.getTangent().T
+        v = null_space(K, rcond=1e-8)
+        print(v)
+        sys.exit()
+    
+
+        u = {
+            tag: [v[dof-1] for dof in model.nodeDOFs(tag)]
+            for tag in model.getNodeTags()
+        }
+
+        import sees
+        sees.serve(sees.render(model, u, canvas="gltf", vertical=3))
+
     elif sys.argv[1] == "-Q":
         # Quiet conversion
         pass
