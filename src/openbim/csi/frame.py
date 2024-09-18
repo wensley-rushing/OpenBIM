@@ -75,7 +75,7 @@ def create_frames(sap, model, library, config):
             mass = row["MassPerLen"] if row else 0.0
         else:
             mass = 0.0
-        
+
         # Geometric transformation
         if "FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL" in sap:
             row = find_row(sap["FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL"],
@@ -83,7 +83,7 @@ def create_frames(sap, model, library, config):
             angle = row["Angle"] if row else 0.0
         else:
             angle = 0
-            
+
         xi = np.array(model.nodeCoord(nodes[0]))
         xj = np.array(model.nodeCoord(nodes[1]))
         if np.linalg.norm(xj - xi) <= 1e-8:
@@ -108,7 +108,7 @@ def create_frames(sap, model, library, config):
 
         section = library["frame_sections"][assign["AnalSect"]]
 
-        if assign["SectionType"] != "Nonprismatic" or \
+        if ("SectionType" not in assign) or (assign["SectionType"] != "Nonprismatic") or \
            assign["NPSectType"] == "Advanced":
 
             assert len(section.integration) == 1

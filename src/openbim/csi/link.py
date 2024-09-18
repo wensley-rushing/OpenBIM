@@ -59,6 +59,28 @@ def create_links(csi, model, library, config):
         assign = find_row(csi["LINK PROPERTY ASSIGNMENTS"],
                           Link=link["Link"])
 
+        if assign["LinkJoints"] == "SingleJoint":
+
+            props = find_row(csi["LINK PROPERTY DEFINITIONS 01 - GENERAL"],
+                             Link=assign["LinkProp"])
+
+            if props["LinkType"] != "Linear":
+                log.append(UnimplementedInstance(f"Joint.SingleJoint.LinkType={prop['LinkType']}", assign))
+
+            # TODO: Implement soil springs
+            props = find_rows(csi["LINK PROPERTY DEFINITIONS 02 - LINEAR"],
+                             Link=assign["LinkProp"])
+
+            flags = tuple(1 if find_row(props, DOF=dof) else 0 for dof in config["dofs"])
+
+            model.fix(nodes[0], flags)
+
+            continue
+
+        elif assign["LinkJoints"] != "TwoJoint":
+            log.append(UnimplementedInstance(f"Joint.{assign['LinkJoints']}", assign))
+            continue
+
         #
         # Get mats and dofs
         #

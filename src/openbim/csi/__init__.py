@@ -7,6 +7,9 @@
 # Certain operations are loosley adapted from:
 #    https://github.com/XunXun-Zhou/Sap2OpenSees/blob/main/STO_ver1.0.py
 #
+
+# TABLE:  "BRIDGE MODEL SUMMARY 01 - BEARING SUPPORTS"
+
 import re
 import sys
 import warnings
@@ -18,6 +21,7 @@ import numpy as np
 from .parse import load
 from .utility import UnimplementedInstance, find_row, find_rows, print_log
 from .frame import create_frames
+from .point import create_points
 from .link import create_links
 
 RE = {
@@ -191,7 +195,7 @@ class _FrameSection(_Section):
                 }[segment.get(f"E{prop}Var", "Linear")]
 
                 return start*(1 + point*((end/start)**(1/power)-1))**power
-            
+
 
             # Define a numerical integration scheme
 
@@ -325,12 +329,13 @@ def create_model(sap, types=None, verbose=False):
 
     import opensees.openseespy as ops
 
+    config = CONFIG
+
     used = {
         "TABLES AUTOMATICALLY SAVED AFTER ANALYSIS"
     }
     log = []
 
-    config = CONFIG
 
     #
     # Create model
@@ -347,69 +352,20 @@ def create_model(sap, types=None, verbose=False):
 
     used.add("ACTIVE DEGREES OF FREEDOM")
 
-    #
-    # Create nodes
-    #
     dofs = [f"U{i}" for i in range(1, ndm+1)]
     if ndm == 3:
         dofs = dofs + ["R1", "R2", "R3"]
     else:
         dofs = dofs + ["R3"]
-    for node in sap["JOINT COORDINATES"]:
-        model.node(node["Joint"], tuple(node[i] for i in ("XorR", "Y", "Z") if i in node))
 
-    for node in sap.get("JOINT RESTRAINT ASSIGNMENTS", []):
-        model.fix(node["Joint"], tuple(int(node[i]) for i in dofs))
+    config["ndm"] = ndm
+    config["ndf"] = ndf
+    config["dofs"] = dofs
 
-    used.add("JOINT COORDINATES")
-    used.add("JOINT RESTRAINT ASSIGNMENTS")
-
-    if True:
-        # TODO
-        # The format of body dictionary is {'node number':'constraint name'}
-        constraints = {}
-
-        for constraint in  sap.get("JOINT CONSTRAINT ASSIGNMENTS", []):
-            # print(constraint)
-            if "Type" in constraint and constraint["Type"] == "Body":
-                # map node number to constraint
-                constraints[constraint["Joint"]] = constraint["Constraint"]
-            else:
-                log.append(UnimplementedInstance("Joint.Constraint", constraint))
-
-        # Sort the dictionary by body name and return a list [(node, body name)]
-        constraints = list(sorted(constraints.items(), key=lambda x: x[1]))
-
-
-        if len(constraints) > 0:
-            nodes = []
-            # Assign the first body name to the pointer
-            pointer = constraints[0][1]
-
-            # Traverse the tuple. If the second element in the tuple, the body
-            # name, is the same as the pointer, then store the node number, 
-            # into nodes.
-            for node, constraint in constraints:
-                if constraint == pointer:
-                    nodes.append(node)
-                else:
-                    # First write the nodes in nodes to the body file
-                    for le in range(len(nodes)-1):
-                        model.eval(f"rigidLink beam {nodes[0]} {nodes[le + 1]}\n")
-                    # Restore nodes and save the node that returns False.
-                    nodes = []
-                    nodes.append(node)
-                    # The pointer is changed to the new body name
-                    pointer = constraint
-
-            # After the for loop ends, write the nodes in the nodes of the last loop to the body file.
-            for le in range(len(nodes)-1):
-                model.eval(f"rigidLink beam {nodes[0]} {nodes[le + 1]}\n")
-
-
-    used.add("JOINT CONSTRAINT ASSIGNMENTS")
-
-    # TODO
+    #
+    # Create nodes
+    #
+    log.extend( create_points(sap, model, None, config) )
 
     library = _collect_materials(sap, model)
 
@@ -417,7 +373,6 @@ def create_model(sap, types=None, verbose=False):
     # Unimplemented objects
     for item in [
         "CONNECTIVITY - CABLE",
-        "CONNECTIVITY - LINK",
         "CONNECTIVITY - SOLID",
         "CONNECTIVITY - TENDON"]:
         for elem in sap.get(item, []):
@@ -434,7 +389,7 @@ def create_model(sap, types=None, verbose=False):
     #
     log.extend(create_frames(sap, model, library, config))
 
-    
+
     #
     # Create shells
     #
@@ -467,7 +422,7 @@ def create_model(sap, types=None, verbose=False):
                       nodes, section
         )
 
-    if verbose:
+    if verbose and len(log) > 0:
         print_log(log)
 
     if verbose and False:

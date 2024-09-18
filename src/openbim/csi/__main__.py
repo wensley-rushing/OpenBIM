@@ -14,7 +14,10 @@ if __name__ == "__main__":
 
     elif sys.argv[1] == "-E":
         # Eigen
-        model.eigen(1)
+        import sees
+        model.constraints("Transformation")
+        model.eigen(2)
+        sees.serve(sees.render_mode(model, 2, 50.0, vertical=3))
 
     elif sys.argv[1] == "-A":
         # Apply loads and analyze
@@ -24,20 +27,20 @@ if __name__ == "__main__":
     elif sys.argv[1] == "-V":
         # Visualize
         import sees
-        sees.serve(sees.render(model, canvas="gltf", vertical=3))
+        sees.serve(sees.render(model, canvas="plotly", vertical=3))
 
     elif sys.argv[1] == "-Vn":
         # Visualize
         from scipy.linalg import null_space
+        model.constraints("Transformation")
         model.analysis("Static")
         K = model.getTangent().T
-        v = null_space(K, rcond=1e-8)
+        v = null_space(K)[:,0] #, rcond=1e-8)
         print(v)
-        sys.exit()
-    
+
 
         u = {
-            tag: [v[dof-1] for dof in model.nodeDOFs(tag)]
+            tag: [1000*v[dof-1] for dof in model.nodeDOFs(tag)]
             for tag in model.getNodeTags()
         }
 
