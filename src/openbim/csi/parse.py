@@ -16,9 +16,9 @@ def _parse_value(v):
     except:
         return v
 
-def load(f, append: dict=None):
+def load(file, append: dict=None):
     """
-    Read file-like object f and form a dictionary.
+    Read file-like object file and form a dictionary.
     """
     if append is None:
         tables = {}
@@ -27,7 +27,7 @@ def load(f, append: dict=None):
 
     current_table = None
     current_item  = None
-    for line in f:
+    for line in file:
         if "END TABLE DATA" in line:
             break
 

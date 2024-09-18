@@ -18,6 +18,7 @@ import numpy as np
 from .parse import load
 from .utility import UnimplementedInstance, find_row, find_rows, print_log
 from .frame import create_frames
+from .point import create_points
 from .link import create_links
 
 RE = {
@@ -46,9 +47,6 @@ class _Material:
         Fy:    float
         Fu:    float
         EffFy: float
-
-class _Model:
-    pass
 
 class _Section:
     def __init__(self, name: str, csi: dict,
@@ -143,7 +141,7 @@ class _FrameSection(_Section):
         elif section["Shape"] == "Nonprismatic" and \
              len(segments) != 1: #section["NPSecType"] == "Advanced":
 
-            # TODO: Just treating as normal prismatic section
+            # TODO: Currently just treating advanced as normal prismatic section
 
             assert all(segment["StartSect"] == segment["EndSect"] for segment in segments)
 
@@ -159,7 +157,6 @@ class _FrameSection(_Section):
 
             segments = find_rows(csi["FRAME SECTION PROPERTIES 05 - NONPRISMATIC"],
                                  SectionName=section["SectionName"])
-
 
             assert len(segments) == 1
             segment = segments[0]
@@ -191,7 +188,7 @@ class _FrameSection(_Section):
                 }[segment.get(f"E{prop}Var", "Linear")]
 
                 return start*(1 + point*((end/start)**(1/power)-1))**power
-            
+
 
             # Define a numerical integration scheme
 
@@ -219,22 +216,15 @@ class _FrameSection(_Section):
 
 
         else:
-            warnings.warn(f"Unknown shape {section['Shape']}")
             # TODO: truss section?
+            warnings.warn(f"Unknown shape {section['Shape']}")
             pass
 
         # TODO
         outline = "FRAME SECTION PROPERTIES 06 - POLYGON DATA"
 
 
-class _Shell:
-    def __init__(self, csi):
-        pass
-
-
-
-
-def _collect_materials(csi, model):
+def create_materials(csi, model):
     library = {
       "frame_sections": {},
       "shell_sections": {},
@@ -260,6 +250,8 @@ def _collect_materials(csi, model):
         else:
             stiff = link["TransKE"]
             damp  = link["TransCE"]
+
+        # TODO: use damp
         model.eval(f"uniaxialMaterial Elastic {mat_total} {stiff}\n")
 
         dof = link["DOF"]
@@ -279,7 +271,6 @@ def _collect_materials(csi, model):
         mat_total += 1
 
     for link in csi.get("LINK PROPERTY DEFINITIONS 10 - PLASTIC (WEN)", []):
-#       continue
         name = link["Link"]
 
         if not link.get("Nonlinear", False):
@@ -321,103 +312,54 @@ def apply_loads(csi, model):
     "CABLE LOADS - DISTRIBUTED",
     pass
 
+
+
 def create_model(sap, types=None, verbose=False):
 
     import opensees.openseespy as ops
+
+    config = CONFIG
 
     used = {
         "TABLES AUTOMATICALLY SAVED AFTER ANALYSIS"
     }
     log = []
 
-    config = CONFIG
 
     #
     # Create model
     #
-    dofs = {key for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() if val}
-    dims = {key for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() if val}
-    ndf = sum(int(i) for i in sap["ACTIVE DEGREES OF FREEDOM"][0].values())
-    ndm = sum(int(v) for k,v in sap["ACTIVE DEGREES OF FREEDOM"][0].items()
+    dofs = {key:val for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() } # if val }
+    dims = {key for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() } # if val }
+    ndf = sum(1 for v in sap["ACTIVE DEGREES OF FREEDOM"][0].values())
+    ndm = sum(1 for k,v in sap["ACTIVE DEGREES OF FREEDOM"][0].items()
               if k[0] == "U")
-    # ndm = 3 if sap["ACTIVE DEGREES OF FREEDOM"][0]["UZ"] else 2
-    # print(ndm)
 
     model = ops.Model(ndm=ndm, ndf=ndf)
 
     used.add("ACTIVE DEGREES OF FREEDOM")
 
+#   dofs = [f"U{i}" for i in range(1, ndm+1)]
+#   if ndm == 3:
+#       dofs = dofs + ["R1", "R2", "R3"]
+#   else:
+#       dofs = dofs + ["R3"]
+
+    config["ndm"] = ndm
+    config["ndf"] = ndf
+    config["dofs"] = dofs
+
     #
     # Create nodes
     #
-    dofs = [f"U{i}" for i in range(1, ndm+1)]
-    if ndm == 3:
-        dofs = dofs + ["R1", "R2", "R3"]
-    else:
-        dofs = dofs + ["R3"]
-    for node in sap["JOINT COORDINATES"]:
-        model.node(node["Joint"], tuple(node[i] for i in ("XorR", "Y", "Z") if i in node))
+    log.extend( create_points(sap, model, None, config) )
 
-    for node in sap.get("JOINT RESTRAINT ASSIGNMENTS", []):
-        model.fix(node["Joint"], tuple(int(node[i]) for i in dofs))
-
-    used.add("JOINT COORDINATES")
-    used.add("JOINT RESTRAINT ASSIGNMENTS")
-
-    if True:
-        # TODO
-        # The format of body dictionary is {'node number':'constraint name'}
-        constraints = {}
-
-        for constraint in  sap.get("JOINT CONSTRAINT ASSIGNMENTS", []):
-            # print(constraint)
-            if "Type" in constraint and constraint["Type"] == "Body":
-                # map node number to constraint
-                constraints[constraint["Joint"]] = constraint["Constraint"]
-            else:
-                log.append(UnimplementedInstance("Joint.Constraint", constraint))
-
-        # Sort the dictionary by body name and return a list [(node, body name)]
-        constraints = list(sorted(constraints.items(), key=lambda x: x[1]))
-
-
-        if len(constraints) > 0:
-            nodes = []
-            # Assign the first body name to the pointer
-            pointer = constraints[0][1]
-
-            # Traverse the tuple. If the second element in the tuple, the body
-            # name, is the same as the pointer, then store the node number, 
-            # into nodes.
-            for node, constraint in constraints:
-                if constraint == pointer:
-                    nodes.append(node)
-                else:
-                    # First write the nodes in nodes to the body file
-                    for le in range(len(nodes)-1):
-                        model.eval(f"rigidLink beam {nodes[0]} {nodes[le + 1]}\n")
-                    # Restore nodes and save the node that returns False.
-                    nodes = []
-                    nodes.append(node)
-                    # The pointer is changed to the new body name
-                    pointer = constraint
-
-            # After the for loop ends, write the nodes in the nodes of the last loop to the body file.
-            for le in range(len(nodes)-1):
-                model.eval(f"rigidLink beam {nodes[0]} {nodes[le + 1]}\n")
-
-
-    used.add("JOINT CONSTRAINT ASSIGNMENTS")
-
-    # TODO
-
-    library = _collect_materials(sap, model)
+    library = create_materials(sap, model)
 
 
     # Unimplemented objects
     for item in [
         "CONNECTIVITY - CABLE",
-        "CONNECTIVITY - LINK",
         "CONNECTIVITY - SOLID",
         "CONNECTIVITY - TENDON"]:
         for elem in sap.get(item, []):
@@ -426,15 +368,13 @@ def create_model(sap, types=None, verbose=False):
     #
     # Create Links
     #
-    log.extend(create_links(sap, model, library, config))
-
+    log.extend( create_links(sap, model, library, config) )
 
     #
     # Create frames
     #
-    log.extend(create_frames(sap, model, library, config))
+    log.extend( create_frames(sap, model, library, config) )
 
-    
     #
     # Create shells
     #
@@ -467,7 +407,7 @@ def create_model(sap, types=None, verbose=False):
                       nodes, section
         )
 
-    if verbose:
+    if verbose and len(log) > 0:
         print_log(log)
 
     if verbose and False:
@@ -476,6 +416,4 @@ def create_model(sap, types=None, verbose=False):
                 print(f"\t{table}", file=sys.stderr)
 
     return model
-
-
 
