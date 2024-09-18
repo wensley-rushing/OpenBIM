@@ -3,8 +3,11 @@ from openbim.csi import create_model, apply_loads, load
 if __name__ == "__main__":
     import sys
 
+
+
     with open(sys.argv[2], "r") as f:
         csi = load(f)
+
 
     model = create_model(csi, verbose=True)
 
@@ -17,7 +20,7 @@ if __name__ == "__main__":
         import sees
         model.constraints("Transformation")
         model.eigen(2)
-        sees.serve(sees.render_mode(model, 2, 50.0, vertical=3))
+        sees.serve(sees.render_mode(model, 1, 50.0, vertical=3))
 
     elif sys.argv[1] == "-A":
         # Apply loads and analyze

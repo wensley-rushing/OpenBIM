@@ -7,9 +7,6 @@
 # Certain operations are loosley adapted from:
 #    https://github.com/XunXun-Zhou/Sap2OpenSees/blob/main/STO_ver1.0.py
 #
-
-# TABLE:  "BRIDGE MODEL SUMMARY 01 - BEARING SUPPORTS"
-
 import re
 import sys
 import warnings
@@ -50,9 +47,6 @@ class _Material:
         Fy:    float
         Fu:    float
         EffFy: float
-
-class _Model:
-    pass
 
 class _Section:
     def __init__(self, name: str, csi: dict,
@@ -147,7 +141,7 @@ class _FrameSection(_Section):
         elif section["Shape"] == "Nonprismatic" and \
              len(segments) != 1: #section["NPSecType"] == "Advanced":
 
-            # TODO: Just treating as normal prismatic section
+            # TODO: Currently just treating advanced as normal prismatic section
 
             assert all(segment["StartSect"] == segment["EndSect"] for segment in segments)
 
@@ -163,7 +157,6 @@ class _FrameSection(_Section):
 
             segments = find_rows(csi["FRAME SECTION PROPERTIES 05 - NONPRISMATIC"],
                                  SectionName=section["SectionName"])
-
 
             assert len(segments) == 1
             segment = segments[0]
@@ -223,22 +216,15 @@ class _FrameSection(_Section):
 
 
         else:
-            warnings.warn(f"Unknown shape {section['Shape']}")
             # TODO: truss section?
+            warnings.warn(f"Unknown shape {section['Shape']}")
             pass
 
         # TODO
         outline = "FRAME SECTION PROPERTIES 06 - POLYGON DATA"
 
 
-class _Shell:
-    def __init__(self, csi):
-        pass
-
-
-
-
-def _collect_materials(csi, model):
+def create_materials(csi, model):
     library = {
       "frame_sections": {},
       "shell_sections": {},
@@ -264,6 +250,8 @@ def _collect_materials(csi, model):
         else:
             stiff = link["TransKE"]
             damp  = link["TransCE"]
+
+        # TODO: use damp
         model.eval(f"uniaxialMaterial Elastic {mat_total} {stiff}\n")
 
         dof = link["DOF"]
@@ -283,7 +271,6 @@ def _collect_materials(csi, model):
         mat_total += 1
 
     for link in csi.get("LINK PROPERTY DEFINITIONS 10 - PLASTIC (WEN)", []):
-#       continue
         name = link["Link"]
 
         if not link.get("Nonlinear", False):
@@ -325,6 +312,8 @@ def apply_loads(csi, model):
     "CABLE LOADS - DISTRIBUTED",
     pass
 
+
+
 def create_model(sap, types=None, verbose=False):
 
     import opensees.openseespy as ops
@@ -340,23 +329,21 @@ def create_model(sap, types=None, verbose=False):
     #
     # Create model
     #
-    dofs = {key for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() if val}
-    dims = {key for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() if val}
-    ndf = sum(int(i) for i in sap["ACTIVE DEGREES OF FREEDOM"][0].values())
-    ndm = sum(int(v) for k,v in sap["ACTIVE DEGREES OF FREEDOM"][0].items()
+    dofs = {key:val for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() } # if val }
+    dims = {key for key,val in sap["ACTIVE DEGREES OF FREEDOM"][0].items() } # if val }
+    ndf = sum(1 for v in sap["ACTIVE DEGREES OF FREEDOM"][0].values())
+    ndm = sum(1 for k,v in sap["ACTIVE DEGREES OF FREEDOM"][0].items()
               if k[0] == "U")
-    # ndm = 3 if sap["ACTIVE DEGREES OF FREEDOM"][0]["UZ"] else 2
-    # print(ndm)
 
     model = ops.Model(ndm=ndm, ndf=ndf)
 
     used.add("ACTIVE DEGREES OF FREEDOM")
 
-    dofs = [f"U{i}" for i in range(1, ndm+1)]
-    if ndm == 3:
-        dofs = dofs + ["R1", "R2", "R3"]
-    else:
-        dofs = dofs + ["R3"]
+#   dofs = [f"U{i}" for i in range(1, ndm+1)]
+#   if ndm == 3:
+#       dofs = dofs + ["R1", "R2", "R3"]
+#   else:
+#       dofs = dofs + ["R3"]
 
     config["ndm"] = ndm
     config["ndf"] = ndf
@@ -367,7 +354,7 @@ def create_model(sap, types=None, verbose=False):
     #
     log.extend( create_points(sap, model, None, config) )
 
-    library = _collect_materials(sap, model)
+    library = create_materials(sap, model)
 
 
     # Unimplemented objects
@@ -381,14 +368,12 @@ def create_model(sap, types=None, verbose=False):
     #
     # Create Links
     #
-    log.extend(create_links(sap, model, library, config))
-
+    log.extend( create_links(sap, model, library, config) )
 
     #
     # Create frames
     #
-    log.extend(create_frames(sap, model, library, config))
-
+    log.extend( create_frames(sap, model, library, config) )
 
     #
     # Create shells
@@ -431,6 +416,4 @@ def create_model(sap, types=None, verbose=False):
                 print(f"\t{table}", file=sys.stderr)
 
     return model
-
-
 

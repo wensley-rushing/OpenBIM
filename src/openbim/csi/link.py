@@ -1,3 +1,9 @@
+#===----------------------------------------------------------------------===#
+#
+#         STAIRLab -- STructural Artificial Intelligence Laboratory
+#
+#===----------------------------------------------------------------------===#
+#
 import numpy as np
 from .utility import UnimplementedInstance, find_row, find_rows
 
@@ -28,7 +34,8 @@ def _orient(xi, xj, deg):
         l_z = np.cross(l_x, g_z)
 
     # The local axis may also be rotated using the Rodrigues' rotation formula
-    l_z_rot = l_z * np.cos(float(deg) / 180 * np.pi) + np.cross(l_x, l_z) * np.sin(float(deg) / 180 * np.pi)
+    angle = deg / 180 * np.pi
+    l_z_rot = l_z * np.cos(angle) + np.cross(l_x, l_z) * np.sin(angle)
     # The rotated local y-axis can be obtained by crossing the rotated local z-axis with the local x-axis
     l_y_rot = np.cross(l_z_rot, l_x)
     # Finally, return the normalized local y-axis
@@ -50,8 +57,6 @@ _link_tables = {
 def create_links(csi, model, library, config):
     log = []
 
-    # Dictionary for link local axis rotation
-    link_local = {}
 
     for link in csi.get("CONNECTIVITY - LINK",[]):
         nodes = (link["JointI"], link["JointJ"])
@@ -65,13 +70,13 @@ def create_links(csi, model, library, config):
                              Link=assign["LinkProp"])
 
             if props["LinkType"] != "Linear":
-                log.append(UnimplementedInstance(f"Joint.SingleJoint.LinkType={prop['LinkType']}", assign))
+                log.append(UnimplementedInstance(f"Joint.SingleJoint.LinkType={props['LinkType']}", assign))
 
             # TODO: Implement soil springs
             props = find_rows(csi["LINK PROPERTY DEFINITIONS 02 - LINEAR"],
                              Link=assign["LinkProp"])
 
-            flags = tuple(1 if find_row(props, DOF=dof) else 0 for dof in config["dofs"])
+            flags = tuple(1 if find_row(props, DOF=f"{dof[0]}{'XYZ'.find(dof[1])+1}") and config["dofs"][dof] else 0 for dof in config["dofs"])
 
             model.fix(nodes[0], flags)
 

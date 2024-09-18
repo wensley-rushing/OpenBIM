@@ -1,3 +1,9 @@
+#===----------------------------------------------------------------------===#
+#
+#         STAIRLab -- STructural Artificial Intelligence Laboratory
+#
+#===----------------------------------------------------------------------===#
+#
 import sys
 import numpy as np
 
@@ -7,7 +13,7 @@ def _orient(xi, xj, angle):
     """
     Calculate the coordinate transformation vector.
     xi is the location of node I, xj node J,
-    and `angle` is the rotation about the local axis
+    and `angle` is the rotation about the local axis in degrees
 
     By default local axis 2 is always in the 1-Z plane, except if the object
     is vertical and then it is parallel to the global X axis.
@@ -34,7 +40,9 @@ def _orient(xi, xj, angle):
         l_z = np.cross(e_x, g_z)
 
     # Rotate the local axis using the Rodrigue rotation formula
-    l_z_rot = l_z * np.cos(angle / 180 * np.pi) + np.cross(e_x, l_z) * np.sin(angle / 180 * np.pi)
+    # convert from degrees to radians
+    angle = angle / 180 * np.pi
+    l_z_rot = l_z * np.cos(angle) + np.cross(e_x, l_z) * np.sin(angle)
     # Finally, the normalized local z-axis is returned
     return l_z_rot / np.linalg.norm(l_z_rot)
 
@@ -51,7 +59,7 @@ def _is_truss(frame, csi):
 
 
 def create_frames(sap, model, library, config):
-    ndm = 3
+    ndm = config.get("ndm", 3)
     log = []
 
     itag = 1
@@ -65,9 +73,10 @@ def create_frames(sap, model, library, config):
         if "IsCurved" in frame and frame["IsCurved"]:
             log.append(UnimplementedInstance("Frame.Curve", frame))
 
-
+        
 
         nodes = (frame["JointI"], frame["JointJ"])
+
 
         if "FRAME ADDED MASS ASSIGNMENTS" in sap:
             row = find_row(sap["FRAME ADDED MASS ASSIGNMENTS"],
@@ -86,8 +95,9 @@ def create_frames(sap, model, library, config):
 
         xi = np.array(model.nodeCoord(nodes[0]))
         xj = np.array(model.nodeCoord(nodes[1]))
-        if np.linalg.norm(xj - xi) <= 1e-8:
-            print(f"ZERO LENGTH FRAME: {frame['Frame']}")
+        if np.linalg.norm(xj - xi) <= 1e-10:
+            log.append(UnimplementedInstance("Frame.ZeroLength", frame))
+            print(f"ZERO LENGTH FRAME: {frame['Frame']}", file=sys.stderr)
             continue
 
         if ndm == 3:
