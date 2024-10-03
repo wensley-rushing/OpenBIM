@@ -221,12 +221,26 @@ def create_opensees_model(ast):
                         if element_type == 'C3D4':
                             model.element('tetrahedron', element_id, *connectivity)  # Example for tetrahedral elements
 
+                        # BEAMS
+                        elif element_type == 'B31':
+                            element('elasticBeamColumn', element_id, *connectivity)  # Linear 2-node beam
+                        
+                        elif element_type == 'B32':
+                            element('elasticBeamColumn', element_id, *connectivity)  # Quadratic 3-node beam
+                        
+                        elif element_type == 'B33':
+                            element('elasticBeamColumn', element_id, *connectivity)  # Linear 3-node beam
+                        
+                        elif element_type == 'B21':
+                            element('elasticBeamColumn', element_id, *connectivity)  # 2D beam
+                        
+                        elif element_type == 'B22':
+                            element('elasticBeamColumn', element_id, *connectivity)  # Quadratic 2-node beam
+                        
                         elif element_type == 'C0D2':  # Beam example
                             model.element('elasticBeamColumn', element_id, *connectivity)
 
-                        elif element_type == 'C0D2':  # Beam element
-                            element('elasticBeamColumn', element_id, *connectivity)
-
+                        # SOLID
                         elif element_type == 'C3D8':  # Hexahedral element
                             element('brick', element_id, *connectivity)
 
