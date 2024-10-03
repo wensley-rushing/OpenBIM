@@ -89,12 +89,12 @@ meshio_to_abaqus_type = {v: k for k, v in abaqus_to_meshio_type.items()}
 
 
 class Node:
-    def __init__(self, keyword, attributes=None):
+    def __init__(self, keyword: str, attributes: dict=None):
         self.keyword = keyword
         self.attributes = attributes if attributes else {}
         self.children = []
 
-    def add_child(self, child_node):
+    def add_child(self, child_node: 'Node'):
         self.children.append(child_node)
 
     def __repr__(self, level=0):
@@ -104,6 +104,7 @@ class Node:
         return ret
 
 def load(filename):
+
     with open(filename, 'r') as file:
         root = Node("root")
         current_node = None
@@ -111,9 +112,10 @@ def load(filename):
 
         for line in file:
             line = line.strip()
-            if not line or line.startswith("#"):  # Skip empty lines and comments
+            if not line or line.startswith("#") or line.startswith("**"):  
+                # Skip empty lines and comments
                 continue
-            
+
             if line.startswith("*"):  # Identify keywords
                 # Split keyword and attributes
                 parts = line[1:].split(",", 1)
@@ -128,7 +130,7 @@ def load(filename):
 
                 # Create a new node
                 new_node = Node(keyword, attributes)
-                if current_node:
+                if current_node is not None:
                     current_node.add_child(new_node)
                 else:
                     root.add_child(new_node)
@@ -148,15 +150,12 @@ def load(filename):
 
 
 def create_opensees_model(ast):
-    # Wipe existing model
-
     # Create a new model
-    model = ops.Model(ndm=3, ndf=3)  # 2D model with 3 degrees of freedom
+    model = ops.Model(ndm=3, ndf=3)
 
-    # Parse the AST and construct the OpenSees model
-    for node in ast.children:
-        
-    material_map = {}  # Dictionary to map material names/IDs
+    # Dictionary to map material names/IDs
+    material_map = {}
+    section_map = {}
 
     # Parse materials
     for node in ast.children:
@@ -184,7 +183,7 @@ def create_opensees_model(ast):
                     f_t = float(properties[1])  # Tensile strength
                     model.uniaxialMaterial('Concrete', material_name, f_c, f_t)
 
-                 material_map[node.attributes.get('name')] = material_name
+                material_map[node.attributes.get('name')] = material_name
 
         if node.keyword == 'Section':
             section_name = node.attributes.get('name')
@@ -224,17 +223,14 @@ def create_opensees_model(ast):
                         elif element_type == 'C0D2':  # Beam example
                             model.element('elasticBeamColumn', element_id, *connectivity)
 
-                        elif element_type == 'C0D2':  # Beam element
-                            element('elasticBeamColumn', element_id, *connectivity)
-
                         elif element_type == 'C3D8':  # Hexahedral element
-                            element('brick', element_id, *connectivity)
+                            model.element('brick', element_id, *connectivity)
 
                         elif element_type == 'C2D4':  # 2D quadrilateral element
-                            element('quad', element_id, *connectivity)
+                            model.element('quad', element_id, *connectivity)
 
                         elif element_type == 'C3D10':  # Tetrahedral element with mid-side nodes
-                            element('tetrahedron', element_id, *connectivity)  # or use specific type
+                            model.element('tetrahedron', element_id, *connectivity)  # or use specific type
 
                         else:
                             print(f"Warning: Unrecognized element type {element_type} for element ID {element_id}.")
