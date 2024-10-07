@@ -27,8 +27,10 @@ if __name__ == "__main__":
         # Eigen
         import sees
         model.constraints("Transformation")
-        model.eigen(2)
-        sees.serve(sees.render_mode(model, 1, 50.0, vertical=3))
+        W = model.eigen(2)
+        for w in W:
+            print(f"T = {2*np.pi/np.sqrt(w)}")
+        sees.serve(sees.render_mode(model, 1, 200.0, vertical=3, canvas="gltf"))
 
     elif sys.argv[1] == "-A":
         # Apply loads and analyze

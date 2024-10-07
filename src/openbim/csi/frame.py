@@ -7,7 +7,18 @@
 import sys
 import numpy as np
 
-from .utility import UnimplementedInstance, find_row, find_rows
+from .utility import UnimplementedInstance, find_row
+
+
+def _is_truss(frame, csi):
+    if "FRAME RELEASE ASSIGNMENTS 1 - GENERAL" in csi:
+        release = find_row(csi["FRAME RELEASE ASSIGNMENTS 1 - GENERAL"],
+                        Frame=frame["Frame"])
+    else:
+        return False
+
+    return release and all(release[i] for i in ("TI", "M2I", "M3I", "M2J", "M3J"))
+
 
 def _orient(xi, xj, angle):
     """
@@ -21,41 +32,30 @@ def _orient(xi, xj, angle):
     """
 
     # The local 1 axis points from node I to node J
-    d_x, d_y, d_z = e_x = xj - xi
+    dx, dy, dz = e1 = xj - xi
     # Global z
-    g_z = np.array([0, 0, 1])
+    E3 = np.array([0, 0, 1])
 
     # In Sap2000, if the element is vertical, the local y-axis is the same as the
     # global x-axis, and the local z-axis can be obtained by cross-multiplying
     # the local x-axis with the local y-axis.
-    if d_x == 0 and d_y == 0:
-        l_y = np.array([1, 0, 0])
-        l_z = np.cross(e_x, l_y)
+    if dx == 0 and dy == 0:
+        e2 = np.array([1, 0, 0])
+        e3 = np.cross(e1, e2)
 
-    # In other cases, the plane composed of the local x-axis and the local
+    # Otherwise, the plane composed of the local x-axis and the local
     # y-axis is a vertical plane (that is, the normal vector level). In this
     # case, the local z-axis can be obtained by the cross product of the local
     # x-axis and the global z-axis.
     else:
-        l_z = np.cross(e_x, g_z)
+        e3 = np.cross(e1, E3)
 
     # Rotate the local axis using the Rodrigue rotation formula
     # convert from degrees to radians
     angle = angle / 180 * np.pi
-    l_z_rot = l_z * np.cos(angle) + np.cross(e_x, l_z) * np.sin(angle)
+    e3r = e3 * np.cos(angle) + np.cross(e1, e3) * np.sin(angle)
     # Finally, the normalized local z-axis is returned
-    return l_z_rot / np.linalg.norm(l_z_rot)
-
-
-
-def _is_truss(frame, csi):
-    if "FRAME RELEASE ASSIGNMENTS 1 - GENERAL" in csi:
-        release = find_row(csi["FRAME RELEASE ASSIGNMENTS 1 - GENERAL"],
-                        Frame=frame["Frame"])
-    else:
-        return False
-
-    return release and all(release[i] for i in ("TI", "M2I", "M3I", "M2J", "M3J"))
+    return e3r / np.linalg.norm(e3r)
 
 
 def create_frames(sap, model, library, config):
@@ -73,7 +73,6 @@ def create_frames(sap, model, library, config):
         if "IsCurved" in frame and frame["IsCurved"]:
             log.append(UnimplementedInstance("Frame.Curve", frame))
 
-        
 
         nodes = (frame["JointI"], frame["JointJ"])
 
